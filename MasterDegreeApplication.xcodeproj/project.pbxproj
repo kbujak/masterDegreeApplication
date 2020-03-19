@@ -12,6 +12,7 @@
 		F074A6EE2424140A0088D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F074A6ED2424140A0088D4F3 /* Assets.xcassets */; };
 		F074A6F42424140A0088D4F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F074A6F22424140A0088D4F3 /* LaunchScreen.storyboard */; };
 		F074A6FF2424140A0088D4F3 /* MasterDegreeApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A6FE2424140A0088D4F3 /* MasterDegreeApplicationTests.swift */; };
+		F074A70B242418110088D4F3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A70A242418110088D4F3 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		F074A6FA2424140A0088D4F3 /* MasterDegreeApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterDegreeApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F074A6FE2424140A0088D4F3 /* MasterDegreeApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDegreeApplicationTests.swift; sourceTree = "<group>"; };
 		F074A7002424140A0088D4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F074A70A242418110088D4F3 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +77,8 @@
 		F074A6E6242414080088D4F3 /* MasterDegreeApplication */ = {
 			isa = PBXGroup;
 			children = (
-				F074A6E7242414080088D4F3 /* AppDelegate.swift */,
-				F074A6E9242414080088D4F3 /* SceneDelegate.swift */,
-				F074A6ED2424140A0088D4F3 /* Assets.xcassets */,
-				F074A6F22424140A0088D4F3 /* LaunchScreen.storyboard */,
-				F074A6F52424140A0088D4F3 /* Info.plist */,
+				F074A70C2424183D0088D4F3 /* ViewControllers */,
+				F074A709242417DF0088D4F3 /* Resources */,
 			);
 			path = MasterDegreeApplication;
 			sourceTree = "<group>";
@@ -91,6 +90,26 @@
 				F074A7002424140A0088D4F3 /* Info.plist */,
 			);
 			path = MasterDegreeApplicationTests;
+			sourceTree = "<group>";
+		};
+		F074A709242417DF0088D4F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F074A6E7242414080088D4F3 /* AppDelegate.swift */,
+				F074A6E9242414080088D4F3 /* SceneDelegate.swift */,
+				F074A6ED2424140A0088D4F3 /* Assets.xcassets */,
+				F074A6F22424140A0088D4F3 /* LaunchScreen.storyboard */,
+				F074A6F52424140A0088D4F3 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F074A70C2424183D0088D4F3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F074A70A242418110088D4F3 /* SignInViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +214,7 @@
 			files = (
 				F074A6E8242414080088D4F3 /* AppDelegate.swift in Sources */,
 				F074A6EA242414080088D4F3 /* SceneDelegate.swift in Sources */,
+				F074A70B242418110088D4F3 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,10 +367,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"MasterDegreeApplication/Preview Content\"";
 				DEVELOPMENT_TEAM = 4VV3H7446H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MasterDegreeApplication/Info.plist;
+				INFOPLIST_FILE = MasterDegreeApplication/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,10 +386,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"MasterDegreeApplication/Preview Content\"";
 				DEVELOPMENT_TEAM = 4VV3H7446H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MasterDegreeApplication/Info.plist;
+				INFOPLIST_FILE = MasterDegreeApplication/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
