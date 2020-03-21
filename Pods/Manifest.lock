@@ -1,4 +1,5 @@
 PODS:
+  - PureLayout (3.1.5)
   - Realm (4.3.2):
     - Realm/Headers (= 4.3.2)
   - Realm/Headers (4.3.2)
@@ -14,6 +15,7 @@ PODS:
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
+  - PureLayout
   - RealmSwift
   - RxCocoa
   - SwiftGen (~> 6.0)
@@ -21,6 +23,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - PureLayout
     - Realm
     - RealmSwift
     - RxCocoa
@@ -30,6 +33,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
@@ -38,6 +42,6 @@ SPEC CHECKSUMS:
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 0f15a0db744080ed78a5d75b7891fa50906fc7c4
+PODFILE CHECKSUM: 802ec8f6cb8b8e0aaa4e2c534d7fb3a0a79565f8
 
 COCOAPODS: 1.9.1

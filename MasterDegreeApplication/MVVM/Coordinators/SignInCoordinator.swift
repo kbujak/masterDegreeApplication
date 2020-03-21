@@ -19,7 +19,8 @@ class SignInCoordinator: CompoundCoordinator {
     }
 
     func start(in controller: UINavigationController) {
-        let VC = SignInViewController()
+        let VM = SignInViewModel()
+        let VC = SignInViewController(viewModel: VM)
         self.VC = VC
         controller.pushViewController(VC, animated: true)
     }
