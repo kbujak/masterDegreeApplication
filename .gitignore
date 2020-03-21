@@ -1,6 +1,8 @@
-MasterDegreeApplication.xcodeproj/project.xcworkspace/xcuserdata/**
-MasterDegreeApplication.xcodeproj/xcuserdata/**
-MasterDegreeApplication.xcworkspace/xcuserdata/**
-Pods/Pods.xcodeproj/xcuserdata/**
+MasterDegreeApplication.xcodeproj/project.xcworkspace/xcuserdata/
+MasterDegreeApplication.xcodeproj/xcuserdata/
+MasterDegreeApplication.xcworkspace/xcuserdata/
+Pods/Pods.xcodeproj/xcuserdata/
+*.DS_Store
 xcuserdata
 venv/
+local_derived_data

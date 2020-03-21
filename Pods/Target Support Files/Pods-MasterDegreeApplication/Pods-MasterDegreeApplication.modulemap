@@ -1,0 +1,6 @@
+framework module Pods_MasterDegreeApplication {
+  umbrella header "Pods-MasterDegreeApplication-umbrella.h"
+
+  export *
+  module * { export * }
+}

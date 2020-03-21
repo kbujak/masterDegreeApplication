@@ -12,16 +12,18 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var appCoordinator: AppCoordinator?
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
+        let appCoordinator = AppCoordinator()
+        self.appCoordinator = appCoordinator
+
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            let VC = SignInViewController()
-            window.rootViewController = VC
             self.window = window
-            window.makeKeyAndVisible()
+            appCoordinator.start(in: window)
         }
     }
 
@@ -35,4 +37,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {}
 }
-
