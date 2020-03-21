@@ -12,6 +12,8 @@
 		F0353E85242619E800AEB067 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E84242619E800AEB067 /* AppCoordinatorTests.swift */; };
 		F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8824261A8C00AEB067 /* Coordinator.swift */; };
 		F0353E8B24261A9D00AEB067 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8A24261A9D00AEB067 /* AppCoordinator.swift */; };
+		F0685D6B2426708D00F900CF /* SignInCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6A2426708D00F900CF /* SignInCoordinatorTests.swift */; };
+		F0685D6D242671CB00F900CF /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6C242671CB00F900CF /* SignInCoordinator.swift */; };
 		F074A6E8242414080088D4F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A6E7242414080088D4F3 /* AppDelegate.swift */; };
 		F074A6EA242414080088D4F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A6E9242414080088D4F3 /* SceneDelegate.swift */; };
 		F074A6EE2424140A0088D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F074A6ED2424140A0088D4F3 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		F0353E84242619E800AEB067 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		F0353E8824261A8C00AEB067 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F0353E8A24261A9D00AEB067 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F0685D6A2426708D00F900CF /* SignInCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0685D6C242671CB00F900CF /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
 		F074A6E4242414080088D4F3 /* MasterDegreeApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDegreeApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F074A6E7242414080088D4F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F074A6E9242414080088D4F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			children = (
 				F0353E8824261A8C00AEB067 /* Coordinator.swift */,
 				F0353E8A24261A9D00AEB067 /* AppCoordinator.swift */,
+				F0685D6C242671CB00F900CF /* SignInCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				F0353E84242619E800AEB067 /* AppCoordinatorTests.swift */,
+				F0685D6A2426708D00F900CF /* SignInCoordinatorTests.swift */,
 			);
 			path = CoordinatorTestCases;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 				F074A6E8242414080088D4F3 /* AppDelegate.swift in Sources */,
 				F0353E8B24261A9D00AEB067 /* AppCoordinator.swift in Sources */,
 				F074A6EA242414080088D4F3 /* SceneDelegate.swift in Sources */,
+				F0685D6D242671CB00F900CF /* SignInCoordinator.swift in Sources */,
 				F074A70B242418110088D4F3 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0685D6B2426708D00F900CF /* SignInCoordinatorTests.swift in Sources */,
 				F0353E85242619E800AEB067 /* AppCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

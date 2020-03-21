@@ -14,5 +14,4 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .red
     }
-
 }

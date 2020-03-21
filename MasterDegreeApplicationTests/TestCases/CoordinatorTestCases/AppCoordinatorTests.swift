@@ -43,6 +43,15 @@ class AppCoordinatorTest: XCTestCase {
         guard let VC = coordinator.VC else { XCTFail("Coordinator not initialised"); return }
         XCTAssert(VC is UINavigationController)
     }
+
+    func testAppCoordinator_whenStart_thenContainsSignInCoordinator() {
+        let coordinator = createCoordinatorThenStart()
+
+        guard
+            let signInCoordinator = coordinator.children.values.first
+        else { XCTFail("Coordinator not initialised"); return }
+        XCTAssert(signInCoordinator is SignInCoordinator)
+    }
 }
 
 private extension AppCoordinatorTest {

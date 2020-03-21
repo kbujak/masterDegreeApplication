@@ -22,10 +22,16 @@ class AppCoordinator: CompoundCoordinator {
         let navigationVC = UINavigationController()
         navigationVC.isNavigationBarHidden = true
         self.VC = navigationVC
-        let asdas = SignInViewController()
-        navigationVC.viewControllers = [asdas]
 
         window.rootViewController = VC
         window.makeKeyAndVisible()
+
+        startSignInCoordinator()
+    }
+
+    private func startSignInCoordinator() {
+        guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
+        let coordinator: SignInCoordinator = createCoordinator()
+        coordinator.start(in: navigationVC)
     }
 }
