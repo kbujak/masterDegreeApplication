@@ -1,5 +1,5 @@
 //
-//  AppCoordinator.swift
+//  MVVMAppCoordinator.swift
 //  MasterDegreeApplication
 //
 //  Created by Krystian Bujak on 21/03/2020.
@@ -9,16 +9,9 @@
 import Foundation
 import UIKit
 
-class AppCoordinator: CompoundCoordinator {
-    var VC: UINavigationController?
-    var id: CoordinatorIdentifier
-    var children: [CoordinatorIdentifier: Coordinator] = [:]
+class MVVMAppCoordinator: AppCoordinator {
 
-    required init(id: CoordinatorIdentifier = CoordinatorIdentifier()) {
-        self.id = id
-    }
-
-    func start(in window: UIWindow) {
+    override func start(in window: UIWindow) {
         let navigationVC = UINavigationController()
         navigationVC.isNavigationBarHidden = true
         self.VC = navigationVC
@@ -31,7 +24,7 @@ class AppCoordinator: CompoundCoordinator {
 
     private func startSignInCoordinator() {
         guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
-        let coordinator: SignInCoordinator = createCoordinator()
+        let coordinator: MVVMSignInCoordinator = createCoordinator()
         coordinator.start(in: navigationVC)
     }
 }

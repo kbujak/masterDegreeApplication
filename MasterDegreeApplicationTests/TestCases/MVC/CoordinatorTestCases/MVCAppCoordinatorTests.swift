@@ -1,62 +1,62 @@
 //
-//  AppCoordinatorTest.swift
+//  MVCAppCoordinatorTests.swift
 //  MasterDegreeApplicationTests
 //
-//  Created by Krystian Bujak on 21/03/2020.
+//  Created by Krystian Bujak on 22/03/2020.
 //  Copyright © 2020 Booyac IT. All rights reserved.
 //
 
 import XCTest
 @testable import MasterDegreeApplication
 
-class AppCoordinatorTest: XCTestCase {
+class MVCAppCoordinatorTests: XCTestCase {
 
-    func testAppCoordinator_whenInit_thenIdIsInitialised() {
+    func testCoordinator_whenInit_thenIdIsInitialised() {
         let id = UUID().uuidString
         let coordinatorId = CoordinatorIdentifier(id: id)
-        let coordinator = AppCoordinator(id: coordinatorId)
+        let coordinator = MVCAppCoordinator(id: coordinatorId)
 
         XCTAssertEqual(id, coordinator.id.id)
     }
 
-    func testAppCoordinator_whenInit_thenChildrenIsEmpty() {
-        let coordinator = AppCoordinator()
+    func testCoordinator_whenInit_thenChildrenIsEmpty() {
+        let coordinator = MVCAppCoordinator()
 
         XCTAssertEqual(coordinator.children.count, 0)
     }
 
-    func testAppCoordinator_whenInit_thenVCIsNil() {
-        let coordinator = AppCoordinator()
+    func testCoordinator_whenInit_thenVCIsNil() {
+        let coordinator = MVCAppCoordinator()
 
         XCTAssertNil(coordinator.VC)
     }
 
-    func testAppCoordinator_whenStart_thenVCIsNotNil() {
+    func testCoordinator_whenStart_thenVCIsNotNil() {
         let coordinator = createCoordinatorThenStart()
 
         XCTAssertNotNil(coordinator.VC)
     }
 
-    func testAppCoordinator_whenStart_thenVCIsNavigationController() {
+    func testCoordinator_whenStart_thenVCIsNavigationController() {
         let coordinator = createCoordinatorThenStart()
 
         guard let VC = coordinator.VC else { XCTFail("Coordinator not initialised"); return }
         XCTAssert(VC is UINavigationController)
     }
 
-    func testAppCoordinator_whenStart_thenContainsSignInCoordinator() {
+    func testCoordinator_whenStart_thenContainsSignInCoordinator() {
         let coordinator = createCoordinatorThenStart()
 
         guard
             let signInCoordinator = coordinator.children.values.first
         else { XCTFail("Coordinator not initialised"); return }
-        XCTAssert(signInCoordinator is SignInCoordinator)
+        XCTAssert(signInCoordinator is MVCSignInCoordinator)
     }
 }
 
-private extension AppCoordinatorTest {
+private extension MVCAppCoordinatorTests {
     func createCoordinatorThenStart() -> AppCoordinator {
-        let coordinator = AppCoordinator()
+        let coordinator = MVCAppCoordinator()
         let window = UIWindow(frame: UIScreen.main.bounds)
         coordinator.start(in: window)
         return coordinator

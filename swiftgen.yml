@@ -1,12 +1,12 @@
 strings:
-  inputs: MasterDegreeApplication/Resources/Base.lproj
+  inputs: MasterDegreeApplication/Common/Resources/Base.lproj
   filter: .+\.strings$
   outputs:
     - templateName: structured-swift4
-      output: MasterDegreeApplication/Generated/strings.swift
+      output: MasterDegreeApplication/Common/Generated/strings.swift
 xcassets:
   inputs:
-    - MasterDegreeApplication/Resources/Assets.xcassets
+    - MasterDegreeApplication/Common/Resources/Assets.xcassets
   outputs:
     - templateName: swift4
-      output: MasterDegreeApplication/Generated/assets-images.swift
+      output: MasterDegreeApplication/Common/Generated/assets-images.swift

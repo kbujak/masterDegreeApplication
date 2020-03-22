@@ -1,16 +1,16 @@
 //
-//  SignInCoordinator.swift
+//  MVCSignInCoordinator.swift
 //  MasterDegreeApplication
 //
-//  Created by Krystian Bujak on 21/03/2020.
+//  Created by Krystian Bujak on 22/03/2020.
 //  Copyright © 2020 Booyac IT. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class SignInCoordinator: CompoundCoordinator {
-    var VC: SignInViewController?
+class MVCSignInCoordinator: CompoundCoordinator {
+    var VC: MVCSignInViewController?
     var id: CoordinatorIdentifier
     var children: [CoordinatorIdentifier: Coordinator] = [:]
 
@@ -19,8 +19,7 @@ class SignInCoordinator: CompoundCoordinator {
     }
 
     func start(in controller: UINavigationController) {
-        let VM = SignInViewModel()
-        let VC = SignInViewController(viewModel: VM)
+        let VC = MVCSignInViewController()
         self.VC = VC
         controller.pushViewController(VC, animated: true)
     }

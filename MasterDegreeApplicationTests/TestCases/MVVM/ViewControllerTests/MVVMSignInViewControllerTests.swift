@@ -1,5 +1,5 @@
 //
-//  SignInViewControllerTests.swift
+//  MVVMSignInViewControllerTests.swift
 //  MasterDegreeApplicationTests
 //
 //  Created by Krystian Bujak on 21/03/2020.
@@ -9,11 +9,11 @@
 import XCTest
 @testable import MasterDegreeApplication
 
-class SignInViewControllerTest: XCTestCase {
+class MVVMSignInViewControllerTests: XCTestCase {
 
-    func testAppCoordinator_whenStart_thenVCIsNavigationController() {
+    func testController_whenStart_thenVCIsNavigationController() {
         let viewModel = SignInViewModel()
-        let viewController = SignInViewController(viewModel: viewModel)
+        let viewController = MVVMSignInViewController(viewModel: viewModel)
         XCTAssertNotNil(viewController)
     }
 }

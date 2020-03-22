@@ -1,29 +1,20 @@
 //
-//  SignInViewController.swift
+//  MVCSignInViewController.swift
 //  MasterDegreeApplication
 //
-//  Created by Krystian Bujak on 19/03/2020.
+//  Created by Krystian Bujak on 22/03/2020.
 //  Copyright © 2020 Booyac IT. All rights reserved.
 //
 
 import UIKit
 import PureLayout
 
-class SignInViewController: UIViewController {
+class MVCSignInViewController: UIViewController {
     private let titleLabel = UILabel()
     private let usernameTextfield = UITextField()
     private let passwordTextfield = UITextField()
     private let signInButton = UIButton()
     private let signUpButton = UIButton()
-
-    private let viewModel: SignInViewModel
-
-    init(viewModel: SignInViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +25,7 @@ class SignInViewController: UIViewController {
     }
 }
 
-private extension SignInViewController {
+private extension MVCSignInViewController {
     func setupLayouts() {
         titleLabel.autoPinEdgesToSuperviewSafeArea(with: UIEdgeInsets(top: 200, left: 20, bottom: 0, right: 20),
                                                    excludingEdge: .bottom)

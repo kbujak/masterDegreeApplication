@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
-        let appCoordinator = AppCoordinator()
+        let appCoordinator = architecture == .MVVM ? MVVMAppCoordinator() : MVCAppCoordinator()
         self.appCoordinator = appCoordinator
 
         if let windowScene = scene as? UIWindowScene {

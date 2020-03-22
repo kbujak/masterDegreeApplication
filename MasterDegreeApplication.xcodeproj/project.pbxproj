@@ -9,24 +9,33 @@
 /* Begin PBXBuildFile section */
 		18ABAB6A29306368D37953AD /* Pods_MasterDegreeApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978FBAD6E4A116CEC4EA9237 /* Pods_MasterDegreeApplicationTests.framework */; };
 		56A8AE396F469E1EDE5E3B7C /* Pods_MasterDegreeApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE39AAC5F240C8FD77A59D7 /* Pods_MasterDegreeApplication.framework */; };
-		F0353E85242619E800AEB067 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E84242619E800AEB067 /* AppCoordinatorTests.swift */; };
+		F0353E85242619E800AEB067 /* MVVMAppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E84242619E800AEB067 /* MVVMAppCoordinatorTests.swift */; };
 		F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8824261A8C00AEB067 /* Coordinator.swift */; };
-		F0353E8B24261A9D00AEB067 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8A24261A9D00AEB067 /* AppCoordinator.swift */; };
-		F0685D6B2426708D00F900CF /* SignInCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6A2426708D00F900CF /* SignInCoordinatorTests.swift */; };
-		F0685D6D242671CB00F900CF /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6C242671CB00F900CF /* SignInCoordinator.swift */; };
+		F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */; };
+		F0685D6B2426708D00F900CF /* MVVMSignInCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6A2426708D00F900CF /* MVVMSignInCoordinatorTests.swift */; };
+		F0685D6D242671CB00F900CF /* MVVMSignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6C242671CB00F900CF /* MVVMSignInCoordinator.swift */; };
 		F074A6E8242414080088D4F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A6E7242414080088D4F3 /* AppDelegate.swift */; };
 		F074A6EA242414080088D4F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A6E9242414080088D4F3 /* SceneDelegate.swift */; };
 		F074A6EE2424140A0088D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F074A6ED2424140A0088D4F3 /* Assets.xcassets */; };
 		F074A6F42424140A0088D4F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F074A6F22424140A0088D4F3 /* LaunchScreen.storyboard */; };
-		F074A70B242418110088D4F3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A70A242418110088D4F3 /* SignInViewController.swift */; };
+		F074A70B242418110088D4F3 /* MVVMSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A70A242418110088D4F3 /* MVVMSignInViewController.swift */; };
 		F074A71224241D290088D4F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F074A71024241D290088D4F3 /* Localizable.strings */; };
+		F09434682427844A007898C8 /* AppArchitecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09434672427844A007898C8 /* AppArchitecture.swift */; };
+		F094346A242784E3007898C8 /* MVCAppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0943469242784E3007898C8 /* MVCAppCoordinatorTests.swift */; };
+		F094346E24278546007898C8 /* MVCAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094346D24278546007898C8 /* MVCAppCoordinator.swift */; };
+		F0943472242785BF007898C8 /* MVCSignInCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0943471242785BF007898C8 /* MVCSignInCoordinatorTests.swift */; };
+		F0943474242785E5007898C8 /* MVCSignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0943473242785E5007898C8 /* MVCSignInCoordinator.swift */; };
+		F09434762427861D007898C8 /* MVCSignInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09434752427861D007898C8 /* MVCSignInViewControllerTests.swift */; };
+		F094347924278659007898C8 /* MVCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094347824278659007898C8 /* MVCSignInViewController.swift */; };
+		F094347C242786F8007898C8 /* SelectedArchitecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094347B242786F8007898C8 /* SelectedArchitecture.swift */; };
 		F095A337242691C400D51976 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A336242691C400D51976 /* SignInViewModel.swift */; };
 		F095A33A242692D500D51976 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A339242692D500D51976 /* ViewModel.swift */; };
-		F095A33E2426937D00D51976 /* SignInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A33D2426937D00D51976 /* SignInViewControllerTests.swift */; };
+		F095A33E2426937D00D51976 /* MVVMSignInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A33D2426937D00D51976 /* MVVMSignInViewControllerTests.swift */; };
 		F095A3412426984600D51976 /* Array+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A3402426984600D51976 /* Array+UIView.swift */; };
 		F095A344242699DE00D51976 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A343242699DE00D51976 /* UIColor+AppColors.swift */; };
 		F095A34724269EA900D51976 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A34524269EA900D51976 /* strings.swift */; };
 		F095A34824269EA900D51976 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A34624269EA900D51976 /* assets-images.swift */; };
+		F0F6643424277AD400FC0A3B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6643324277AD400FC0A3B /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +55,11 @@
 		978FBAD6E4A116CEC4EA9237 /* Pods_MasterDegreeApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterDegreeApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E26A0F38A8CA2E6FD4E21F /* Pods-MasterDegreeApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterDegreeApplication.release.xcconfig"; path = "Target Support Files/Pods-MasterDegreeApplication/Pods-MasterDegreeApplication.release.xcconfig"; sourceTree = "<group>"; };
 		ADF185C5968799BB091D8379 /* Pods-MasterDegreeApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterDegreeApplicationTests.release.xcconfig"; path = "Target Support Files/Pods-MasterDegreeApplicationTests/Pods-MasterDegreeApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
-		F0353E84242619E800AEB067 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0353E84242619E800AEB067 /* MVVMAppCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMAppCoordinatorTests.swift; sourceTree = "<group>"; };
 		F0353E8824261A8C00AEB067 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		F0353E8A24261A9D00AEB067 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		F0685D6A2426708D00F900CF /* SignInCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinatorTests.swift; sourceTree = "<group>"; };
-		F0685D6C242671CB00F900CF /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMAppCoordinator.swift; sourceTree = "<group>"; };
+		F0685D6A2426708D00F900CF /* MVVMSignInCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0685D6C242671CB00F900CF /* MVVMSignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInCoordinator.swift; sourceTree = "<group>"; };
 		F074A6E4242414080088D4F3 /* MasterDegreeApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDegreeApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F074A6E7242414080088D4F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F074A6E9242414080088D4F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,15 +68,24 @@
 		F074A6F52424140A0088D4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F074A6FA2424140A0088D4F3 /* MasterDegreeApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterDegreeApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F074A7002424140A0088D4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F074A70A242418110088D4F3 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		F074A70A242418110088D4F3 /* MVVMSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInViewController.swift; sourceTree = "<group>"; };
 		F074A71124241D290088D4F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F09434672427844A007898C8 /* AppArchitecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppArchitecture.swift; sourceTree = "<group>"; };
+		F0943469242784E3007898C8 /* MVCAppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCAppCoordinatorTests.swift; sourceTree = "<group>"; };
+		F094346D24278546007898C8 /* MVCAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCAppCoordinator.swift; sourceTree = "<group>"; };
+		F0943471242785BF007898C8 /* MVCSignInCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSignInCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0943473242785E5007898C8 /* MVCSignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSignInCoordinator.swift; sourceTree = "<group>"; };
+		F09434752427861D007898C8 /* MVCSignInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSignInViewControllerTests.swift; sourceTree = "<group>"; };
+		F094347824278659007898C8 /* MVCSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSignInViewController.swift; sourceTree = "<group>"; };
+		F094347B242786F8007898C8 /* SelectedArchitecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedArchitecture.swift; sourceTree = "<group>"; };
 		F095A336242691C400D51976 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F095A339242692D500D51976 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		F095A33D2426937D00D51976 /* SignInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerTests.swift; sourceTree = "<group>"; };
+		F095A33D2426937D00D51976 /* MVVMSignInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInViewControllerTests.swift; sourceTree = "<group>"; };
 		F095A3402426984600D51976 /* Array+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+UIView.swift"; sourceTree = "<group>"; };
 		F095A343242699DE00D51976 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 		F095A34524269EA900D51976 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		F095A34624269EA900D51976 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "assets-images.swift"; sourceTree = "<group>"; };
+		F0F6643324277AD400FC0A3B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +131,8 @@
 		F0353E8724261A8C00AEB067 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				F0353E8824261A8C00AEB067 /* Coordinator.swift */,
-				F0353E8A24261A9D00AEB067 /* AppCoordinator.swift */,
-				F0685D6C242671CB00F900CF /* SignInCoordinator.swift */,
+				F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */,
+				F0685D6C242671CB00F900CF /* MVVMSignInCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -152,10 +169,9 @@
 		F074A6E6242414080088D4F3 /* MasterDegreeApplication */ = {
 			isa = PBXGroup;
 			children = (
+				F0943466242783C4007898C8 /* Common */,
 				F095A33B2426931600D51976 /* MVVM */,
-				F0559BE2242422020013DA08 /* Generated */,
-				F074A709242417DF0088D4F3 /* Resources */,
-				F095A342242699C600D51976 /* Extensions */,
+				F094347024278550007898C8 /* MVC */,
 			);
 			path = MasterDegreeApplication;
 			sourceTree = "<group>";
@@ -178,6 +194,8 @@
 				F074A6ED2424140A0088D4F3 /* Assets.xcassets */,
 				F074A6F22424140A0088D4F3 /* LaunchScreen.storyboard */,
 				F074A6F52424140A0088D4F3 /* Info.plist */,
+				F09434672427844A007898C8 /* AppArchitecture.swift */,
+				F094347B242786F8007898C8 /* SelectedArchitecture.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -185,7 +203,70 @@
 		F074A70C2424183D0088D4F3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F074A70A242418110088D4F3 /* SignInViewController.swift */,
+				F074A70A242418110088D4F3 /* MVVMSignInViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F0943466242783C4007898C8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F0F6643524277ADA00FC0A3B /* Coordinator */,
+				F095A342242699C600D51976 /* Extensions */,
+				F074A709242417DF0088D4F3 /* Resources */,
+				F0559BE2242422020013DA08 /* Generated */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F094346B242784E9007898C8 /* CoordinatorTestCases */ = {
+			isa = PBXGroup;
+			children = (
+				F0943469242784E3007898C8 /* MVCAppCoordinatorTests.swift */,
+				F0943471242785BF007898C8 /* MVCSignInCoordinatorTests.swift */,
+			);
+			path = CoordinatorTestCases;
+			sourceTree = "<group>";
+		};
+		F094346C242784F6007898C8 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				F094346B242784E9007898C8 /* CoordinatorTestCases */,
+				F094347724278622007898C8 /* ViewControllerTests */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		F094346F2427854B007898C8 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F094346D24278546007898C8 /* MVCAppCoordinator.swift */,
+				F0943473242785E5007898C8 /* MVCSignInCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F094347024278550007898C8 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				F094346F2427854B007898C8 /* Coordinators */,
+				F094347A2427865C007898C8 /* ViewControllers */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		F094347724278622007898C8 /* ViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F09434752427861D007898C8 /* MVCSignInViewControllerTests.swift */,
+			);
+			path = ViewControllerTests;
+			sourceTree = "<group>";
+		};
+		F094347A2427865C007898C8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F094347824278659007898C8 /* MVCSignInViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -221,7 +302,7 @@
 		F095A33F2426938100D51976 /* ViewControllerTests */ = {
 			isa = PBXGroup;
 			children = (
-				F095A33D2426937D00D51976 /* SignInViewControllerTests.swift */,
+				F095A33D2426937D00D51976 /* MVVMSignInViewControllerTests.swift */,
 			);
 			path = ViewControllerTests;
 			sourceTree = "<group>";
@@ -239,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				F095A33C2426935600D51976 /* MVVM */,
+				F094346C242784F6007898C8 /* MVC */,
 			);
 			path = TestCases;
 			sourceTree = "<group>";
@@ -246,10 +328,19 @@
 		F0A2D2EC2426129100FF92D6 /* CoordinatorTestCases */ = {
 			isa = PBXGroup;
 			children = (
-				F0353E84242619E800AEB067 /* AppCoordinatorTests.swift */,
-				F0685D6A2426708D00F900CF /* SignInCoordinatorTests.swift */,
+				F0353E84242619E800AEB067 /* MVVMAppCoordinatorTests.swift */,
+				F0685D6A2426708D00F900CF /* MVVMSignInCoordinatorTests.swift */,
 			);
 			path = CoordinatorTestCases;
+			sourceTree = "<group>";
+		};
+		F0F6643524277ADA00FC0A3B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F0353E8824261A8C00AEB067 /* Coordinator.swift */,
+				F0F6643324277AD400FC0A3B /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,16 +551,22 @@
 			files = (
 				F095A34824269EA900D51976 /* assets-images.swift in Sources */,
 				F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */,
+				F0F6643424277AD400FC0A3B /* AppCoordinator.swift in Sources */,
 				F095A344242699DE00D51976 /* UIColor+AppColors.swift in Sources */,
 				F095A3412426984600D51976 /* Array+UIView.swift in Sources */,
 				F095A337242691C400D51976 /* SignInViewModel.swift in Sources */,
 				F074A6E8242414080088D4F3 /* AppDelegate.swift in Sources */,
-				F0353E8B24261A9D00AEB067 /* AppCoordinator.swift in Sources */,
+				F0943474242785E5007898C8 /* MVCSignInCoordinator.swift in Sources */,
+				F094346E24278546007898C8 /* MVCAppCoordinator.swift in Sources */,
+				F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */,
+				F09434682427844A007898C8 /* AppArchitecture.swift in Sources */,
 				F074A6EA242414080088D4F3 /* SceneDelegate.swift in Sources */,
-				F0685D6D242671CB00F900CF /* SignInCoordinator.swift in Sources */,
+				F0685D6D242671CB00F900CF /* MVVMSignInCoordinator.swift in Sources */,
 				F095A33A242692D500D51976 /* ViewModel.swift in Sources */,
 				F095A34724269EA900D51976 /* strings.swift in Sources */,
-				F074A70B242418110088D4F3 /* SignInViewController.swift in Sources */,
+				F094347C242786F8007898C8 /* SelectedArchitecture.swift in Sources */,
+				F094347924278659007898C8 /* MVCSignInViewController.swift in Sources */,
+				F074A70B242418110088D4F3 /* MVVMSignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,9 +574,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0685D6B2426708D00F900CF /* SignInCoordinatorTests.swift in Sources */,
-				F095A33E2426937D00D51976 /* SignInViewControllerTests.swift in Sources */,
-				F0353E85242619E800AEB067 /* AppCoordinatorTests.swift in Sources */,
+				F0685D6B2426708D00F900CF /* MVVMSignInCoordinatorTests.swift in Sources */,
+				F094346A242784E3007898C8 /* MVCAppCoordinatorTests.swift in Sources */,
+				F095A33E2426937D00D51976 /* MVVMSignInViewControllerTests.swift in Sources */,
+				F09434762427861D007898C8 /* MVCSignInViewControllerTests.swift in Sources */,
+				F0943472242785BF007898C8 /* MVCSignInCoordinatorTests.swift in Sources */,
+				F0353E85242619E800AEB067 /* MVVMAppCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,7 +735,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4VV3H7446H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MasterDegreeApplication/Resources/Info.plist;
+				INFOPLIST_FILE = MasterDegreeApplication/Common/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -655,7 +755,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4VV3H7446H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MasterDegreeApplication/Resources/Info.plist;
+				INFOPLIST_FILE = MasterDegreeApplication/Common/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,5 +1,5 @@
 //
-//  SignInCoordinatorTests.swift
+//  MVVMSignInCoordinatorTests.swift
 //  MasterDegreeApplicationTests
 //
 //  Created by Krystian Bujak on 21/03/2020.
@@ -9,14 +9,14 @@
 import XCTest
 @testable import MasterDegreeApplication
 
-class SignInCoordinatorTest: XCTestCase {
+class MVVMSignInCoordinatorTests: XCTestCase {
 
-    func testAppCoordinator_whenStart_thenVCIsNavigationController() {
+    func testCoordinator_whenStart_thenVCIsNavigationController() {
         let navigationVC = UINavigationController()
-        let coordinator = SignInCoordinator()
+        let coordinator = MVVMSignInCoordinator()
         coordinator.start(in: navigationVC)
 
         guard let VC = coordinator.VC else { XCTFail("Coordinator not initialised"); return }
-        XCTAssert(VC is SignInViewController)
+        XCTAssert(VC is MVVMSignInViewController)
     }
 }
