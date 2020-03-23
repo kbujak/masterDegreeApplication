@@ -17,6 +17,6 @@ class MVCSignInCoordinatorTests: XCTestCase {
         coordinator.start(in: navigationVC)
 
         guard let VC = coordinator.VC else { XCTFail("Coordinator not initialised"); return }
-        XCTAssert(VC is MVCSignInViewController)
+        XCTAssert(VC is UINavigationController)
     }
 }

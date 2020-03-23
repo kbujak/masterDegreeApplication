@@ -42,7 +42,7 @@ class MVCSignUpViewController: UIViewController {
 
         setupLayouts()
         setupStyles()
-        bindViewModelToView()
+        setupActions()
     }
 
 }
@@ -100,9 +100,27 @@ private extension MVCSignUpViewController {
 
 // MARK: - Private layer
 private extension MVCSignUpViewController {
-    func bindViewModelToView() {
+    func setupActions() {
         backButton.rx.tap
             .subscribe(onNext: { [weak self] in self?.delegate?.didTapBack() })
             .disposed(by: bag)
+
+        submitButton.rx.tap
+            .subscribe(onNext: { [weak self] in self?.createUser() })
+            .disposed(by: bag)
+    }
+
+    func createUser() {
+        guard
+            let username = usernameTextfield.text,
+            let password = passwordTextfield.text,
+            let retypePassword = retypePasswordTextfield.text,
+            Validator.username(username).validate(),
+            Validator.password(password).validate(),
+            Validator.retypePassword(password, retypePassword).validate()
+        else { return }
+
+        let user = User(username: username, password: password)
+        print(user)
     }
 }

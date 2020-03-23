@@ -9,7 +9,6 @@
 import XCTest
 import RxSwift
 import RxCocoa
-import RxBlocking
 @testable import MasterDegreeApplication
 
 class SignUpViewModelTests: XCTestCase {

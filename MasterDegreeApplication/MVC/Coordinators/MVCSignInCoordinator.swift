@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class MVCSignInCoordinator: CompoundCoordinator {
-    var VC: MVCSignInViewController?
+    var VC: UINavigationController?
     var id: CoordinatorIdentifier
     var children: [CoordinatorIdentifier: Coordinator] = [:]
 
@@ -19,8 +19,28 @@ class MVCSignInCoordinator: CompoundCoordinator {
     }
 
     func start(in controller: UINavigationController) {
-        let VC = MVCSignInViewController()
-        self.VC = VC
+        let VC = MVCSignInViewController(delegate: self)
+        self.VC = controller
         controller.pushViewController(VC, animated: true)
+    }
+
+    private func openSignUp() {
+        guard let navigationVC = self.VC else { fatalError() }
+        let controller = MVCSignUpViewController(delegate: self)
+        navigationVC.pushViewController(controller, animated: true)
+    }
+}
+
+// MARK: - SignInViewController
+extension MVCSignInCoordinator: SignInViewControllerDelegate {
+    func didTapSignUp() {
+        openSignUp()
+    }
+}
+
+// MARK: - SignUpViewController
+extension MVCSignInCoordinator: SignUpViewControllerDelegate {
+    func didTapBack() {
+        VC?.popViewController(animated: true)
     }
 }

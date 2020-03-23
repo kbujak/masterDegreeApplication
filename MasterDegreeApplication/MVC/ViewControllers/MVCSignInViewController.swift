@@ -8,13 +8,23 @@
 
 import UIKit
 import PureLayout
+import RxSwift
 
 class MVCSignInViewController: UIViewController {
     private let titleLabel = UILabel()
-    private let usernameTextfield = UITextField()
-    private let passwordTextfield = UITextField()
-    private let signInButton = UIButton()
+    private let usernameTextfield = SignInTextfield()
+    private let passwordTextfield = SignInTextfield()
+    private let signInButton = SignInButton()
     private let signUpButton = UIButton()
+    private weak var delegate: SignInViewControllerDelegate?
+    private let bag = DisposeBag()
+
+    init(delegate: SignInViewControllerDelegate? = nil) {
+        self.delegate = delegate
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) { fatalError() }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +32,7 @@ class MVCSignInViewController: UIViewController {
 
         setupLayouts()
         setupStyles()
+        setupActions()
     }
 }
 
@@ -69,5 +80,14 @@ private extension MVCSignInViewController {
                                attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10)]),
             for: .normal
         )
+    }
+}
+
+// MARK: - Private layer
+private extension MVCSignInViewController {
+    func setupActions() {
+        signUpButton.rx.tap
+            .subscribe(onNext: { [weak self] in self?.delegate?.didTapSignUp() })
+            .disposed(by: bag)
     }
 }
