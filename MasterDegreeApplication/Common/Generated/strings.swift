@@ -12,17 +12,29 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
 
-  internal enum SignInViewController {
+  internal enum Common {
     /// Enter password
-    internal static let password = L10n.tr("Localizable", "SignInViewController.password")
+    internal static let password = L10n.tr("Localizable", "Common.password")
+    /// Enter username
+    internal static let username = L10n.tr("Localizable", "Common.username")
+  }
+
+  internal enum SignInViewController {
     /// Sign in
     internal static let signIn = L10n.tr("Localizable", "SignInViewController.signIn")
     /// Don't have account? Sign up!
     internal static let signUp = L10n.tr("Localizable", "SignInViewController.signUp")
     /// Welcome
     internal static let title = L10n.tr("Localizable", "SignInViewController.title")
-    /// Enter username
-    internal static let username = L10n.tr("Localizable", "SignInViewController.username")
+  }
+
+  internal enum SignUpViewController {
+    /// Retype password
+    internal static let retypePassword = L10n.tr("Localizable", "SignUpViewController.retypePassword")
+    /// Register
+    internal static let signUp = L10n.tr("Localizable", "SignUpViewController.signUp")
+    /// Create account
+    internal static let title = L10n.tr("Localizable", "SignUpViewController.title")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

@@ -6,8 +6,13 @@
   Copyright © 2020 Booyac IT. All rights reserved.
 */
 
+"Common.username"="Enter username";
+"Common.password"="Enter password";
+
 "SignInViewController.title"="Welcome";
-"SignInViewController.username"="Enter username";
-"SignInViewController.password"="Enter password";
 "SignInViewController.signIn"="Sign in";
 "SignInViewController.signUp"="Don't have account? Sign up!";
+
+"SignUpViewController.signUp"="Register";
+"SignUpViewController.title"="Create account";
+"SignUpViewController.retypePassword"="Retype password";

@@ -11,12 +11,17 @@ import XCTest
 
 class MVVMSignInCoordinatorTests: XCTestCase {
 
-    func testCoordinator_whenStart_thenVCIsNavigationController() {
+    func testCoordinator_whenStart_thenRootIsNavigationController() {
+        let coordinator = createCoordinatorAndStart()
+
+        guard let VC = coordinator.VC else { XCTFail("Coordinator not initialised"); return }
+        XCTAssert(VC is UINavigationController)
+    }
+
+    private func createCoordinatorAndStart() -> MVVMSignInCoordinator {
         let navigationVC = UINavigationController()
         let coordinator = MVVMSignInCoordinator()
         coordinator.start(in: navigationVC)
-
-        guard let VC = coordinator.VC else { XCTFail("Coordinator not initialised"); return }
-        XCTAssert(VC is MVVMSignInViewController)
+        return coordinator
     }
 }

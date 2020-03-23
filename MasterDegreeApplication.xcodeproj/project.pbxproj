@@ -9,9 +9,17 @@
 /* Begin PBXBuildFile section */
 		18ABAB6A29306368D37953AD /* Pods_MasterDegreeApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978FBAD6E4A116CEC4EA9237 /* Pods_MasterDegreeApplicationTests.framework */; };
 		56A8AE396F469E1EDE5E3B7C /* Pods_MasterDegreeApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE39AAC5F240C8FD77A59D7 /* Pods_MasterDegreeApplication.framework */; };
+		F012541C2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012541B2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift */; };
+		F012541E2429159B00B90B6D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012541D2429159B00B90B6D /* SignUpViewModel.swift */; };
+		F01254202429168500B90B6D /* SignUpViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012541F2429168500B90B6D /* SignUpViewControllerDelegate.swift */; };
+		F01254222429193200B90B6D /* SignInTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01254212429193200B90B6D /* SignInTextfield.swift */; };
+		F0125425242919C900B90B6D /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125424242919C900B90B6D /* SignInButton.swift */; };
+		F012542724291ED400B90B6D /* MVCSignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012542624291ED400B90B6D /* MVCSignUpViewControllerTests.swift */; };
+		F012542924291EF800B90B6D /* MVCSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012542824291EF800B90B6D /* MVCSignUpViewController.swift */; };
 		F0353E85242619E800AEB067 /* MVVMAppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E84242619E800AEB067 /* MVVMAppCoordinatorTests.swift */; };
 		F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8824261A8C00AEB067 /* Coordinator.swift */; };
 		F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */; };
+		F05E8E62242809B0007314BD /* UIViewController+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */; };
 		F0685D6B2426708D00F900CF /* MVVMSignInCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6A2426708D00F900CF /* MVVMSignInCoordinatorTests.swift */; };
 		F0685D6D242671CB00F900CF /* MVVMSignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6C242671CB00F900CF /* MVVMSignInCoordinator.swift */; };
 		F074A6E8242414080088D4F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A6E7242414080088D4F3 /* AppDelegate.swift */; };
@@ -28,6 +36,8 @@
 		F09434762427861D007898C8 /* MVCSignInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09434752427861D007898C8 /* MVCSignInViewControllerTests.swift */; };
 		F094347924278659007898C8 /* MVCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094347824278659007898C8 /* MVCSignInViewController.swift */; };
 		F094347C242786F8007898C8 /* SelectedArchitecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094347B242786F8007898C8 /* SelectedArchitecture.swift */; };
+		F094347E242787D0007898C8 /* SignInViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094347D242787D0007898C8 /* SignInViewControllerDelegate.swift */; };
+		F094348124278CAF007898C8 /* MVVMSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094348024278CAF007898C8 /* MVVMSignUpViewController.swift */; };
 		F095A337242691C400D51976 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A336242691C400D51976 /* SignInViewModel.swift */; };
 		F095A33A242692D500D51976 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A339242692D500D51976 /* ViewModel.swift */; };
 		F095A33E2426937D00D51976 /* MVVMSignInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A33D2426937D00D51976 /* MVVMSignInViewControllerTests.swift */; };
@@ -55,9 +65,17 @@
 		978FBAD6E4A116CEC4EA9237 /* Pods_MasterDegreeApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterDegreeApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E26A0F38A8CA2E6FD4E21F /* Pods-MasterDegreeApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterDegreeApplication.release.xcconfig"; path = "Target Support Files/Pods-MasterDegreeApplication/Pods-MasterDegreeApplication.release.xcconfig"; sourceTree = "<group>"; };
 		ADF185C5968799BB091D8379 /* Pods-MasterDegreeApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterDegreeApplicationTests.release.xcconfig"; path = "Target Support Files/Pods-MasterDegreeApplicationTests/Pods-MasterDegreeApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
+		F012541B2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignUpViewControllerTests.swift; sourceTree = "<group>"; };
+		F012541D2429159B00B90B6D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		F012541F2429168500B90B6D /* SignUpViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerDelegate.swift; sourceTree = "<group>"; };
+		F01254212429193200B90B6D /* SignInTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextfield.swift; sourceTree = "<group>"; };
+		F0125424242919C900B90B6D /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
+		F012542624291ED400B90B6D /* MVCSignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSignUpViewControllerTests.swift; sourceTree = "<group>"; };
+		F012542824291EF800B90B6D /* MVCSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSignUpViewController.swift; sourceTree = "<group>"; };
 		F0353E84242619E800AEB067 /* MVVMAppCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMAppCoordinatorTests.swift; sourceTree = "<group>"; };
 		F0353E8824261A8C00AEB067 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMAppCoordinator.swift; sourceTree = "<group>"; };
+		F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIWindow.swift"; sourceTree = "<group>"; };
 		F0685D6A2426708D00F900CF /* MVVMSignInCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInCoordinatorTests.swift; sourceTree = "<group>"; };
 		F0685D6C242671CB00F900CF /* MVVMSignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInCoordinator.swift; sourceTree = "<group>"; };
 		F074A6E4242414080088D4F3 /* MasterDegreeApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDegreeApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +96,8 @@
 		F09434752427861D007898C8 /* MVCSignInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSignInViewControllerTests.swift; sourceTree = "<group>"; };
 		F094347824278659007898C8 /* MVCSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSignInViewController.swift; sourceTree = "<group>"; };
 		F094347B242786F8007898C8 /* SelectedArchitecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedArchitecture.swift; sourceTree = "<group>"; };
+		F094347D242787D0007898C8 /* SignInViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerDelegate.swift; sourceTree = "<group>"; };
+		F094348024278CAF007898C8 /* MVVMSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignUpViewController.swift; sourceTree = "<group>"; };
 		F095A336242691C400D51976 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F095A339242692D500D51976 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		F095A33D2426937D00D51976 /* MVVMSignInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInViewControllerTests.swift; sourceTree = "<group>"; };
@@ -126,6 +146,15 @@
 				978FBAD6E4A116CEC4EA9237 /* Pods_MasterDegreeApplicationTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0125423242919B500B90B6D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F01254212429193200B90B6D /* SignInTextfield.swift */,
+				F0125424242919C900B90B6D /* SignInButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F0353E8724261A8C00AEB067 /* Coordinators */ = {
@@ -181,6 +210,7 @@
 			children = (
 				F0A2D2EB2426129100FF92D6 /* TestCases */,
 				F074A7002424140A0088D4F3 /* Info.plist */,
+				F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */,
 			);
 			path = MasterDegreeApplicationTests;
 			sourceTree = "<group>";
@@ -204,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				F074A70A242418110088D4F3 /* MVVMSignInViewController.swift */,
+				F094348024278CAF007898C8 /* MVVMSignUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,9 +243,11 @@
 			isa = PBXGroup;
 			children = (
 				F0F6643524277ADA00FC0A3B /* Coordinator */,
+				F0125423242919B500B90B6D /* Views */,
 				F095A342242699C600D51976 /* Extensions */,
 				F074A709242417DF0088D4F3 /* Resources */,
 				F0559BE2242422020013DA08 /* Generated */,
+				F094347F242787D5007898C8 /* Delegates */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -259,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				F09434752427861D007898C8 /* MVCSignInViewControllerTests.swift */,
+				F012542624291ED400B90B6D /* MVCSignUpViewControllerTests.swift */,
 			);
 			path = ViewControllerTests;
 			sourceTree = "<group>";
@@ -267,8 +301,18 @@
 			isa = PBXGroup;
 			children = (
 				F094347824278659007898C8 /* MVCSignInViewController.swift */,
+				F012542824291EF800B90B6D /* MVCSignUpViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F094347F242787D5007898C8 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				F094347D242787D0007898C8 /* SignInViewControllerDelegate.swift */,
+				F012541F2429168500B90B6D /* SignUpViewControllerDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		F095A338242692CD00D51976 /* ViewModels */ = {
@@ -276,6 +320,7 @@
 			children = (
 				F095A339242692D500D51976 /* ViewModel.swift */,
 				F095A336242691C400D51976 /* SignInViewModel.swift */,
+				F012541D2429159B00B90B6D /* SignUpViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -303,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				F095A33D2426937D00D51976 /* MVVMSignInViewControllerTests.swift */,
+				F012541B2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift */,
 			);
 			path = ViewControllerTests;
 			sourceTree = "<group>";
@@ -553,20 +599,27 @@
 				F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */,
 				F0F6643424277AD400FC0A3B /* AppCoordinator.swift in Sources */,
 				F095A344242699DE00D51976 /* UIColor+AppColors.swift in Sources */,
+				F094347E242787D0007898C8 /* SignInViewControllerDelegate.swift in Sources */,
 				F095A3412426984600D51976 /* Array+UIView.swift in Sources */,
 				F095A337242691C400D51976 /* SignInViewModel.swift in Sources */,
 				F074A6E8242414080088D4F3 /* AppDelegate.swift in Sources */,
 				F0943474242785E5007898C8 /* MVCSignInCoordinator.swift in Sources */,
 				F094346E24278546007898C8 /* MVCAppCoordinator.swift in Sources */,
 				F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */,
+				F01254202429168500B90B6D /* SignUpViewControllerDelegate.swift in Sources */,
 				F09434682427844A007898C8 /* AppArchitecture.swift in Sources */,
+				F094348124278CAF007898C8 /* MVVMSignUpViewController.swift in Sources */,
+				F012541E2429159B00B90B6D /* SignUpViewModel.swift in Sources */,
 				F074A6EA242414080088D4F3 /* SceneDelegate.swift in Sources */,
 				F0685D6D242671CB00F900CF /* MVVMSignInCoordinator.swift in Sources */,
+				F0125425242919C900B90B6D /* SignInButton.swift in Sources */,
+				F012542924291EF800B90B6D /* MVCSignUpViewController.swift in Sources */,
 				F095A33A242692D500D51976 /* ViewModel.swift in Sources */,
 				F095A34724269EA900D51976 /* strings.swift in Sources */,
 				F094347C242786F8007898C8 /* SelectedArchitecture.swift in Sources */,
 				F094347924278659007898C8 /* MVCSignInViewController.swift in Sources */,
 				F074A70B242418110088D4F3 /* MVVMSignInViewController.swift in Sources */,
+				F01254222429193200B90B6D /* SignInTextfield.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +630,9 @@
 				F0685D6B2426708D00F900CF /* MVVMSignInCoordinatorTests.swift in Sources */,
 				F094346A242784E3007898C8 /* MVCAppCoordinatorTests.swift in Sources */,
 				F095A33E2426937D00D51976 /* MVVMSignInViewControllerTests.swift in Sources */,
+				F05E8E62242809B0007314BD /* UIViewController+UIWindow.swift in Sources */,
+				F012542724291ED400B90B6D /* MVCSignUpViewControllerTests.swift in Sources */,
+				F012541C2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift in Sources */,
 				F09434762427861D007898C8 /* MVCSignInViewControllerTests.swift in Sources */,
 				F0943472242785BF007898C8 /* MVCSignInCoordinatorTests.swift in Sources */,
 				F0353E85242619E800AEB067 /* MVVMAppCoordinatorTests.swift in Sources */,

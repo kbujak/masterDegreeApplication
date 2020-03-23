@@ -8,18 +8,23 @@
 
 import UIKit
 import PureLayout
+import RxSwift
+import RxCocoa
 
 class MVVMSignInViewController: UIViewController {
     private let titleLabel = UILabel()
-    private let usernameTextfield = UITextField()
-    private let passwordTextfield = UITextField()
-    private let signInButton = UIButton()
+    private let usernameTextfield = SignInTextfield()
+    private let passwordTextfield = SignInTextfield()
+    private let signInButton = SignInButton()
     private let signUpButton = UIButton()
 
     private let viewModel: SignInViewModel
+    private weak var delegate: SignInViewControllerDelegate?
+    private let bag = DisposeBag()
 
-    init(viewModel: SignInViewModel) {
+    init(viewModel: SignInViewModel, delegate: SignInViewControllerDelegate? = nil) {
         self.viewModel = viewModel
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -31,9 +36,11 @@ class MVVMSignInViewController: UIViewController {
 
         setupLayouts()
         setupStyles()
+        bindViewModelToView()
     }
 }
 
+// MARK: - UI Setup
 private extension MVVMSignInViewController {
     func setupLayouts() {
         titleLabel.autoPinEdgesToSuperviewSafeArea(with: UIEdgeInsets(top: 200, left: 20, bottom: 0, right: 20),
@@ -43,19 +50,16 @@ private extension MVVMSignInViewController {
             with: UIEdgeInsets(top: 250, left: 20, bottom: 0, right: 20),
             excludingEdge: .bottom
         )
-        usernameTextfield.autoSetDimension(.height, toSize: 35)
 
         passwordTextfield.autoPinEdgesToSuperviewSafeArea(
             with: UIEdgeInsets(top: 305, left: 20, bottom: 0, right: 20),
             excludingEdge: .bottom
         )
-        passwordTextfield.autoSetDimension(.height, toSize: 35)
 
         signInButton.autoPinEdgesToSuperviewSafeArea(
             with: UIEdgeInsets(top: 370, left: 100, bottom: 0, right: 100),
             excludingEdge: .bottom
         )
-        signInButton.autoSetDimension(.height, toSize: 40)
 
         signUpButton.autoPinEdge(.top, to: .bottom, of: signInButton, withOffset: 3)
         signUpButton.autoAlignAxis(.vertical, toSameAxisOf: view)
@@ -68,25 +72,11 @@ private extension MVVMSignInViewController {
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
 
-        usernameTextfield.placeholder = L10n.SignInViewController.username
-        usernameTextfield.backgroundColor = .white
-        usernameTextfield.layer.cornerRadius = 6
-        usernameTextfield.textAlignment = .left
-        usernameTextfield.layer.borderColor = UIColor.black.cgColor
-        usernameTextfield.layer.borderWidth = 1
+        usernameTextfield.placeholder = L10n.Common.username
 
-        passwordTextfield.placeholder = L10n.SignInViewController.password
+        passwordTextfield.placeholder = L10n.Common.password
         passwordTextfield.isSecureTextEntry = true
-        passwordTextfield.backgroundColor = .white
-        passwordTextfield.layer.cornerRadius = 6
-        passwordTextfield.textAlignment = .left
-        passwordTextfield.layer.borderColor = UIColor.black.cgColor
-        passwordTextfield.layer.borderWidth = 1
 
-        signInButton.backgroundColor = .lightGray
-        signInButton.layer.cornerRadius = 6
-        signInButton.layer.borderColor = UIColor.black.cgColor
-        signInButton.layer.borderWidth = 1
         signInButton.setTitle(L10n.SignInViewController.signIn, for: .normal)
 
         signUpButton.setAttributedTitle(
@@ -94,5 +84,12 @@ private extension MVVMSignInViewController {
                                attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10)]),
             for: .normal
         )
+    }
+}
+
+// MARK: - Private layer
+private extension MVVMSignInViewController {
+    func bindViewModelToView() {
+        signUpButton.rx.tap.subscribe(onNext: { [weak self] in self?.delegate?.didTapSignUp() }).disposed(by: bag)
     }
 }

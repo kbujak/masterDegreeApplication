@@ -1,19 +1,18 @@
 //
-//  MVVMSignInViewControllerTests.swift
+//  MVCSignUpViewControllerTests.swift
 //  MasterDegreeApplicationTests
 //
-//  Created by Krystian Bujak on 21/03/2020.
+//  Created by Krystian Bujak on 23/03/2020.
 //  Copyright © 2020 Booyac IT. All rights reserved.
 //
 
 import XCTest
 @testable import MasterDegreeApplication
 
-class MVVMSignInViewControllerTests: XCTestCase {
+class MVCSignUpViewControllerTests: XCTestCase {
 
     func testController_whenStart_thenVCIsNotNil() {
-        let viewModel = SignInViewModel()
-        let viewController = MVVMSignInViewController(viewModel: viewModel)
+        let viewController = MVCSignUpViewController()
         XCTAssertNotNil(viewController)
     }
 }
