@@ -104,5 +104,21 @@ private extension MVVMSignUpViewController {
 private extension MVVMSignUpViewController {
     func bindViewModelToView() {
         backButton.rx.tap.subscribe(onNext: { [weak self] in self?.delegate?.didTapBack() }).disposed(by: bag)
+
+        let input = SignUpViewModel.Input(
+            username: usernameTextfield.rx.text.orEmpty.asDriver(),
+            password: passwordTextfield.rx.text.orEmpty.asDriver(),
+            retypePassword: retypePasswordTextfield.rx.text.orEmpty.asDriver(),
+            registerTrigger: submitButton.rx.tap.asDriver()
+        )
+
+        let output = viewModel.transform(input: input)
+
+        output.user.subscribe(
+            onNext: { user in
+                print(user)
+            }
+        )
+        .disposed(by: bag)
     }
 }
