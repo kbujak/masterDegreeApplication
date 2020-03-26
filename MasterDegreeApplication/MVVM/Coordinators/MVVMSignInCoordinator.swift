@@ -46,6 +46,10 @@ extension MVVMSignInCoordinator: SignInViewControllerDelegate {
     func didTapSignUp() {
         openSignUp()
     }
+
+    func didSignInSuccessfully(withUser user: User) {
+        startMainTabbarCoordinator(withUser: user)
+    }
 }
 
 // MARK: - SignUpViewController

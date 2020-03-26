@@ -91,5 +91,19 @@ private extension MVVMSignInViewController {
 private extension MVVMSignInViewController {
     func bindViewModelToView() {
         signUpButton.rx.tap.subscribe(onNext: { [weak self] in self?.delegate?.didTapSignUp() }).disposed(by: bag)
+
+        let input = SignInViewModel.Input(
+            username: usernameTextfield.rx.text.orEmpty.asDriver(),
+            password: passwordTextfield.rx.text.orEmpty.asDriver(),
+            signInTrigger: signInButton.rx.tap.asDriver()
+        )
+        let output = viewModel.transform(input: input)
+
+        output.user
+            .subscribe(
+                onNext: { [weak self] user in self?.delegate?.didSignInSuccessfully(withUser: user) },
+                onError: { error in print(error) }
+            )
+            .disposed(by: bag)
     }
 }

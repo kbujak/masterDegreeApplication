@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import RealmSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
 
+        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteString)
         let realmProvider = RealmProviderImpl()
         let keychainProvider = KeychainProviderImpl()
         let context = Context(

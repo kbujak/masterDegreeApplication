@@ -35,6 +35,10 @@ class MVCSignInCoordinator: CompoundCoordinator {
 
 // MARK: - SignInViewController
 extension MVCSignInCoordinator: SignInViewControllerDelegate {
+    func didSignInSuccessfully(withUser user: User) {
+        print(user)
+    }
+
     func didTapSignUp() {
         openSignUp()
     }
