@@ -19,7 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
 
         let realmProvider = RealmProviderImpl()
-        let context = Context(realmProvider: realmProvider)
+        let keychainProvider = KeychainProviderImpl()
+        let context = Context(
+            realmProvider: realmProvider,
+            keychainProvider: keychainProvider
+        )
 
         let appCoordinator = architecture == .MVVM
             ? MVVMAppCoordinator(context: context)

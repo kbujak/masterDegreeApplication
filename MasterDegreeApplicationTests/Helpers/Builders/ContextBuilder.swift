@@ -7,14 +7,22 @@
 //
 
 import Foundation
+import KeychainSwift
 @testable import MasterDegreeApplication
 
 class ContextBuilder {
     var realmProvider: RealmProvider?
+    var keychainProvider: KeychainProvider?
+
+    func with(keychainProvider: KeychainProvider) -> ContextBuilder {
+        self.keychainProvider = keychainProvider
+        return self
+    }
 
     func build() -> Context {
         return Context(
-            realmProvider: realmProvider ?? RealmProviderMock()
+            realmProvider: realmProvider ?? RealmProviderMock(),
+            keychainProvider: keychainProvider ?? KeychainProviderMock()
         )
     }
 }

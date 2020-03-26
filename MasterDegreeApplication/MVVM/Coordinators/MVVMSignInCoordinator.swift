@@ -27,6 +27,12 @@ class MVVMSignInCoordinator: CompoundCoordinator {
         controller.pushViewController(VC, animated: true)
     }
 
+    private func startMainTabbarCoordinator(withUser user: User) {
+        guard let VC = self.VC else { fatalError() }
+        let coordinator: MVVMMainTabbarCoordinator = createCoordinator()
+        coordinator.start(in: VC)
+    }
+
     private func openSignUp() {
         guard let navigationVC = self.VC else { fatalError() }
         let viewModel = SignUpViewModel(context: context)
@@ -45,7 +51,7 @@ extension MVVMSignInCoordinator: SignInViewControllerDelegate {
 // MARK: - SignUpViewController
 extension MVVMSignInCoordinator: SignUpViewControllerDelegate {
     func didSignUpSuccessfully(_ user: User) {
-        print(user)
+        startMainTabbarCoordinator(withUser: user)
     }
 
     func didTapBack() {

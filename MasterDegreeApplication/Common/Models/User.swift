@@ -20,6 +20,10 @@ struct User {
         self.password = password
     }
 
+    init(realm: UserRealm) {
+        self.init(id: realm.id, username: realm.username, password: realm.password)
+    }
+
     func createRealm() -> UserRealm {
         return UserRealm(user: self)
     }

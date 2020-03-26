@@ -125,7 +125,10 @@ private extension MVCSignUpViewController {
         let user = User(username: username, password: password)
         context.realmProvider.createUser(withUser: user)
             .subscribe(
-                onNext: { [weak self] user in self?.delegate?.didSignUpSuccessfully(user) },
+                onNext: { [weak self] user in
+                    self?.context.keychainProvider.userId = user.id
+                    self?.delegate?.didSignUpSuccessfully(user)
+                },
                 onError: { error in print(error) }
             )
             .disposed(by: bag)

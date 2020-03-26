@@ -35,6 +35,25 @@ class RealmProviderMock: RealmProvider {
         }
     }
 
+    func fetchUser(withId Id: String) -> Observable<User> {
+        return Observable.create { [weak self] subscriber -> Disposable in
+            do {
+                guard let `self` = self else { throw AppErrors.unknownError }
+
+                let realm = try self.tryGetRealm()
+                let object = realm.object(ofType: UserRealm.self, forPrimaryKey: Id)
+
+                guard let userRealm = object else { throw AppErrors.userNotFound }
+                let user = User(realm: userRealm)
+                subscriber.onNext(user)
+                subscriber.onCompleted()
+            } catch {
+                subscriber.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+
     private func tryGetRealm() throws -> Realm {
         return try queue.sync {
             try Realm(configuration: Realm.Configuration(inMemoryIdentifier: "TestRealm"))

@@ -10,4 +10,5 @@ import Foundation
 
 struct Context {
     let realmProvider: RealmProvider
+    let keychainProvider: KeychainProvider
 }

@@ -54,6 +54,7 @@ class SignUpViewModel: ViewModel {
         context.realmProvider.createUser(withUser: user)
             .observeOn(MainScheduler.instance)
             .subscribeOn(MainScheduler.instance)
+            .do(onNext: { [weak self] user in self?.context.keychainProvider.userId = user.id })
             .bind(to: userSubject)
             .disposed(by: bag)
     }

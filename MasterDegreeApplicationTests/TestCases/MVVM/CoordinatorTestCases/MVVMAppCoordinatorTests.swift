@@ -44,13 +44,30 @@ class MVVMAppCoordinatorTests: XCTestCase {
         XCTAssert(VC is UINavigationController)
     }
 
-    func testCoordinator_whenStart_thenContainsSignInCoordinator() {
+    func teststart_whenKeychainDoesNotContainUserId_thenContainsSignInCoordinator() {
         let coordinator = createCoordinatorThenStart()
 
         guard
-            let signInCoordinator = coordinator.children.values.first
+            let childCoordinator = coordinator.children.values.first
         else { XCTFail("Coordinator not initialised"); return }
-        XCTAssert(signInCoordinator is MVVMSignInCoordinator)
+        XCTAssert(childCoordinator is MVVMSignInCoordinator)
+    }
+
+    func teststart_whenKeychainDoesContainUserId_thenContainsSignInCoordinator() {
+        let keychainMock = KeychainProviderMock()
+        keychainMock.userId = "testId"
+        let context = ContextBuilder()
+            .with(keychainProvider: keychainMock)
+            .build()
+        let coordinator = MVVMAppCoordinator(context: context)
+        let window = UIWindow(frame: UIScreen.main.bounds)
+
+        coordinator.start(in: window)
+
+        guard
+            let childCoordinator = coordinator.children.values.first
+        else { XCTFail("Coordinator not initialised"); return }
+        XCTAssert(childCoordinator is MVVMMainTabbarCoordinator)
     }
 }
 

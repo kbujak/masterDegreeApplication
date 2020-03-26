@@ -9,5 +9,6 @@
 import Foundation
 
 enum AppErrors: Error {
+    case userNotFound
     case unknownError
 }

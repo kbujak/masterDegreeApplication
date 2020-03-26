@@ -19,12 +19,18 @@ class MVVMAppCoordinator: AppCoordinator {
         window.rootViewController = VC
         window.makeKeyAndVisible()
 
-        startSignInCoordinator()
+        context.keychainProvider.userId == nil ? startSignInCoordinator() : startMainTabbarCoordinator()
     }
 
     private func startSignInCoordinator() {
         guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
         let coordinator: MVVMSignInCoordinator = createCoordinator()
+        coordinator.start(in: navigationVC)
+    }
+
+    private func startMainTabbarCoordinator() {
+        guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
+        let coordinator: MVVMMainTabbarCoordinator = createCoordinator()
         coordinator.start(in: navigationVC)
     }
 }

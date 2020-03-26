@@ -19,6 +19,42 @@
 		F012542B2429203F00B90B6D /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012542A2429203F00B90B6D /* Validator.swift */; };
 		F012542D2429214F00B90B6D /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012542C2429214F00B90B6D /* ValidatorTests.swift */; };
 		F01254302429238F00B90B6D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012542F2429238F00B90B6D /* UserTests.swift */; };
+		F0346F30242D28F100368ABD /* MVVMMainTabbarCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F2F242D28F100368ABD /* MVVMMainTabbarCoordinatorTests.swift */; };
+		F0346F32242D297600368ABD /* MVVMMainTabbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F31242D297600368ABD /* MVVMMainTabbarCoordinator.swift */; };
+		F0346F36242D2B1D00368ABD /* KeychainProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F35242D2B1D00368ABD /* KeychainProvider.swift */; };
+		F0346F38242D307A00368ABD /* MVCMainTabbarCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F37242D307A00368ABD /* MVCMainTabbarCoordinatorTests.swift */; };
+		F0346F3A242D30B800368ABD /* MVCMainTabbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F39242D30B800368ABD /* MVCMainTabbarCoordinator.swift */; };
+		F0346F3C242D3E8900368ABD /* MVVMUsersCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F3B242D3E8900368ABD /* MVVMUsersCoordinatorTests.swift */; };
+		F0346F3E242D3F0100368ABD /* MVCUsersCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F3D242D3F0100368ABD /* MVCUsersCoordinatorTests.swift */; };
+		F0346F40242D3F4900368ABD /* MVVMUsersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F3F242D3F4900368ABD /* MVVMUsersViewControllerTests.swift */; };
+		F0346F42242D3F8500368ABD /* MVCUsersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F41242D3F8500368ABD /* MVCUsersViewControllerTests.swift */; };
+		F0346F44242D3FB500368ABD /* UsersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F43242D3FB500368ABD /* UsersViewModelTests.swift */; };
+		F0346F46242D401300368ABD /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F45242D401300368ABD /* UsersViewModel.swift */; };
+		F0346F48242D406000368ABD /* MVVMUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F47242D406000368ABD /* MVVMUsersViewController.swift */; };
+		F0346F4A242D40CA00368ABD /* MVCUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F49242D40CA00368ABD /* MVCUsersViewController.swift */; };
+		F0346F4C242D411200368ABD /* MVVMUsersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F4B242D411200368ABD /* MVVMUsersCoordinator.swift */; };
+		F0346F4E242D421100368ABD /* MVCUsersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F4D242D421100368ABD /* MVCUsersCoordinator.swift */; };
+		F0346F50242D44B900368ABD /* KeychainProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F4F242D44B900368ABD /* KeychainProviderMock.swift */; };
+		F0346F52242D478C00368ABD /* MVVMCalendarCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F51242D478C00368ABD /* MVVMCalendarCoordinatorTests.swift */; };
+		F0346F54242D47B800368ABD /* MVVMCalendarViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F53242D47B800368ABD /* MVVMCalendarViewControllerTests.swift */; };
+		F0346F56242D47E100368ABD /* CalendarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F55242D47E100368ABD /* CalendarViewModelTests.swift */; };
+		F0346F58242D481B00368ABD /* MVCCalendarCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F57242D481B00368ABD /* MVCCalendarCoordinatorTests.swift */; };
+		F0346F5A242D484200368ABD /* MVCCalendarViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F59242D484200368ABD /* MVCCalendarViewControllerTests.swift */; };
+		F0346F5C242D487D00368ABD /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F5B242D487D00368ABD /* CalendarViewModel.swift */; };
+		F0346F5E242D48AF00368ABD /* MVVMCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F5D242D48AF00368ABD /* MVVMCalendarViewController.swift */; };
+		F0346F60242D48EA00368ABD /* MVVMCalendarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F5F242D48EA00368ABD /* MVVMCalendarCoordinator.swift */; };
+		F0346F62242D496100368ABD /* MVCCalendarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F61242D496100368ABD /* MVCCalendarCoordinator.swift */; };
+		F0346F64242D499000368ABD /* MVCCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F63242D499000368ABD /* MVCCalendarViewController.swift */; };
+		F0346F66242D4AC400368ABD /* MVVMProfileCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F65242D4AC400368ABD /* MVVMProfileCoordinatorTests.swift */; };
+		F0346F68242D4AF100368ABD /* MVVMProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F67242D4AF100368ABD /* MVVMProfileViewControllerTests.swift */; };
+		F0346F6A242D4B1300368ABD /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F69242D4B1300368ABD /* ProfileViewModelTests.swift */; };
+		F0346F6C242D4B3800368ABD /* MVCProfileCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F6B242D4B3800368ABD /* MVCProfileCoordinatorTests.swift */; };
+		F0346F6E242D4B6200368ABD /* MVCProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F6D242D4B6200368ABD /* MVCProfileViewControllerTests.swift */; };
+		F0346F70242D4BA700368ABD /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F6F242D4BA700368ABD /* ProfileViewModel.swift */; };
+		F0346F72242D4BDF00368ABD /* MVVMProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F71242D4BDF00368ABD /* MVVMProfileViewController.swift */; };
+		F0346F74242D4C0C00368ABD /* MVVMProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F73242D4C0C00368ABD /* MVVMProfileCoordinator.swift */; };
+		F0346F76242D4C6D00368ABD /* MVCProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F75242D4C6D00368ABD /* MVCProfileCoordinator.swift */; };
+		F0346F78242D4C9F00368ABD /* MVCProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0346F77242D4C9F00368ABD /* MVCProfileViewController.swift */; };
 		F0353E85242619E800AEB067 /* MVVMAppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E84242619E800AEB067 /* MVVMAppCoordinatorTests.swift */; };
 		F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8824261A8C00AEB067 /* Coordinator.swift */; };
 		F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */; };
@@ -86,6 +122,42 @@
 		F012542A2429203F00B90B6D /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		F012542C2429214F00B90B6D /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 		F012542F2429238F00B90B6D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		F0346F2F242D28F100368ABD /* MVVMMainTabbarCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMMainTabbarCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0346F31242D297600368ABD /* MVVMMainTabbarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMMainTabbarCoordinator.swift; sourceTree = "<group>"; };
+		F0346F35242D2B1D00368ABD /* KeychainProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProvider.swift; sourceTree = "<group>"; };
+		F0346F37242D307A00368ABD /* MVCMainTabbarCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCMainTabbarCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0346F39242D30B800368ABD /* MVCMainTabbarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCMainTabbarCoordinator.swift; sourceTree = "<group>"; };
+		F0346F3B242D3E8900368ABD /* MVVMUsersCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMUsersCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0346F3D242D3F0100368ABD /* MVCUsersCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCUsersCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0346F3F242D3F4900368ABD /* MVVMUsersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMUsersViewControllerTests.swift; sourceTree = "<group>"; };
+		F0346F41242D3F8500368ABD /* MVCUsersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCUsersViewControllerTests.swift; sourceTree = "<group>"; };
+		F0346F43242D3FB500368ABD /* UsersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModelTests.swift; sourceTree = "<group>"; };
+		F0346F45242D401300368ABD /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		F0346F47242D406000368ABD /* MVVMUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMUsersViewController.swift; sourceTree = "<group>"; };
+		F0346F49242D40CA00368ABD /* MVCUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCUsersViewController.swift; sourceTree = "<group>"; };
+		F0346F4B242D411200368ABD /* MVVMUsersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMUsersCoordinator.swift; sourceTree = "<group>"; };
+		F0346F4D242D421100368ABD /* MVCUsersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCUsersCoordinator.swift; sourceTree = "<group>"; };
+		F0346F4F242D44B900368ABD /* KeychainProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProviderMock.swift; sourceTree = "<group>"; };
+		F0346F51242D478C00368ABD /* MVVMCalendarCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCalendarCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0346F53242D47B800368ABD /* MVVMCalendarViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCalendarViewControllerTests.swift; sourceTree = "<group>"; };
+		F0346F55242D47E100368ABD /* CalendarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModelTests.swift; sourceTree = "<group>"; };
+		F0346F57242D481B00368ABD /* MVCCalendarCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCCalendarCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0346F59242D484200368ABD /* MVCCalendarViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCCalendarViewControllerTests.swift; sourceTree = "<group>"; };
+		F0346F5B242D487D00368ABD /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		F0346F5D242D48AF00368ABD /* MVVMCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCalendarViewController.swift; sourceTree = "<group>"; };
+		F0346F5F242D48EA00368ABD /* MVVMCalendarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCalendarCoordinator.swift; sourceTree = "<group>"; };
+		F0346F61242D496100368ABD /* MVCCalendarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCCalendarCoordinator.swift; sourceTree = "<group>"; };
+		F0346F63242D499000368ABD /* MVCCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCCalendarViewController.swift; sourceTree = "<group>"; };
+		F0346F65242D4AC400368ABD /* MVVMProfileCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMProfileCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0346F67242D4AF100368ABD /* MVVMProfileViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMProfileViewControllerTests.swift; sourceTree = "<group>"; };
+		F0346F69242D4B1300368ABD /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
+		F0346F6B242D4B3800368ABD /* MVCProfileCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCProfileCoordinatorTests.swift; sourceTree = "<group>"; };
+		F0346F6D242D4B6200368ABD /* MVCProfileViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCProfileViewControllerTests.swift; sourceTree = "<group>"; };
+		F0346F6F242D4BA700368ABD /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		F0346F71242D4BDF00368ABD /* MVVMProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMProfileViewController.swift; sourceTree = "<group>"; };
+		F0346F73242D4C0C00368ABD /* MVVMProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMProfileCoordinator.swift; sourceTree = "<group>"; };
+		F0346F75242D4C6D00368ABD /* MVCProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCProfileCoordinator.swift; sourceTree = "<group>"; };
+		F0346F77242D4C9F00368ABD /* MVCProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCProfileViewController.swift; sourceTree = "<group>"; };
 		F0353E84242619E800AEB067 /* MVVMAppCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMAppCoordinatorTests.swift; sourceTree = "<group>"; };
 		F0353E8824261A8C00AEB067 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMAppCoordinator.swift; sourceTree = "<group>"; };
@@ -200,6 +272,10 @@
 			children = (
 				F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */,
 				F0685D6C242671CB00F900CF /* MVVMSignInCoordinator.swift */,
+				F0346F31242D297600368ABD /* MVVMMainTabbarCoordinator.swift */,
+				F0346F4B242D411200368ABD /* MVVMUsersCoordinator.swift */,
+				F0346F5F242D48EA00368ABD /* MVVMCalendarCoordinator.swift */,
+				F0346F73242D4C0C00368ABD /* MVVMProfileCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -243,6 +319,7 @@
 			children = (
 				F0699848242BBD8E00A0E30D /* Context.swift */,
 				F069984B242BBE4900A0E30D /* RealmProvider.swift */,
+				F0346F35242D2B1D00368ABD /* KeychainProvider.swift */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -277,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				F0699854242BC97B00A0E30D /* RealmProviderMock.swift */,
+				F0346F4F242D44B900368ABD /* KeychainProviderMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -341,6 +419,9 @@
 			children = (
 				F074A70A242418110088D4F3 /* MVVMSignInViewController.swift */,
 				F094348024278CAF007898C8 /* MVVMSignUpViewController.swift */,
+				F0346F47242D406000368ABD /* MVVMUsersViewController.swift */,
+				F0346F5D242D48AF00368ABD /* MVVMCalendarViewController.swift */,
+				F0346F71242D4BDF00368ABD /* MVVMProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -367,6 +448,10 @@
 			children = (
 				F0943469242784E3007898C8 /* MVCAppCoordinatorTests.swift */,
 				F0943471242785BF007898C8 /* MVCSignInCoordinatorTests.swift */,
+				F0346F37242D307A00368ABD /* MVCMainTabbarCoordinatorTests.swift */,
+				F0346F3D242D3F0100368ABD /* MVCUsersCoordinatorTests.swift */,
+				F0346F57242D481B00368ABD /* MVCCalendarCoordinatorTests.swift */,
+				F0346F6B242D4B3800368ABD /* MVCProfileCoordinatorTests.swift */,
 			);
 			path = CoordinatorTestCases;
 			sourceTree = "<group>";
@@ -385,6 +470,10 @@
 			children = (
 				F094346D24278546007898C8 /* MVCAppCoordinator.swift */,
 				F0943473242785E5007898C8 /* MVCSignInCoordinator.swift */,
+				F0346F39242D30B800368ABD /* MVCMainTabbarCoordinator.swift */,
+				F0346F4D242D421100368ABD /* MVCUsersCoordinator.swift */,
+				F0346F61242D496100368ABD /* MVCCalendarCoordinator.swift */,
+				F0346F75242D4C6D00368ABD /* MVCProfileCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -403,6 +492,9 @@
 			children = (
 				F09434752427861D007898C8 /* MVCSignInViewControllerTests.swift */,
 				F012542624291ED400B90B6D /* MVCSignUpViewControllerTests.swift */,
+				F0346F41242D3F8500368ABD /* MVCUsersViewControllerTests.swift */,
+				F0346F59242D484200368ABD /* MVCCalendarViewControllerTests.swift */,
+				F0346F6D242D4B6200368ABD /* MVCProfileViewControllerTests.swift */,
 			);
 			path = ViewControllerTests;
 			sourceTree = "<group>";
@@ -412,6 +504,9 @@
 			children = (
 				F094347824278659007898C8 /* MVCSignInViewController.swift */,
 				F012542824291EF800B90B6D /* MVCSignUpViewController.swift */,
+				F0346F49242D40CA00368ABD /* MVCUsersViewController.swift */,
+				F0346F63242D499000368ABD /* MVCCalendarViewController.swift */,
+				F0346F77242D4C9F00368ABD /* MVCProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -431,6 +526,9 @@
 				F095A339242692D500D51976 /* ViewModel.swift */,
 				F095A336242691C400D51976 /* SignInViewModel.swift */,
 				F012541D2429159B00B90B6D /* SignUpViewModel.swift */,
+				F0346F45242D401300368ABD /* UsersViewModel.swift */,
+				F0346F5B242D487D00368ABD /* CalendarViewModel.swift */,
+				F0346F6F242D4BA700368ABD /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -460,6 +558,9 @@
 			children = (
 				F095A33D2426937D00D51976 /* MVVMSignInViewControllerTests.swift */,
 				F012541B2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift */,
+				F0346F3F242D3F4900368ABD /* MVVMUsersViewControllerTests.swift */,
+				F0346F53242D47B800368ABD /* MVVMCalendarViewControllerTests.swift */,
+				F0346F67242D4AF100368ABD /* MVVMProfileViewControllerTests.swift */,
 			);
 			path = ViewControllerTests;
 			sourceTree = "<group>";
@@ -489,6 +590,10 @@
 			children = (
 				F0353E84242619E800AEB067 /* MVVMAppCoordinatorTests.swift */,
 				F0685D6A2426708D00F900CF /* MVVMSignInCoordinatorTests.swift */,
+				F0346F2F242D28F100368ABD /* MVVMMainTabbarCoordinatorTests.swift */,
+				F0346F3B242D3E8900368ABD /* MVVMUsersCoordinatorTests.swift */,
+				F0346F51242D478C00368ABD /* MVVMCalendarCoordinatorTests.swift */,
+				F0346F65242D4AC400368ABD /* MVVMProfileCoordinatorTests.swift */,
 			);
 			path = CoordinatorTestCases;
 			sourceTree = "<group>";
@@ -497,6 +602,9 @@
 			isa = PBXGroup;
 			children = (
 				F0D0C719242926DF00A75D43 /* SignUpViewModelTests.swift */,
+				F0346F43242D3FB500368ABD /* UsersViewModelTests.swift */,
+				F0346F55242D47E100368ABD /* CalendarViewModelTests.swift */,
+				F0346F69242D4B1300368ABD /* ProfileViewModelTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -716,6 +824,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0346F62242D496100368ABD /* MVCCalendarCoordinator.swift in Sources */,
 				F095A34824269EA900D51976 /* assets-images.swift in Sources */,
 				F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */,
 				F0F6643424277AD400FC0A3B /* AppCoordinator.swift in Sources */,
@@ -723,27 +832,44 @@
 				F012542B2429203F00B90B6D /* Validator.swift in Sources */,
 				F0D0C7182429245900A75D43 /* User.swift in Sources */,
 				F0699849242BBD8E00A0E30D /* Context.swift in Sources */,
+				F0346F74242D4C0C00368ABD /* MVVMProfileCoordinator.swift in Sources */,
+				F0346F72242D4BDF00368ABD /* MVVMProfileViewController.swift in Sources */,
 				F094347E242787D0007898C8 /* SignInViewControllerDelegate.swift in Sources */,
+				F0346F64242D499000368ABD /* MVCCalendarViewController.swift in Sources */,
 				F095A3412426984600D51976 /* Array+UIView.swift in Sources */,
+				F0346F5E242D48AF00368ABD /* MVVMCalendarViewController.swift in Sources */,
 				F095A337242691C400D51976 /* SignInViewModel.swift in Sources */,
 				F069984E242BC2DD00A0E30D /* AppErrors.swift in Sources */,
+				F0346F60242D48EA00368ABD /* MVVMCalendarCoordinator.swift in Sources */,
 				F074A6E8242414080088D4F3 /* AppDelegate.swift in Sources */,
 				F0943474242785E5007898C8 /* MVCSignInCoordinator.swift in Sources */,
+				F0346F4E242D421100368ABD /* MVCUsersCoordinator.swift in Sources */,
 				F094346E24278546007898C8 /* MVCAppCoordinator.swift in Sources */,
 				F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */,
+				F0346F4C242D411200368ABD /* MVVMUsersCoordinator.swift in Sources */,
 				F069984C242BBE4900A0E30D /* RealmProvider.swift in Sources */,
 				F01254202429168500B90B6D /* SignUpViewControllerDelegate.swift in Sources */,
 				F09434682427844A007898C8 /* AppArchitecture.swift in Sources */,
 				F094348124278CAF007898C8 /* MVVMSignUpViewController.swift in Sources */,
+				F0346F48242D406000368ABD /* MVVMUsersViewController.swift in Sources */,
 				F012541E2429159B00B90B6D /* SignUpViewModel.swift in Sources */,
 				F074A6EA242414080088D4F3 /* SceneDelegate.swift in Sources */,
+				F0346F5C242D487D00368ABD /* CalendarViewModel.swift in Sources */,
+				F0346F32242D297600368ABD /* MVVMMainTabbarCoordinator.swift in Sources */,
 				F0685D6D242671CB00F900CF /* MVVMSignInCoordinator.swift in Sources */,
+				F0346F76242D4C6D00368ABD /* MVCProfileCoordinator.swift in Sources */,
 				F0125425242919C900B90B6D /* SignInButton.swift in Sources */,
 				F012542924291EF800B90B6D /* MVCSignUpViewController.swift in Sources */,
 				F095A33A242692D500D51976 /* ViewModel.swift in Sources */,
+				F0346F3A242D30B800368ABD /* MVCMainTabbarCoordinator.swift in Sources */,
 				F095A34724269EA900D51976 /* strings.swift in Sources */,
+				F0346F78242D4C9F00368ABD /* MVCProfileViewController.swift in Sources */,
 				F094347C242786F8007898C8 /* SelectedArchitecture.swift in Sources */,
+				F0346F46242D401300368ABD /* UsersViewModel.swift in Sources */,
 				F094347924278659007898C8 /* MVCSignInViewController.swift in Sources */,
+				F0346F70242D4BA700368ABD /* ProfileViewModel.swift in Sources */,
+				F0346F36242D2B1D00368ABD /* KeychainProvider.swift in Sources */,
+				F0346F4A242D40CA00368ABD /* MVCUsersViewController.swift in Sources */,
 				F074A70B242418110088D4F3 /* MVVMSignInViewController.swift in Sources */,
 				F065399D242BBC5A00AF4E0F /* UserRealm.swift in Sources */,
 				F01254222429193200B90B6D /* SignInTextfield.swift in Sources */,
@@ -754,20 +880,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0346F3C242D3E8900368ABD /* MVVMUsersCoordinatorTests.swift in Sources */,
+				F0346F44242D3FB500368ABD /* UsersViewModelTests.swift in Sources */,
 				F0685D6B2426708D00F900CF /* MVVMSignInCoordinatorTests.swift in Sources */,
+				F0346F5A242D484200368ABD /* MVCCalendarViewControllerTests.swift in Sources */,
 				F094346A242784E3007898C8 /* MVCAppCoordinatorTests.swift in Sources */,
 				F0D0C71A242926DF00A75D43 /* SignUpViewModelTests.swift in Sources */,
+				F0346F30242D28F100368ABD /* MVVMMainTabbarCoordinatorTests.swift in Sources */,
 				F0699850242BC89600A0E30D /* ContextBuilder.swift in Sources */,
+				F0346F42242D3F8500368ABD /* MVCUsersViewControllerTests.swift in Sources */,
 				F012542D2429214F00B90B6D /* ValidatorTests.swift in Sources */,
+				F0346F6A242D4B1300368ABD /* ProfileViewModelTests.swift in Sources */,
 				F095A33E2426937D00D51976 /* MVVMSignInViewControllerTests.swift in Sources */,
+				F0346F54242D47B800368ABD /* MVVMCalendarViewControllerTests.swift in Sources */,
 				F05E8E62242809B0007314BD /* UIViewController+UIWindow.swift in Sources */,
+				F0346F3E242D3F0100368ABD /* MVCUsersCoordinatorTests.swift in Sources */,
+				F0346F68242D4AF100368ABD /* MVVMProfileViewControllerTests.swift in Sources */,
+				F0346F58242D481B00368ABD /* MVCCalendarCoordinatorTests.swift in Sources */,
 				F01254302429238F00B90B6D /* UserTests.swift in Sources */,
 				F012542724291ED400B90B6D /* MVCSignUpViewControllerTests.swift in Sources */,
+				F0346F56242D47E100368ABD /* CalendarViewModelTests.swift in Sources */,
+				F0346F66242D4AC400368ABD /* MVVMProfileCoordinatorTests.swift in Sources */,
 				F012541C2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift in Sources */,
+				F0346F52242D478C00368ABD /* MVVMCalendarCoordinatorTests.swift in Sources */,
+				F0346F6C242D4B3800368ABD /* MVCProfileCoordinatorTests.swift in Sources */,
 				F09434762427861D007898C8 /* MVCSignInViewControllerTests.swift in Sources */,
+				F0346F38242D307A00368ABD /* MVCMainTabbarCoordinatorTests.swift in Sources */,
+				F0346F40242D3F4900368ABD /* MVVMUsersViewControllerTests.swift in Sources */,
+				F0346F50242D44B900368ABD /* KeychainProviderMock.swift in Sources */,
 				F0943472242785BF007898C8 /* MVCSignInCoordinatorTests.swift in Sources */,
 				F0699855242BC97B00A0E30D /* RealmProviderMock.swift in Sources */,
 				F0353E85242619E800AEB067 /* MVVMAppCoordinatorTests.swift in Sources */,
+				F0346F6E242D4B6200368ABD /* MVCProfileViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

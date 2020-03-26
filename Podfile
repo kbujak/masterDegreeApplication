@@ -9,6 +9,7 @@ target 'MasterDegreeApplication' do
   pod 'RealmSwift'
   pod 'RxCocoa'
   pod 'PureLayout'
+  pod 'KeychainSwift', '~> 19.0'
 
   target 'MasterDegreeApplicationTests' do
     inherit! :search_paths
