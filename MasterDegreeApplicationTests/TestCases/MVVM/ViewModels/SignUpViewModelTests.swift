@@ -15,7 +15,7 @@ class SignUpViewModelTests: XCTestCase {
     private let bag = DisposeBag()
 
     func testUser_whenAllDataCorrect_thenItReturnsUser() {
-        let viewModel = SignUpViewModel()
+        let viewModel = SignUpViewModel(context: ContextBuilder().build())
         let input = SignUpViewModel.Input(
             username: Driver.just("test1"),
             password: Driver.just("test52"),
@@ -38,7 +38,7 @@ class SignUpViewModelTests: XCTestCase {
     }
 
     func testUser_whenDataIncorrect_thenItReturnsNothing() {
-        let viewModel = SignUpViewModel()
+        let viewModel = SignUpViewModel(context: ContextBuilder().build())
         let input = SignUpViewModel.Input(
             username: Driver.just("test1"),
             password: Driver.just("test2"),

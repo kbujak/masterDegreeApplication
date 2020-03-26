@@ -23,8 +23,14 @@
 		F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8824261A8C00AEB067 /* Coordinator.swift */; };
 		F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */; };
 		F05E8E62242809B0007314BD /* UIViewController+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */; };
+		F065399D242BBC5A00AF4E0F /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065399C242BBC5A00AF4E0F /* UserRealm.swift */; };
 		F0685D6B2426708D00F900CF /* MVVMSignInCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6A2426708D00F900CF /* MVVMSignInCoordinatorTests.swift */; };
 		F0685D6D242671CB00F900CF /* MVVMSignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6C242671CB00F900CF /* MVVMSignInCoordinator.swift */; };
+		F0699849242BBD8E00A0E30D /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0699848242BBD8E00A0E30D /* Context.swift */; };
+		F069984C242BBE4900A0E30D /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069984B242BBE4900A0E30D /* RealmProvider.swift */; };
+		F069984E242BC2DD00A0E30D /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069984D242BC2DD00A0E30D /* AppErrors.swift */; };
+		F0699850242BC89600A0E30D /* ContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069984F242BC89600A0E30D /* ContextBuilder.swift */; };
+		F0699855242BC97B00A0E30D /* RealmProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0699854242BC97B00A0E30D /* RealmProviderMock.swift */; };
 		F074A6E8242414080088D4F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A6E7242414080088D4F3 /* AppDelegate.swift */; };
 		F074A6EA242414080088D4F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074A6E9242414080088D4F3 /* SceneDelegate.swift */; };
 		F074A6EE2424140A0088D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F074A6ED2424140A0088D4F3 /* Assets.xcassets */; };
@@ -84,8 +90,14 @@
 		F0353E8824261A8C00AEB067 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMAppCoordinator.swift; sourceTree = "<group>"; };
 		F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIWindow.swift"; sourceTree = "<group>"; };
+		F065399C242BBC5A00AF4E0F /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
 		F0685D6A2426708D00F900CF /* MVVMSignInCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInCoordinatorTests.swift; sourceTree = "<group>"; };
 		F0685D6C242671CB00F900CF /* MVVMSignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInCoordinator.swift; sourceTree = "<group>"; };
+		F0699848242BBD8E00A0E30D /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		F069984B242BBE4900A0E30D /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
+		F069984D242BC2DD00A0E30D /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
+		F069984F242BC89600A0E30D /* ContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextBuilder.swift; sourceTree = "<group>"; };
+		F0699854242BC97B00A0E30D /* RealmProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProviderMock.swift; sourceTree = "<group>"; };
 		F074A6E4242414080088D4F3 /* MasterDegreeApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDegreeApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F074A6E7242414080088D4F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F074A6E9242414080088D4F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +213,74 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		F065399A242BBC2A00AF4E0F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0D0C7172429245900A75D43 /* User.swift */,
+				F065399E242BBC8200AF4E0F /* RealmModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F065399B242BBC3800AF4E0F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F012542A2429203F00B90B6D /* Validator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F065399E242BBC8200AF4E0F /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				F065399C242BBC5A00AF4E0F /* UserRealm.swift */,
+			);
+			path = RealmModels;
+			sourceTree = "<group>";
+		};
+		F069984A242BBDBD00A0E30D /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				F0699848242BBD8E00A0E30D /* Context.swift */,
+				F069984B242BBE4900A0E30D /* RealmProvider.swift */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		F0699851242BC94300A0E30D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F0699856242BC99600A0E30D /* Mocks */,
+				F0699853242BC95000A0E30D /* Extensions */,
+				F0699852242BC94A00A0E30D /* Builders */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F0699852242BC94A00A0E30D /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				F069984F242BC89600A0E30D /* ContextBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		F0699853242BC95000A0E30D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F0699856242BC99600A0E30D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F0699854242BC97B00A0E30D /* RealmProviderMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		F074A6DB242414080088D4F3 = {
 			isa = PBXGroup;
 			children = (
@@ -235,8 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				F0A2D2EB2426129100FF92D6 /* TestCases */,
+				F0699851242BC94300A0E30D /* Helpers */,
 				F074A7002424140A0088D4F3 /* Info.plist */,
-				F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */,
 			);
 			path = MasterDegreeApplicationTests;
 			sourceTree = "<group>";
@@ -268,14 +348,16 @@
 		F0943466242783C4007898C8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F069984A242BBDBD00A0E30D /* Context */,
 				F0F6643524277ADA00FC0A3B /* Coordinator */,
+				F094347F242787D5007898C8 /* Delegates */,
 				F0125423242919B500B90B6D /* Views */,
 				F095A342242699C600D51976 /* Extensions */,
+				F065399A242BBC2A00AF4E0F /* Models */,
 				F074A709242417DF0088D4F3 /* Resources */,
 				F0559BE2242422020013DA08 /* Generated */,
-				F094347F242787D5007898C8 /* Delegates */,
-				F012542A2429203F00B90B6D /* Validator.swift */,
-				F0D0C7172429245900A75D43 /* User.swift */,
+				F065399B242BBC3800AF4E0F /* Helpers */,
+				F069984D242BC2DD00A0E30D /* AppErrors.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -640,13 +722,16 @@
 				F095A344242699DE00D51976 /* UIColor+AppColors.swift in Sources */,
 				F012542B2429203F00B90B6D /* Validator.swift in Sources */,
 				F0D0C7182429245900A75D43 /* User.swift in Sources */,
+				F0699849242BBD8E00A0E30D /* Context.swift in Sources */,
 				F094347E242787D0007898C8 /* SignInViewControllerDelegate.swift in Sources */,
 				F095A3412426984600D51976 /* Array+UIView.swift in Sources */,
 				F095A337242691C400D51976 /* SignInViewModel.swift in Sources */,
+				F069984E242BC2DD00A0E30D /* AppErrors.swift in Sources */,
 				F074A6E8242414080088D4F3 /* AppDelegate.swift in Sources */,
 				F0943474242785E5007898C8 /* MVCSignInCoordinator.swift in Sources */,
 				F094346E24278546007898C8 /* MVCAppCoordinator.swift in Sources */,
 				F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */,
+				F069984C242BBE4900A0E30D /* RealmProvider.swift in Sources */,
 				F01254202429168500B90B6D /* SignUpViewControllerDelegate.swift in Sources */,
 				F09434682427844A007898C8 /* AppArchitecture.swift in Sources */,
 				F094348124278CAF007898C8 /* MVVMSignUpViewController.swift in Sources */,
@@ -660,6 +745,7 @@
 				F094347C242786F8007898C8 /* SelectedArchitecture.swift in Sources */,
 				F094347924278659007898C8 /* MVCSignInViewController.swift in Sources */,
 				F074A70B242418110088D4F3 /* MVVMSignInViewController.swift in Sources */,
+				F065399D242BBC5A00AF4E0F /* UserRealm.swift in Sources */,
 				F01254222429193200B90B6D /* SignInTextfield.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,6 +757,7 @@
 				F0685D6B2426708D00F900CF /* MVVMSignInCoordinatorTests.swift in Sources */,
 				F094346A242784E3007898C8 /* MVCAppCoordinatorTests.swift in Sources */,
 				F0D0C71A242926DF00A75D43 /* SignUpViewModelTests.swift in Sources */,
+				F0699850242BC89600A0E30D /* ContextBuilder.swift in Sources */,
 				F012542D2429214F00B90B6D /* ValidatorTests.swift in Sources */,
 				F095A33E2426937D00D51976 /* MVVMSignInViewControllerTests.swift in Sources */,
 				F05E8E62242809B0007314BD /* UIViewController+UIWindow.swift in Sources */,
@@ -679,6 +766,7 @@
 				F012541C2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift in Sources */,
 				F09434762427861D007898C8 /* MVCSignInViewControllerTests.swift in Sources */,
 				F0943472242785BF007898C8 /* MVCSignInCoordinatorTests.swift in Sources */,
+				F0699855242BC97B00A0E30D /* RealmProviderMock.swift in Sources */,
 				F0353E85242619E800AEB067 /* MVVMAppCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

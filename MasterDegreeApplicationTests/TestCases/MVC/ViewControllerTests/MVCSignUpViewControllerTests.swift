@@ -12,7 +12,7 @@ import XCTest
 class MVCSignUpViewControllerTests: XCTestCase {
 
     func testController_whenStart_thenVCIsNotNil() {
-        let viewController = MVCSignUpViewController()
+        let viewController = MVCSignUpViewController(context: ContextBuilder().build())
         XCTAssertNotNil(viewController)
     }
 }

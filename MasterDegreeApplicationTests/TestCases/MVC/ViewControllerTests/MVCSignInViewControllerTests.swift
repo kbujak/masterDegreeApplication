@@ -12,7 +12,7 @@ import XCTest
 class MVCSignInViewControllerTests: XCTestCase {
 
     func testController_whenStart_thenVCIsNavigationController() {
-        let viewController = MVCSignInViewController()
+        let viewController = MVCSignInViewController(context: ContextBuilder().build())
         XCTAssertNotNil(viewController)
     }
 }

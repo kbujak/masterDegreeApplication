@@ -17,7 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
-        let appCoordinator = architecture == .MVVM ? MVVMAppCoordinator() : MVCAppCoordinator()
+
+        let realmProvider = RealmProviderImpl()
+        let context = Context(realmProvider: realmProvider)
+
+        let appCoordinator = architecture == .MVVM
+            ? MVVMAppCoordinator(context: context)
+            : MVCAppCoordinator(context: context)
         self.appCoordinator = appCoordinator
 
         if let windowScene = scene as? UIWindowScene {

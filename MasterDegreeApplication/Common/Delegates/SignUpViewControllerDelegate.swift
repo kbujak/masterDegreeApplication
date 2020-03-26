@@ -10,4 +10,5 @@ import Foundation
 
 protocol SignUpViewControllerDelegate: class {
     func didTapBack()
+    func didSignUpSuccessfully(_ user: User)
 }

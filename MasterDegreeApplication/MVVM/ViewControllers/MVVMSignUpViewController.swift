@@ -115,9 +115,8 @@ private extension MVVMSignUpViewController {
         let output = viewModel.transform(input: input)
 
         output.user.subscribe(
-            onNext: { user in
-                print(user)
-            }
+            onNext: { [weak self] user in self?.delegate?.didSignUpSuccessfully(user) },
+            onError: { error in print(error) }
         )
         .disposed(by: bag)
     }

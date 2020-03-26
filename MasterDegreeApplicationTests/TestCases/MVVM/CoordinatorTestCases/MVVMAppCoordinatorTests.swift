@@ -14,19 +14,19 @@ class MVVMAppCoordinatorTests: XCTestCase {
     func testCoordinator_whenInit_thenIdIsInitialised() {
         let id = UUID().uuidString
         let coordinatorId = CoordinatorIdentifier(id: id)
-        let coordinator = MVVMAppCoordinator(id: coordinatorId)
+        let coordinator = MVVMAppCoordinator(context: ContextBuilder().build(), id: coordinatorId)
 
         XCTAssertEqual(id, coordinator.id.id)
     }
 
     func testCoordinator_whenInit_thenChildrenIsEmpty() {
-        let coordinator = MVVMAppCoordinator()
+        let coordinator = MVVMAppCoordinator(context: ContextBuilder().build())
 
         XCTAssertEqual(coordinator.children.count, 0)
     }
 
     func testCoordinator_whenInit_thenVCIsNil() {
-        let coordinator = MVVMAppCoordinator()
+        let coordinator = MVVMAppCoordinator(context: ContextBuilder().build())
 
         XCTAssertNil(coordinator.VC)
     }
@@ -56,7 +56,7 @@ class MVVMAppCoordinatorTests: XCTestCase {
 
 private extension MVVMAppCoordinatorTests {
     func createCoordinatorThenStart() -> AppCoordinator {
-        let coordinator = MVVMAppCoordinator()
+        let coordinator = MVVMAppCoordinator(context: ContextBuilder().build())
         let window = UIWindow(frame: UIScreen.main.bounds)
         coordinator.start(in: window)
         return coordinator

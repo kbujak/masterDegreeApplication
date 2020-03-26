@@ -12,7 +12,7 @@ import XCTest
 class MVVMSignInViewControllerTests: XCTestCase {
 
     func testController_whenStart_thenVCIsNotNil() {
-        let viewModel = SignInViewModel()
+        let viewModel = SignInViewModel(context: ContextBuilder().build())
         let viewController = MVVMSignInViewController(viewModel: viewModel)
         XCTAssertNotNil(viewController)
     }

@@ -11,8 +11,9 @@ import UIKit
 
 protocol Coordinator: class {
     var id: CoordinatorIdentifier { get }
+    var context: Context { get }
 
-    init(id: CoordinatorIdentifier)
+    init(context: Context, id: CoordinatorIdentifier)
 }
 
 protocol CompoundCoordinator: Coordinator {
@@ -24,7 +25,7 @@ protocol CompoundCoordinator: Coordinator {
 
 extension CompoundCoordinator {
     func createCoordinator<Child: Coordinator>() -> Child {
-        let coordinator = Child(id: CoordinatorIdentifier())
+        let coordinator = Child(context: self.context, id: CoordinatorIdentifier())
         children[coordinator.id] = coordinator
         return coordinator
     }

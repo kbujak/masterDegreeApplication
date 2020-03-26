@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct User {
     let id: String
@@ -17,5 +18,9 @@ struct User {
         self.id = id
         self.username = username
         self.password = password
+    }
+
+    func createRealm() -> UserRealm {
+        return UserRealm(user: self)
     }
 }

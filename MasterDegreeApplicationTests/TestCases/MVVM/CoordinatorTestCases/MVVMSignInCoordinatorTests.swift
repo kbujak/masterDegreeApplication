@@ -20,7 +20,7 @@ class MVVMSignInCoordinatorTests: XCTestCase {
 
     private func createCoordinatorAndStart() -> MVVMSignInCoordinator {
         let navigationVC = UINavigationController()
-        let coordinator = MVVMSignInCoordinator()
+        let coordinator = MVVMSignInCoordinator(context: ContextBuilder().build())
         coordinator.start(in: navigationVC)
         return coordinator
     }

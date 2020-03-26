@@ -23,9 +23,11 @@ class MVCSignUpViewController: UIViewController {
 
     private weak var delegate: SignUpViewControllerDelegate?
     private let bag = DisposeBag()
+    private let context: Context
 
-    init(delegate: SignUpViewControllerDelegate? = nil) {
+    init(context: Context, delegate: SignUpViewControllerDelegate? = nil) {
         self.delegate = delegate
+        self.context = context
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -121,6 +123,12 @@ private extension MVCSignUpViewController {
         else { return }
 
         let user = User(username: username, password: password)
+        context.realmProvider.createUser(withUser: user)
+            .subscribe(
+                onNext: { [weak self] user in self?.delegate?.didSignUpSuccessfully(user) },
+                onError: { error in print(error) }
+            )
+            .disposed(by: bag)
         print(user)
     }
 }

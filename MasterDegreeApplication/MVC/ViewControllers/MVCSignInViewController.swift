@@ -18,9 +18,11 @@ class MVCSignInViewController: UIViewController {
     private let signUpButton = UIButton()
     private weak var delegate: SignInViewControllerDelegate?
     private let bag = DisposeBag()
+    private let context: Context
 
-    init(delegate: SignInViewControllerDelegate? = nil) {
+    init(context: Context, delegate: SignInViewControllerDelegate? = nil) {
         self.delegate = delegate
+        self.context = context
         super.init(nibName: nil, bundle: nil)
     }
 

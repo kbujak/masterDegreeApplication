@@ -13,8 +13,10 @@ class AppCoordinator: CompoundCoordinator {
     var children = [CoordinatorIdentifier: Coordinator]()
     var VC: UINavigationController?
     var id: CoordinatorIdentifier
+    let context: Context
 
-    required init(id: CoordinatorIdentifier = CoordinatorIdentifier()) {
+    required init(context: Context, id: CoordinatorIdentifier = CoordinatorIdentifier()) {
+        self.context = context
         self.id = id
     }
 

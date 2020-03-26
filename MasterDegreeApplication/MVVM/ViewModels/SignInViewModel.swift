@@ -9,6 +9,11 @@
 import Foundation
 
 class SignInViewModel: ViewModel {
+    private let context: Context
+
+    init(context: Context) {
+        self.context = context
+    }
 
     func transform(input: SignInViewModel.Input) -> SignInViewModel.Output {
         return Output()

@@ -17,6 +17,11 @@ class SignUpViewModel: ViewModel {
     private let retypePasswordRelay = BehaviorRelay<String>(value: "")
     private let userSubject = PublishSubject<User>()
     private let bag = DisposeBag()
+    private let context: Context
+
+    init(context: Context) {
+        self.context = context
+    }
 
     func transform(input: SignUpViewModel.Input) -> SignUpViewModel.Output {
         input.username.drive(usernameRelay).disposed(by: bag)
@@ -45,8 +50,11 @@ class SignUpViewModel: ViewModel {
         else { return }
 
         let user = User(username: usernameRelay.value, password: passwordRelay.value)
-        DispatchQueue.main.async { [weak self] in
-            self?.userSubject.onNext(user)
-        }
+
+        context.realmProvider.createUser(withUser: user)
+            .observeOn(MainScheduler.instance)
+            .subscribeOn(MainScheduler.instance)
+            .bind(to: userSubject)
+            .disposed(by: bag)
     }
 }

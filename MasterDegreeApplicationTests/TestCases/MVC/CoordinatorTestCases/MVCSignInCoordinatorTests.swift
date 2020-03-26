@@ -13,7 +13,7 @@ class MVCSignInCoordinatorTests: XCTestCase {
 
     func testCoordinator_whenStart_thenVCIsNavigationController() {
         let navigationVC = UINavigationController()
-        let coordinator = MVCSignInCoordinator()
+        let coordinator = MVCSignInCoordinator(context: ContextBuilder().build())
         coordinator.start(in: navigationVC)
 
         guard let VC = coordinator.VC else { XCTFail("Coordinator not initialised"); return }

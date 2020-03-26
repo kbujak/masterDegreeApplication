@@ -13,20 +13,22 @@ class MVCSignInCoordinator: CompoundCoordinator {
     var VC: UINavigationController?
     var id: CoordinatorIdentifier
     var children: [CoordinatorIdentifier: Coordinator] = [:]
+    let context: Context
 
-    required init(id: CoordinatorIdentifier = CoordinatorIdentifier()) {
+    required init(context: Context, id: CoordinatorIdentifier = CoordinatorIdentifier()) {
+        self.context = context
         self.id = id
     }
 
     func start(in controller: UINavigationController) {
-        let VC = MVCSignInViewController(delegate: self)
+        let VC = MVCSignInViewController(context: context, delegate: self)
         self.VC = controller
         controller.pushViewController(VC, animated: true)
     }
 
     private func openSignUp() {
         guard let navigationVC = self.VC else { fatalError() }
-        let controller = MVCSignUpViewController(delegate: self)
+        let controller = MVCSignUpViewController(context: context, delegate: self)
         navigationVC.pushViewController(controller, animated: true)
     }
 }
@@ -40,6 +42,10 @@ extension MVCSignInCoordinator: SignInViewControllerDelegate {
 
 // MARK: - SignUpViewController
 extension MVCSignInCoordinator: SignUpViewControllerDelegate {
+    func didSignUpSuccessfully(_ user: User) {
+        print(user)
+    }
+
     func didTapBack() {
         VC?.popViewController(animated: true)
     }
