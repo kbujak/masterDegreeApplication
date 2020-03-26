@@ -11,8 +11,6 @@ import RxSwift
 @testable import MasterDegreeApplication
 
 class RealmProviderMock: RealmProvider {
-    func clear() { }
-
     private let queue = DispatchQueue(label: "realmMock", qos: .background, attributes: .concurrent)
 
     func createUser(withUser user: User) -> Observable<User> {
@@ -53,6 +51,31 @@ class RealmProviderMock: RealmProvider {
             return Disposables.create()
         }
     }
+
+    func fetchUser(withUsername username: String, password: String) -> Observable<User?> {
+        return Observable.create { [weak self] subscriber -> Disposable in
+            do {
+                guard let `self` = self else { throw AppErrors.unknownError }
+
+                let realm = try self.tryGetRealm()
+                let object = realm.objects(UserRealm.self).filter(NSPredicate(format: "username == %@", username))
+                let userRealm = object.first
+
+                if let userRealm = userRealm, userRealm.password == password {
+                    let user = User(realm: userRealm)
+                    subscriber.onNext(user)
+                } else {
+                    subscriber.onNext(nil)
+                }
+                subscriber.onCompleted()
+            } catch {
+                subscriber.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+
+    func clear() { }
 
     private func tryGetRealm() throws -> Realm {
         return try queue.sync {

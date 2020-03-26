@@ -91,5 +91,29 @@ private extension MVCSignInViewController {
         signUpButton.rx.tap
             .subscribe(onNext: { [weak self] in self?.delegate?.didTapSignUp() })
             .disposed(by: bag)
+
+        signInButton.rx.tap
+            .subscribe(onNext: { [weak self] in self?.fetchUser() })
+            .disposed(by: bag)
+    }
+
+    func fetchUser() {
+        guard
+            let username = usernameTextfield.text,
+            let password = passwordTextfield.text,
+            !username.isEmpty && username != "",
+            !password.isEmpty && password != ""
+        else { return }
+
+        context.realmProvider.fetchUser(withUsername: username, password: password)
+            .subscribe(
+                onNext: { [weak self] user in
+                    guard let user = user else { return }
+                    self?.context.keychainProvider.userId = user.id
+                    self?.delegate?.didSignInSuccessfully(withUser: user)
+                },
+                onError: { error in print(error) }
+            )
+            .disposed(by: bag)
     }
 }
