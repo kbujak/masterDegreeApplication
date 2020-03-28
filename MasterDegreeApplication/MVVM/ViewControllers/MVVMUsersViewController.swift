@@ -7,13 +7,20 @@
 //
 
 import Foundation
+import PureLayout
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MVVMUsersViewController: UIViewController {
+    private let inviteButton = UIButton()
     private let viewModel: UsersViewModel
+    private weak var delegate: UsersViewControllerDelegate?
+    private let bag = DisposeBag()
 
-    init(viewModel: UsersViewModel) {
+    init(viewModel: UsersViewModel, delegate: UsersViewControllerDelegate? = nil) {
         self.viewModel = viewModel
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -21,6 +28,36 @@ class MVVMUsersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        [inviteButton].addTo(view)
+
+        setupLayouts()
+        setupStyles()
+        bindViewModelToView()
+    }
+}
+
+// MARK: - Setup UI
+private extension MVVMUsersViewController {
+    func setupLayouts() {
+        inviteButton.autoPinEdge(toSuperviewSafeArea: .bottom, withInset: 20)
+        inviteButton.autoAlignAxis(toSuperviewMarginAxis: .vertical)
+        inviteButton.autoSetDimension(.width, toSize: 100)
+        inviteButton.autoSetDimension(.height, toSize: 50)
+    }
+
+    func setupStyles() {
+        view.backgroundColor = .white
+        inviteButton.setTitle(L10n.UsersViewController.invite, for: .normal)
+        inviteButton.backgroundColor = .mainColor
+        inviteButton.layer.cornerRadius = 25
+    }
+}
+
+// MARK: - Private layer
+private extension MVVMUsersViewController {
+    func bindViewModelToView() {
+        inviteButton.rx.tap.asDriver()
+            .drive(onNext: { [weak self] in self?.delegate?.didTapInvite() })
+            .disposed(by: bag)
     }
 }

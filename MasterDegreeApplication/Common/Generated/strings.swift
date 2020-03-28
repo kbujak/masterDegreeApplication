@@ -13,6 +13,8 @@ import Foundation
 internal enum L10n {
 
   internal enum Common {
+    /// Back
+    internal static let back = L10n.tr("Localizable", "Common.back")
     /// Enter password
     internal static let password = L10n.tr("Localizable", "Common.password")
     /// Enter username
@@ -35,6 +37,11 @@ internal enum L10n {
     internal static let signUp = L10n.tr("Localizable", "SignUpViewController.signUp")
     /// Create account
     internal static let title = L10n.tr("Localizable", "SignUpViewController.title")
+  }
+
+  internal enum UsersViewController {
+    /// Invite
+    internal static let invite = L10n.tr("Localizable", "UsersViewController.invite")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

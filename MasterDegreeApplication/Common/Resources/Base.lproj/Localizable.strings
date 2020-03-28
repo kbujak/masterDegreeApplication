@@ -8,6 +8,7 @@
 
 "Common.username"="Enter username";
 "Common.password"="Enter password";
+"Common.back"="Back";
 
 "SignInViewController.title"="Welcome";
 "SignInViewController.signIn"="Sign in";
@@ -16,3 +17,5 @@
 "SignUpViewController.signUp"="Register";
 "SignUpViewController.title"="Create account";
 "SignUpViewController.retypePassword"="Retype password";
+
+"UsersViewController.invite"="Invite";

@@ -22,12 +22,33 @@ class MVVMUsersCoordinator: CompoundCoordinator {
 
     func start(in controller: UITabBarController) {
         let VM = UsersViewModel(context: context)
-        let VC = MVVMUsersViewController(viewModel: VM)
+        let VC = MVVMUsersViewController(viewModel: VM, delegate: self)
 
         let navigationVC = UINavigationController(rootViewController: VC)
         navigationVC.isNavigationBarHidden = true
         self.VC = navigationVC
 
         controller.addChild(navigationVC)
+    }
+
+    private func createAddUsersViewController() {
+        guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
+        let VM = AddUserViewModel(context: context)
+        let VC = MVVMAddUserViewController(viewModel: VM, delegate: self)
+        navigationVC.pushViewController(VC, animated: true)
+    }
+}
+
+// MARK: - UsersViewControllerDelegate
+extension MVVMUsersCoordinator: UsersViewControllerDelegate {
+    func didTapInvite() {
+        createAddUsersViewController()
+    }
+}
+
+// MARK: - AddUserViewControllerDelegate
+extension MVVMUsersCoordinator: AddUserViewControllerDelegate {
+    func didTapBack() {
+        VC?.popViewController(animated: true)
     }
 }
