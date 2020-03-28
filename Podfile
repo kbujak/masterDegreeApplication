@@ -13,6 +13,7 @@ target 'MasterDegreeApplication' do
 
   target 'MasterDegreeApplicationTests' do
     inherit! :search_paths
+    pod 'RxTests'
   end
 
 end

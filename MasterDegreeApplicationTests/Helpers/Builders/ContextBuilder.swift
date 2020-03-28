@@ -8,6 +8,7 @@
 
 import Foundation
 import KeychainSwift
+import RealmSwift
 @testable import MasterDegreeApplication
 
 class ContextBuilder {
@@ -16,6 +17,11 @@ class ContextBuilder {
 
     func with(keychainProvider: KeychainProvider) -> ContextBuilder {
         self.keychainProvider = keychainProvider
+        return self
+    }
+
+    func with(realmProvider: RealmProvider) -> ContextBuilder {
+        self.realmProvider = realmProvider
         return self
     }
 

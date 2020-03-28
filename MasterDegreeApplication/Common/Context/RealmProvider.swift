@@ -14,6 +14,7 @@ protocol RealmProvider: class {
     func createUser(withUser user: User) -> Observable<User>
     func fetchUser(withId Id: String) -> Observable<User>
     func fetchUser(withUsername username: String, password: String) -> Observable<User?>
+    func fetchUser(withPhrase phrase: String) -> Observable<[User]>
     func clear()
 }
 
@@ -51,6 +52,24 @@ class RealmProviderImpl: RealmProvider {
                 guard let userRealm = object else { throw AppErrors.userNotFound }
                 let user = User(realm: userRealm)
                 subscriber.onNext(user)
+                subscriber.onCompleted()
+            } catch {
+                subscriber.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+
+    func fetchUser(withPhrase phrase: String) -> Observable<[User]> {
+        return Observable.create { [weak self] subscriber -> Disposable in
+            do {
+                guard let `self` = self else { throw AppErrors.unknownError }
+
+                let realm = try self.tryGetRealm()
+                let objects = realm.objects(UserRealm.self).filter(NSPredicate(format: "username CONTAINS %@", phrase))
+                let users = Array(objects).map { User(realm: $0) }
+
+                subscriber.onNext(users)
                 subscriber.onCompleted()
             } catch {
                 subscriber.onError(error)

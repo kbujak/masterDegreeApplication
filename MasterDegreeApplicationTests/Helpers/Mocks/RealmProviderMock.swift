@@ -13,73 +13,37 @@ import RxSwift
 class RealmProviderMock: RealmProvider {
     private let queue = DispatchQueue(label: "realmMock", qos: .background, attributes: .concurrent)
 
+    var createUserWithUserCallCount = 0
+    var createUserWithUserClosure: (User) -> Observable<User> = { _ in Observable.empty() }
+
     func createUser(withUser user: User) -> Observable<User> {
-        return Observable.create { [weak self] subscriber -> Disposable in
-            do {
-                guard let `self` = self else { throw AppErrors.unknownError }
-
-                let realm = try self.tryGetRealm()
-                let object = user.createRealm()
-                try realm.write {
-                    realm.add(object)
-                }
-
-                subscriber.onNext(user)
-                subscriber.onCompleted()
-            } catch {
-                subscriber.onError(error)
-            }
-            return Disposables.create()
-        }
+        createUserWithUserCallCount += 1
+        return createUserWithUserClosure(user)
     }
+
+    var fetchUserWithIdCallCount = 0
+    var fetchUserWithIdCallClosure: (String) -> Observable<User> = { _ in Observable.empty() }
 
     func fetchUser(withId Id: String) -> Observable<User> {
-        return Observable.create { [weak self] subscriber -> Disposable in
-            do {
-                guard let `self` = self else { throw AppErrors.unknownError }
-
-                let realm = try self.tryGetRealm()
-                let object = realm.object(ofType: UserRealm.self, forPrimaryKey: Id)
-
-                guard let userRealm = object else { throw AppErrors.userNotFound }
-                let user = User(realm: userRealm)
-                subscriber.onNext(user)
-                subscriber.onCompleted()
-            } catch {
-                subscriber.onError(error)
-            }
-            return Disposables.create()
-        }
+        fetchUserWithIdCallCount += 1
+        return fetchUserWithIdCallClosure(Id)
     }
 
+    var fetchUserWithUsernameCallCount = 0
+    var fetchUserWithUsernameCallClosure: (String, String) -> Observable<User?> = { _, _ in Observable.empty() }
+
     func fetchUser(withUsername username: String, password: String) -> Observable<User?> {
-        return Observable.create { [weak self] subscriber -> Disposable in
-            do {
-                guard let `self` = self else { throw AppErrors.unknownError }
+        fetchUserWithUsernameCallCount += 1
+        return fetchUserWithUsernameCallClosure(username, password)
+    }
 
-                let realm = try self.tryGetRealm()
-                let object = realm.objects(UserRealm.self).filter(NSPredicate(format: "username == %@", username))
-                let userRealm = object.first
+    var fetchUserWithPhraseCallCount = 0
+    var fetchUserWithPhraseCallClosure: (String) -> Observable<[User]> = { _ in Observable.empty() }
 
-                if let userRealm = userRealm, userRealm.password == password {
-                    let user = User(realm: userRealm)
-                    subscriber.onNext(user)
-                } else {
-                    subscriber.onNext(nil)
-                }
-                subscriber.onCompleted()
-            } catch {
-                subscriber.onError(error)
-            }
-            return Disposables.create()
-        }
+    func fetchUser(withPhrase phrase: String) -> Observable<[User]> {
+        fetchUserWithPhraseCallCount += 1
+        return fetchUserWithPhraseCallClosure(phrase)
     }
 
     func clear() { }
-
-    private func tryGetRealm() throws -> Realm {
-        return try queue.sync {
-            try Realm(configuration: Realm.Configuration(inMemoryIdentifier: "TestRealm"))
-        }
-    }
 }

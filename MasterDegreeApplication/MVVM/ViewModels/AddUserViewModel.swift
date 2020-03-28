@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class AddUserViewModel: ViewModel {
     private let context: Context
@@ -16,14 +18,24 @@ class AddUserViewModel: ViewModel {
     }
 
     func transform(input: AddUserViewModel.Input) -> AddUserViewModel.Output {
-        return Output()
+        let users = input.search
+            .subscribeOn(MainScheduler.asyncInstance)
+            .observeOn(MainScheduler.asyncInstance)
+            .flatMapLatest { [weak self] phrase -> Observable<[User]> in
+                guard let `self` = self else { return Observable.error(AppErrors.unknownError) }
+                return self.context.realmProvider.fetchUser(withPhrase: phrase)
+            }
+
+        return Output(
+            users: users
+        )
     }
 
     struct Input {
-
+        let search: Observable<String>
     }
 
     struct Output {
-
+        let users: Observable<[User]>
     }
 }

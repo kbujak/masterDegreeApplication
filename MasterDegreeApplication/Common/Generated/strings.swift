@@ -12,6 +12,11 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
 
+  internal enum AddUserViewController {
+    /// Search users
+    internal static let searchPlaceholder = L10n.tr("Localizable", "AddUserViewController.SearchPlaceholder")
+  }
+
   internal enum Common {
     /// Back
     internal static let back = L10n.tr("Localizable", "Common.back")

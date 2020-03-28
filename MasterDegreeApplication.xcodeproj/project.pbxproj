@@ -100,6 +100,7 @@
 		F0E73C20242F88FE006CD134 /* AddUserViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E73C1F242F88FE006CD134 /* AddUserViewControllerDelegate.swift */; };
 		F0E73C22242F8A60006CD134 /* MVCAddUserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E73C21242F8A60006CD134 /* MVCAddUserViewControllerTests.swift */; };
 		F0E73C24242F8A93006CD134 /* MVCAddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E73C23242F8A93006CD134 /* MVCAddUserViewController.swift */; };
+		F0E73C28242FA649006CD134 /* UserMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E73C27242FA649006CD134 /* UserMocks.swift */; };
 		F0F6643424277AD400FC0A3B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6643324277AD400FC0A3B /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +216,7 @@
 		F0E73C1F242F88FE006CD134 /* AddUserViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewControllerDelegate.swift; sourceTree = "<group>"; };
 		F0E73C21242F8A60006CD134 /* MVCAddUserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCAddUserViewControllerTests.swift; sourceTree = "<group>"; };
 		F0E73C23242F8A93006CD134 /* MVCAddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCAddUserViewController.swift; sourceTree = "<group>"; };
+		F0E73C27242FA649006CD134 /* UserMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMocks.swift; sourceTree = "<group>"; };
 		F0F6643324277AD400FC0A3B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -371,6 +373,7 @@
 			children = (
 				F0699854242BC97B00A0E30D /* RealmProviderMock.swift */,
 				F0346F4F242D44B900368ABD /* KeychainProviderMock.swift */,
+				F0E73C27242FA649006CD134 /* UserMocks.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				F0E73C18242F8540006CD134 /* MVVMAddUserViewControllerTests.swift in Sources */,
 				F0346F52242D478C00368ABD /* MVVMCalendarCoordinatorTests.swift in Sources */,
 				F0346F6C242D4B3800368ABD /* MVCProfileCoordinatorTests.swift in Sources */,
+				F0E73C28242FA649006CD134 /* UserMocks.swift in Sources */,
 				F09434762427861D007898C8 /* MVCSignInViewControllerTests.swift in Sources */,
 				F0346F38242D307A00368ABD /* MVCMainTabbarCoordinatorTests.swift in Sources */,
 				F0346F40242D3F4900368ABD /* MVVMUsersViewControllerTests.swift in Sources */,
