@@ -59,6 +59,8 @@
 		F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8824261A8C00AEB067 /* Coordinator.swift */; };
 		F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */; };
 		F05E8E62242809B0007314BD /* UIViewController+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */; };
+		F063CC9A2433A5F0000227C8 /* AddUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063CC992433A5F0000227C8 /* AddUserCell.swift */; };
+		F063CC9C2433B4E8000227C8 /* UserDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063CC9B2433B4E8000227C8 /* UserDataCache.swift */; };
 		F065399D242BBC5A00AF4E0F /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065399C242BBC5A00AF4E0F /* UserRealm.swift */; };
 		F0685D6B2426708D00F900CF /* MVVMSignInCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6A2426708D00F900CF /* MVVMSignInCoordinatorTests.swift */; };
 		F0685D6D242671CB00F900CF /* MVVMSignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685D6C242671CB00F900CF /* MVVMSignInCoordinator.swift */; };
@@ -171,6 +173,8 @@
 		F0353E8824261A8C00AEB067 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMAppCoordinator.swift; sourceTree = "<group>"; };
 		F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIWindow.swift"; sourceTree = "<group>"; };
+		F063CC992433A5F0000227C8 /* AddUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserCell.swift; sourceTree = "<group>"; };
+		F063CC9B2433B4E8000227C8 /* UserDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCache.swift; sourceTree = "<group>"; };
 		F065399C242BBC5A00AF4E0F /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
 		F0685D6A2426708D00F900CF /* MVVMSignInCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInCoordinatorTests.swift; sourceTree = "<group>"; };
 		F0685D6C242671CB00F900CF /* MVVMSignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignInCoordinator.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			children = (
 				F01254212429193200B90B6D /* SignInTextfield.swift */,
 				F0125424242919C900B90B6D /* SignInButton.swift */,
+				F063CC992433A5F0000227C8 /* AddUserCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				F0699848242BBD8E00A0E30D /* Context.swift */,
+				F063CC9B2433B4E8000227C8 /* UserDataCache.swift */,
 				F069984B242BBE4900A0E30D /* RealmProvider.swift */,
 				F0346F35242D2B1D00368ABD /* KeychainProvider.swift */,
 			);
@@ -677,6 +683,7 @@
 				F074A6F62424140A0088D4F3 /* Sources */,
 				F074A6F72424140A0088D4F3 /* Frameworks */,
 				F074A6F82424140A0088D4F3 /* Resources */,
+				6BDA3C6B522B55D7DC05E659 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -747,6 +754,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6BDA3C6B522B55D7DC05E659 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MasterDegreeApplicationTests/Pods-MasterDegreeApplicationTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MasterDegreeApplicationTests/Pods-MasterDegreeApplicationTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MasterDegreeApplicationTests/Pods-MasterDegreeApplicationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8449FFA23E0464E05A17114E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -874,6 +898,7 @@
 				F0943474242785E5007898C8 /* MVCSignInCoordinator.swift in Sources */,
 				F0346F4E242D421100368ABD /* MVCUsersCoordinator.swift in Sources */,
 				F094346E24278546007898C8 /* MVCAppCoordinator.swift in Sources */,
+				F063CC9A2433A5F0000227C8 /* AddUserCell.swift in Sources */,
 				F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */,
 				F0346F4C242D411200368ABD /* MVVMUsersCoordinator.swift in Sources */,
 				F069984C242BBE4900A0E30D /* RealmProvider.swift in Sources */,
@@ -885,6 +910,7 @@
 				F074A6EA242414080088D4F3 /* SceneDelegate.swift in Sources */,
 				F0346F5C242D487D00368ABD /* CalendarViewModel.swift in Sources */,
 				F0346F32242D297600368ABD /* MVVMMainTabbarCoordinator.swift in Sources */,
+				F063CC9C2433B4E8000227C8 /* UserDataCache.swift in Sources */,
 				F0685D6D242671CB00F900CF /* MVVMSignInCoordinator.swift in Sources */,
 				F0346F76242D4C6D00368ABD /* MVCProfileCoordinator.swift in Sources */,
 				F0E73C16242F7E97006CD134 /* UsersViewControllerDelegate.swift in Sources */,

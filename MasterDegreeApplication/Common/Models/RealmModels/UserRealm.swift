@@ -17,19 +17,21 @@ class UserRealm: Object {
     @objc dynamic var id: String = ""
     @objc dynamic var username: String = ""
     @objc dynamic var password: String = ""
+    var friendIds = List<String>()
 
-    convenience init(id: String, username: String, password: String) {
+    convenience init(id: String, username: String, password: String, friendIds: [String]) {
         self.init()
         self.id = id
         self.username = username
         self.password = password
+        self.friendIds.append(objectsIn: friendIds)
     }
 
     convenience init(user: User) {
-        self.init(id: user.id, username: user.username, password: user.password)
+        self.init(id: user.id, username: user.username, password: user.password, friendIds: user.friendIds)
     }
 
     override class func primaryKey() -> String? {
-        return Properties.username.rawValue
+        return Properties.id.rawValue
     }
 }

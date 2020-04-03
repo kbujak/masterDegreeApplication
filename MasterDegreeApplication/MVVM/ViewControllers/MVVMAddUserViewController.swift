@@ -59,9 +59,9 @@ private extension MVVMAddUserViewController {
     }
 
     func setupTable() {
-        table.separatorStyle = .singleLine
-        table.delegate = self
-        table.dataSource = self
+        table.allowsSelection = true
+        table.allowsMultipleSelection = false
+        table.register(AddUserCell.self, forCellReuseIdentifier: AddUserCell.identifier)
     }
 }
 
@@ -71,22 +71,29 @@ private extension MVVMAddUserViewController {
         backButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in self?.delegate?.didTapBack() })
             .disposed(by: bag)
-    }
-}
 
-// MARK: - TableView
-extension MVVMAddUserViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
+        let input = AddUserViewModel.Input(
+            search: searchBar.rx.searchButtonClicked.map { [weak self] in self?.searchBar.text ?? "" },
+            addUserTrigger: table.rx.itemSelected.map { $0.item }.asDriver(onErrorRecover: { _ in Driver.never() })
+        )
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
-    }
+        let output = viewModel.transform(input: input)
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "test123"
-        return cell
+        output.users.bind(
+            to: table.rx.items(cellIdentifier: AddUserCell.identifier, cellType: AddUserCell.self)
+        ) { [weak self] _, user, cell in
+            guard let `self` = self else { return }
+
+            let isFriend = self.viewModel.isFriend(user)
+            cell.selectionStyle = .none
+            cell.textLabel?.text = isFriend ? "(Added) \(user.username)" : user.username
+        }
+        .disposed(by: bag)
+
+        output.users.subscribe(
+            onNext: { users in print(users) },
+            onError: { error in print(error) }
+        )
+        .disposed(by: bag)
     }
 }

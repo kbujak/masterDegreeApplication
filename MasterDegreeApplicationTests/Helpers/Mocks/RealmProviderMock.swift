@@ -45,5 +45,13 @@ class RealmProviderMock: RealmProvider {
         return fetchUserWithPhraseCallClosure(phrase)
     }
 
+    var inviteUserCallCount = 0
+    var inviteUserCallClosure: (User) -> Observable<User> = { _ in Observable.empty() }
+
+    func invite(user: User) -> Observable<User> {
+        inviteUserCallCount += 1
+        return inviteUserCallClosure(user)
+    }
+
     func clear() { }
 }

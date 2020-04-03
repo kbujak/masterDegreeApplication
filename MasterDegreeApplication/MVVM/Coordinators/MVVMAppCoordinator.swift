@@ -31,6 +31,7 @@ class MVVMAppCoordinator: AppCoordinator {
     private func startMainTabbarCoordinator() {
         guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
         let coordinator: MVVMMainTabbarCoordinator = createCoordinator()
+        context.userDataCache.fetchData()
         coordinator.start(in: navigationVC)
     }
 }

@@ -29,6 +29,7 @@ class MVVMSignInCoordinator: CompoundCoordinator {
 
     private func startMainTabbarCoordinator(withUser user: User) {
         guard let VC = self.VC else { fatalError() }
+        context.userDataCache.update(user: user)
         let coordinator: MVVMMainTabbarCoordinator = createCoordinator()
         coordinator.start(in: VC)
     }

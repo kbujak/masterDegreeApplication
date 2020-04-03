@@ -19,11 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
 
+        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteString)
         let realmProvider = RealmProviderImpl()
         let keychainProvider = KeychainProviderImpl()
+        let userDataCache = UserDataCacheImpl(keychainProvider: keychainProvider, realmProvider: realmProvider)
         let context = Context(
             realmProvider: realmProvider,
-            keychainProvider: keychainProvider
+            keychainProvider: keychainProvider,
+            userDataCache: userDataCache
         )
 
         let appCoordinator = architecture == .MVVM
