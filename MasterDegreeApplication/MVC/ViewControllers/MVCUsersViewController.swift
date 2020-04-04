@@ -14,6 +14,7 @@ import RxCocoa
 
 class MVCUsersViewController: UIViewController {
     private let inviteButton = UIButton()
+    private let table = UITableView(frame: .zero, style: .grouped)
 
     private let context: Context
     private weak var delegate: UsersViewControllerDelegate?
@@ -29,10 +30,11 @@ class MVCUsersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        [inviteButton].addTo(view)
+        [table, inviteButton].addTo(view)
 
         setupLayouts()
         setupStyles()
+        setupTable()
         bindViewModelToView()
     }
 }
@@ -44,6 +46,8 @@ private extension MVCUsersViewController {
         inviteButton.autoAlignAxis(toSuperviewMarginAxis: .vertical)
         inviteButton.autoSetDimension(.width, toSize: 100)
         inviteButton.autoSetDimension(.height, toSize: 50)
+
+        table.autoPinEdgesToSuperviewSafeArea()
     }
 
     func setupStyles() {
@@ -52,6 +56,12 @@ private extension MVCUsersViewController {
         inviteButton.backgroundColor = .mainColor
         inviteButton.layer.cornerRadius = 25
     }
+
+    func setupTable() {
+        table.allowsSelection = true
+        table.allowsMultipleSelection = false
+        table.register(AddUserCell.self, forCellReuseIdentifier: AddUserCell.identifier)
+    }
 }
 
 // MARK: - Private layer
@@ -59,6 +69,23 @@ private extension MVCUsersViewController {
     func bindViewModelToView() {
         inviteButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in self?.delegate?.didTapInvite() })
+            .disposed(by: bag)
+
+        Observable.combineLatest(Observable.just(()), context.userDataCache.userUpdated)
+            .flatMap { [weak self] _ -> Observable<[User]> in
+                guard
+                    let `self` = self,
+                    let currentUser = self.context.userDataCache.user
+                else { return Observable.empty() }
+
+                return self.context.realmProvider.fetchFriends(forUser: currentUser)
+            }
+            .bind(
+                to: table.rx.items(cellIdentifier: AddUserCell.identifier, cellType: AddUserCell.self)
+            ) { _, user, cell in
+                cell.selectionStyle = .none
+                cell.textLabel?.text = user.username
+            }
             .disposed(by: bag)
     }
 }

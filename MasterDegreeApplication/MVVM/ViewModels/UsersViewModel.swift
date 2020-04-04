@@ -49,9 +49,3 @@ class UsersViewModel: ViewModel {
         let friends: Observable<[User]>
     }
 }
-
-extension Results where Element == UserRealm {
-    func toUserArray() -> [User] {
-        return Array(self.map { User(realm: $0) })
-    }
-}
