@@ -16,6 +16,7 @@ protocol RealmProvider: class {
     func fetchUser(withUsername username: String, password: String) -> Observable<User?>
     func fetchUser(withPhrase phrase: String) -> Observable<[User]>
     func addFriend(withUserId userId: String, forUser user: User) -> Observable<User>
+    func fetchFriends(forUser user: User) -> Observable<[User]>
     func clear()
 }
 
@@ -115,6 +116,26 @@ class RealmProviderImpl: RealmProvider {
                     }
                     subscriber.onNext(User(realm: realmUser))
                 }
+                subscriber.onCompleted()
+            } catch {
+                subscriber.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+
+    func fetchFriends(forUser user: User) -> Observable<[User]> {
+        return Observable.create { [weak self] subscriber -> Disposable in
+            do {
+                guard let `self` = self else { throw AppErrors.unknownError }
+
+                let realm = try self.tryGetRealm()
+                let userObject = realm.object(ofType: UserRealm.self, forPrimaryKey: user.id)!
+                let objects = realm.objects(UserRealm.self)
+                    .filter(NSPredicate(format: "id IN %@", userObject.friendIds))
+
+                let friends = Array(objects.map { User(realm: $0) })
+                subscriber.onNext(friends)
                 subscriber.onCompleted()
             } catch {
                 subscriber.onError(error)

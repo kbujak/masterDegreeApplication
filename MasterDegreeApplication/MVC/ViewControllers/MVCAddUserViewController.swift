@@ -104,7 +104,6 @@ private extension MVCAddUserViewController {
     }
 
     func inviteUser(atIndex index: Int) {
-        print(context.userDataCache.user)
         guard
             let currentUser = context.userDataCache.user,
             !currentUser.friendIds.contains(users.value[index].id)

@@ -12,6 +12,7 @@ import RxCocoa
 
 protocol UserDataCache: class {
     var user: User? { get }
+    var userUpdated: Observable<Void> { get }
 
     func fetchData()
     func update(user: User)
@@ -25,6 +26,9 @@ class UserDataCacheImpl: UserDataCache {
 
     var user: User? {
         return userRelay.value
+    }
+    var userUpdated: Observable<Void> {
+        return userRelay.map { _ in () }.asObservable()
     }
 
     init(keychainProvider: KeychainProvider, realmProvider: RealmProvider) {

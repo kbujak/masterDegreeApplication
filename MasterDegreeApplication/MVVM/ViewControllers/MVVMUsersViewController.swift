@@ -14,6 +14,8 @@ import RxCocoa
 
 class MVVMUsersViewController: UIViewController {
     private let inviteButton = UIButton()
+    private let table = UITableView(frame: .zero, style: .grouped)
+
     private let viewModel: UsersViewModel
     private weak var delegate: UsersViewControllerDelegate?
     private let bag = DisposeBag()
@@ -28,10 +30,11 @@ class MVVMUsersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        [inviteButton].addTo(view)
+        [table, inviteButton].addTo(view)
 
         setupLayouts()
         setupStyles()
+        setupTable()
         bindViewModelToView()
     }
 }
@@ -43,6 +46,8 @@ private extension MVVMUsersViewController {
         inviteButton.autoAlignAxis(toSuperviewMarginAxis: .vertical)
         inviteButton.autoSetDimension(.width, toSize: 100)
         inviteButton.autoSetDimension(.height, toSize: 50)
+
+        table.autoPinEdgesToSuperviewSafeArea()
     }
 
     func setupStyles() {
@@ -50,6 +55,12 @@ private extension MVVMUsersViewController {
         inviteButton.setTitle(L10n.UsersViewController.invite, for: .normal)
         inviteButton.backgroundColor = .mainColor
         inviteButton.layer.cornerRadius = 25
+    }
+
+    func setupTable() {
+        table.allowsSelection = true
+        table.allowsMultipleSelection = false
+        table.register(AddUserCell.self, forCellReuseIdentifier: AddUserCell.identifier)
     }
 }
 
@@ -59,5 +70,16 @@ private extension MVVMUsersViewController {
         inviteButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in self?.delegate?.didTapInvite() })
             .disposed(by: bag)
+
+        let input = UsersViewModel.Input()
+        let output = viewModel.transform(input: input)
+
+        output.friends.bind(
+            to: table.rx.items(cellIdentifier: AddUserCell.identifier, cellType: AddUserCell.self)
+        ) { _, user, cell in
+            cell.selectionStyle = .none
+            cell.textLabel?.text = user.username
+        }
+        .disposed(by: bag)
     }
 }
