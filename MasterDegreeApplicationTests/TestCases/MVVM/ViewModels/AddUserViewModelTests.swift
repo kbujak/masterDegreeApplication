@@ -14,32 +14,25 @@ import RxTest
 
 class AddUserViewModelTests: XCTestCase {
     private var bag: DisposeBag!
-    private var scheduler: TestScheduler!
 
     override func setUp() {
         super.setUp()
         self.bag = DisposeBag()
-        self.scheduler = TestScheduler(initialClock: 0)
     }
 
     override func tearDown() {
         self.bag = nil
-        self.scheduler = nil
         super.tearDown()
     }
 
     func testUser_whenAllDataCorrect_thenItReturnsUser() {
-        let realmProvider = RealmProviderMock()
-        realmProvider.fetchUserWithPhraseCallClosure = { _ in Observable.just([userMock1, userMock2, userMock3]) }
+        let realmProvider = configureRealmProvider(fetchedUsers: [userMock1, userMock2, userMock3])
         let context = ContextBuilder().with(realmProvider: realmProvider).build()
-        let viewModel = AddUserViewModel(context: context)
-        let input = AddUserViewModel.Input(
-            search: Observable<String>.just("Kowal"),
-            addUserTrigger: Driver.empty()
-        )
-        let exp = expectation(description: "test123")
 
-        let output = viewModel.transform(input: input)
+        let viewModel = AddUserViewModel(context: context)
+        let output = viewModel.transform(input: configureViewModelInput(context: context, search: "Kowal"))
+
+        let exp = expectation(description: "test123")
 
         output.users.skip(1).subscribe(
             onNext: { users in
@@ -53,29 +46,75 @@ class AddUserViewModelTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
-    func testAddUser() {
-        let realmProvider = RealmProviderMock()
-        realmProvider.fetchUserWithPhraseCallClosure = { _ in Observable.just([userMock1, userMock2, userMock3]) }
-        realmProvider.inviteUserCallClosure = { _ in Observable.just(userMock1) }
-        let context = ContextBuilder().with(realmProvider: realmProvider).build()
+    func testAddUser_whenUserDataCache_thenCalled() {
+        let realmProvider = configureRealmProvider(fetchedUsers: [userMock1, userMock2, userMock3],
+                                                   addedFriend: userMock1)
+        let dataCache = configureUserDataCache(user: userMock1)
+        let context = ContextBuilder()
+            .with(realmProvider: realmProvider)
+            .with(userDataCache: dataCache)
+            .build()
 
         let viewModel = AddUserViewModel(context: context)
-        let input = AddUserViewModel.Input(
-            search: Observable<String>.just(""),
-            addUserTrigger: Driver<Int>.just(1)
-        )
-        let exp = expectation(description: "test123")
-        let output = viewModel.transform(input: input)
+        let output = viewModel.transform(input: configureViewModelInput(context: context, addedUserIndex: 1))
 
-        output.users.skip(1).subscribe(
+        let exp = expectation(description: "test123")
+
+        output.users.skip(2).subscribe(
             onNext: { _ in
                 exp.fulfill()
-                print(realmProvider.inviteUserCallCount)
-                XCTAssertEqual(1, realmProvider.inviteUserCallCount)
+                print(realmProvider.addFriendWithUserIdCallCount)
+                XCTAssertEqual(1, realmProvider.addFriendWithUserIdCallCount)
             }
         )
         .disposed(by: bag)
 
         wait(for: [exp], timeout: 1)
+    }
+
+    func testAddUser_whenNoUserDataCache_thenNotCalled() {
+        let realmProvider = configureRealmProvider(fetchedUsers: [userMock1, userMock2, userMock3],
+                                                   addedFriend: userMock1)
+        let context = ContextBuilder().with(realmProvider: realmProvider).build()
+
+        let viewModel = AddUserViewModel(context: context)
+        let output = viewModel.transform(input: configureViewModelInput(context: context, addedUserIndex: 1))
+
+        let exp = expectation(description: "Add user event")
+
+        output.users.skip(2).subscribe(onNext: { _ in exp.fulfill() }).disposed(by: bag)
+
+        let result = XCTWaiter.wait(for: [exp], timeout: 1)
+        guard case XCTWaiter.Result.timedOut = result else { XCTFail("User shouldn't pass"); return }
+    }
+
+    private func configureRealmProvider(fetchedUsers: [User], addedFriend: User? = nil) -> RealmProviderMock {
+        let realmProvider = RealmProviderMock()
+        realmProvider.fetchUserWithPhraseCallClosure = { _ in Observable.just(fetchedUsers) }
+        if let addedUser = addedFriend {
+            realmProvider.addFriendWithUserIdCallClosure = { _, _ in Observable.just(addedUser) }
+        }
+        return realmProvider
+    }
+
+    private func configureUserDataCache(user: User) -> UserDataCacheMock {
+        let dataCache = UserDataCacheMock()
+        dataCache.user = user
+        return dataCache
+    }
+
+    private func configureViewModelInput(context: Context,
+                                         search: String = "",
+                                         addedUserIndex: Int? = nil) -> AddUserViewModel.Input {
+        var addUserTrigger = Driver<Int>.empty()
+        if let addedUserIndex = addedUserIndex {
+            addUserTrigger = Observable.just(addedUserIndex)
+                .subscribeOn(MainScheduler.asyncInstance)
+                .asDriver(onErrorJustReturn: 1)
+        }
+        return AddUserViewModel.Input(
+            search: Observable<String>.just(search),
+            addUserTrigger: addUserTrigger
+        )
     }
 }

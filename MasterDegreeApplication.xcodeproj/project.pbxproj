@@ -59,6 +59,7 @@
 		F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8824261A8C00AEB067 /* Coordinator.swift */; };
 		F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */; };
 		F05E8E62242809B0007314BD /* UIViewController+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */; };
+		F05ED8A92438BB4900836D8A /* UserDataCacheMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05ED8A82438BB4900836D8A /* UserDataCacheMock.swift */; };
 		F063CC9A2433A5F0000227C8 /* AddUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063CC992433A5F0000227C8 /* AddUserCell.swift */; };
 		F063CC9C2433B4E8000227C8 /* UserDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063CC9B2433B4E8000227C8 /* UserDataCache.swift */; };
 		F065399D242BBC5A00AF4E0F /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065399C242BBC5A00AF4E0F /* UserRealm.swift */; };
@@ -173,6 +174,7 @@
 		F0353E8824261A8C00AEB067 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMAppCoordinator.swift; sourceTree = "<group>"; };
 		F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIWindow.swift"; sourceTree = "<group>"; };
+		F05ED8A82438BB4900836D8A /* UserDataCacheMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCacheMock.swift; sourceTree = "<group>"; };
 		F063CC992433A5F0000227C8 /* AddUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserCell.swift; sourceTree = "<group>"; };
 		F063CC9B2433B4E8000227C8 /* UserDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCache.swift; sourceTree = "<group>"; };
 		F065399C242BBC5A00AF4E0F /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
@@ -312,6 +314,24 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		F05ED8AA2438BB5B00836D8A /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				F0699854242BC97B00A0E30D /* RealmProviderMock.swift */,
+				F0346F4F242D44B900368ABD /* KeychainProviderMock.swift */,
+				F05ED8A82438BB4900836D8A /* UserDataCacheMock.swift */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		F05ED8AB2438BB6500836D8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0E73C27242FA649006CD134 /* UserMocks.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F065399A242BBC2A00AF4E0F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,9 +397,8 @@
 		F0699856242BC99600A0E30D /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				F0699854242BC97B00A0E30D /* RealmProviderMock.swift */,
-				F0346F4F242D44B900368ABD /* KeychainProviderMock.swift */,
-				F0E73C27242FA649006CD134 /* UserMocks.swift */,
+				F05ED8AA2438BB5B00836D8A /* Context */,
+				F05ED8AB2438BB6500836D8A /* Models */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -946,6 +965,7 @@
 				F0D0C71A242926DF00A75D43 /* SignUpViewModelTests.swift in Sources */,
 				F0346F30242D28F100368ABD /* MVVMMainTabbarCoordinatorTests.swift in Sources */,
 				F0E73C1A242F858E006CD134 /* AddUserViewModelTests.swift in Sources */,
+				F05ED8A92438BB4900836D8A /* UserDataCacheMock.swift in Sources */,
 				F0699850242BC89600A0E30D /* ContextBuilder.swift in Sources */,
 				F0346F42242D3F8500368ABD /* MVCUsersViewControllerTests.swift in Sources */,
 				F012542D2429214F00B90B6D /* ValidatorTests.swift in Sources */,

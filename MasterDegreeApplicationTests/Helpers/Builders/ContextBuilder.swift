@@ -14,6 +14,7 @@ import RealmSwift
 class ContextBuilder {
     var realmProvider: RealmProvider?
     var keychainProvider: KeychainProvider?
+    var userDataCache: UserDataCache?
 
     func with(keychainProvider: KeychainProvider) -> ContextBuilder {
         self.keychainProvider = keychainProvider
@@ -25,10 +26,16 @@ class ContextBuilder {
         return self
     }
 
+    func with(userDataCache: UserDataCache) -> ContextBuilder {
+        self.userDataCache = userDataCache
+        return self
+    }
+
     func build() -> Context {
         return Context(
             realmProvider: realmProvider ?? RealmProviderMock(),
-            keychainProvider: keychainProvider ?? KeychainProviderMock()
+            keychainProvider: keychainProvider ?? KeychainProviderMock(),
+            userDataCache: userDataCache ?? UserDataCacheMock()
         )
     }
 }

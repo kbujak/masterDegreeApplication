@@ -47,6 +47,8 @@ internal enum L10n {
   internal enum UsersViewController {
     /// Invite
     internal static let invite = L10n.tr("Localizable", "UsersViewController.invite")
+    /// Friends
+    internal static let tabBarItem = L10n.tr("Localizable", "UsersViewController.tabBarItem")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

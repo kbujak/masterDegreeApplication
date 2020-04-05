@@ -15,7 +15,11 @@ class SignUpViewModelTests: XCTestCase {
     private let bag = DisposeBag()
 
     func testUser_whenAllDataCorrect_thenItReturnsUser() {
-        let viewModel = SignUpViewModel(context: ContextBuilder().build())
+        let realmProvider = RealmProviderMock()
+        realmProvider.createUserWithUserClosure = { _ in Observable.just(userMock1) }
+        let context = ContextBuilder().with(realmProvider: realmProvider).build()
+
+        let viewModel = SignUpViewModel(context: context)
         let input = SignUpViewModel.Input(
             username: Driver.just("test1"),
             password: Driver.just("test52"),

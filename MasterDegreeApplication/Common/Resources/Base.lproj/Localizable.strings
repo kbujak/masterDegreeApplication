@@ -19,5 +19,6 @@
 "SignUpViewController.retypePassword"="Retype password";
 
 "UsersViewController.invite"="Invite";
+"UsersViewController.tabBarItem"="Friends";
 
 "AddUserViewController.SearchPlaceholder"="Search users";
