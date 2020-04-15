@@ -51,7 +51,7 @@ class CreateEventViewModel: ViewModel {
         input.name.bind(to: nameRelay).disposed(by: bag)
 
         input.place.bind(to: placeRelay).disposed(by: bag)
-        
+
         input.submitTrigger.drive(onNext: { [weak self] in self?.submit() }).disposed(by: bag)
 
         let dateString = input.date.share().map { date -> String in

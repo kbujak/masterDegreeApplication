@@ -61,6 +61,7 @@
 		F05E8E62242809B0007314BD /* UIViewController+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */; };
 		F05ED8A92438BB4900836D8A /* UserDataCacheMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05ED8A82438BB4900836D8A /* UserDataCacheMock.swift */; };
 		F0610F0B2447923C00C58740 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0610F0A2447923C00C58740 /* CalendarEvent.swift */; };
+		F0610F0D2447958C00C58740 /* MVCCreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0610F0C2447958C00C58740 /* MVCCreateEventViewController.swift */; };
 		F063CC9A2433A5F0000227C8 /* AddUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063CC992433A5F0000227C8 /* AddUserCell.swift */; };
 		F063CC9C2433B4E8000227C8 /* UserDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063CC9B2433B4E8000227C8 /* UserDataCache.swift */; };
 		F065399D242BBC5A00AF4E0F /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065399C242BBC5A00AF4E0F /* UserRealm.swift */; };
@@ -181,6 +182,7 @@
 		F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIWindow.swift"; sourceTree = "<group>"; };
 		F05ED8A82438BB4900836D8A /* UserDataCacheMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCacheMock.swift; sourceTree = "<group>"; };
 		F0610F0A2447923C00C58740 /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		F0610F0C2447958C00C58740 /* MVCCreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCCreateEventViewController.swift; sourceTree = "<group>"; };
 		F063CC992433A5F0000227C8 /* AddUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserCell.swift; sourceTree = "<group>"; };
 		F063CC9B2433B4E8000227C8 /* UserDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCache.swift; sourceTree = "<group>"; };
 		F065399C242BBC5A00AF4E0F /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 				F0346F63242D499000368ABD /* MVCCalendarViewController.swift */,
 				F0346F77242D4C9F00368ABD /* MVCProfileViewController.swift */,
 				F0E73C23242F8A93006CD134 /* MVCAddUserViewController.swift */,
+				F0610F0C2447958C00C58740 /* MVCCreateEventViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				F094347E242787D0007898C8 /* SignInViewControllerDelegate.swift in Sources */,
 				F0346F64242D499000368ABD /* MVCCalendarViewController.swift in Sources */,
 				F095A3412426984600D51976 /* Array+UIView.swift in Sources */,
+				F0610F0D2447958C00C58740 /* MVCCreateEventViewController.swift in Sources */,
 				F0E73C20242F88FE006CD134 /* AddUserViewControllerDelegate.swift in Sources */,
 				F0346F5E242D48AF00368ABD /* MVVMCalendarViewController.swift in Sources */,
 				F095A337242691C400D51976 /* SignInViewModel.swift in Sources */,
