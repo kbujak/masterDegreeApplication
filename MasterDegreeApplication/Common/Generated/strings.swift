@@ -20,10 +20,21 @@ internal enum L10n {
   internal enum Common {
     /// Back
     internal static let back = L10n.tr("Localizable", "Common.back")
+    /// Create
+    internal static let create = L10n.tr("Localizable", "Common.create")
     /// Enter password
     internal static let password = L10n.tr("Localizable", "Common.password")
     /// Enter username
     internal static let username = L10n.tr("Localizable", "Common.username")
+  }
+
+  internal enum CreateEventViewController {
+    /// Enter event name
+    internal static let nameTextfield = L10n.tr("Localizable", "CreateEventViewController.nameTextfield")
+    /// Enter place
+    internal static let placeTextfield = L10n.tr("Localizable", "CreateEventViewController.placeTextfield")
+    /// Create event
+    internal static let title = L10n.tr("Localizable", "CreateEventViewController.title")
   }
 
   internal enum SignInViewController {

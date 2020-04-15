@@ -1,5 +1,5 @@
 //
-//  SignInTextfield.swift
+//  RoundedGrayButton.swift
 //  MasterDegreeApplication
 //
 //  Created by Krystian Bujak on 23/03/2020.
@@ -8,9 +8,8 @@
 
 import Foundation
 import UIKit
-import PureLayout
 
-class SignInTextfield: UITextField {
+class RoundedGrayButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,23 +22,14 @@ class SignInTextfield: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.insetBy(dx: 20, dy: 0)
-    }
-
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.insetBy(dx: 20, dy: 0)
+    private func setupStyles() {
+        self.backgroundColor = .lightGray
+        self.layer.cornerRadius = 6
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 1
     }
 
     private func setupLayouts() {
-        self.autoSetDimension(.height, toSize: 35)
-    }
-
-    private func setupStyles() {
-        self.backgroundColor = .white
-        self.layer.cornerRadius = 6
-        self.textAlignment = .left
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 1
+        self.autoSetDimension(.height, toSize: 40)
     }
 }

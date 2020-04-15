@@ -12,8 +12,8 @@
 		F012541C2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012541B2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift */; };
 		F012541E2429159B00B90B6D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012541D2429159B00B90B6D /* SignUpViewModel.swift */; };
 		F01254202429168500B90B6D /* SignUpViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012541F2429168500B90B6D /* SignUpViewControllerDelegate.swift */; };
-		F01254222429193200B90B6D /* SignInTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01254212429193200B90B6D /* SignInTextfield.swift */; };
-		F0125425242919C900B90B6D /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125424242919C900B90B6D /* SignInButton.swift */; };
+		F01254222429193200B90B6D /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01254212429193200B90B6D /* BorderedTextField.swift */; };
+		F0125425242919C900B90B6D /* RoundedGrayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125424242919C900B90B6D /* RoundedGrayButton.swift */; };
 		F012542724291ED400B90B6D /* MVCSignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012542624291ED400B90B6D /* MVCSignUpViewControllerTests.swift */; };
 		F012542924291EF800B90B6D /* MVCSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012542824291EF800B90B6D /* MVCSignUpViewController.swift */; };
 		F012542B2429203F00B90B6D /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012542A2429203F00B90B6D /* Validator.swift */; };
@@ -60,6 +60,7 @@
 		F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */; };
 		F05E8E62242809B0007314BD /* UIViewController+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */; };
 		F05ED8A92438BB4900836D8A /* UserDataCacheMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05ED8A82438BB4900836D8A /* UserDataCacheMock.swift */; };
+		F0610F0B2447923C00C58740 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0610F0A2447923C00C58740 /* CalendarEvent.swift */; };
 		F063CC9A2433A5F0000227C8 /* AddUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063CC992433A5F0000227C8 /* AddUserCell.swift */; };
 		F063CC9C2433B4E8000227C8 /* UserDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063CC9B2433B4E8000227C8 /* UserDataCache.swift */; };
 		F065399D242BBC5A00AF4E0F /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065399C242BBC5A00AF4E0F /* UserRealm.swift */; };
@@ -93,6 +94,10 @@
 		F095A344242699DE00D51976 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A343242699DE00D51976 /* UIColor+AppColors.swift */; };
 		F095A34724269EA900D51976 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A34524269EA900D51976 /* strings.swift */; };
 		F095A34824269EA900D51976 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095A34624269EA900D51976 /* assets-images.swift */; };
+		F0B419BA244473E00042B1E7 /* CalendarViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B419B9244473E00042B1E7 /* CalendarViewControllerDelegate.swift */; };
+		F0B419BC244474330042B1E7 /* CreateEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B419BB244474330042B1E7 /* CreateEventViewModel.swift */; };
+		F0B419BE244474890042B1E7 /* MVVMCreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B419BD244474890042B1E7 /* MVVMCreateEventViewController.swift */; };
+		F0B419C0244474C10042B1E7 /* CreateEventViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B419BF244474C10042B1E7 /* CreateEventViewControllerDelegate.swift */; };
 		F0D0C7182429245900A75D43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0C7172429245900A75D43 /* User.swift */; };
 		F0D0C71A242926DF00A75D43 /* SignUpViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0C719242926DF00A75D43 /* SignUpViewModelTests.swift */; };
 		F0E73C16242F7E97006CD134 /* UsersViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E73C15242F7E97006CD134 /* UsersViewControllerDelegate.swift */; };
@@ -127,8 +132,8 @@
 		F012541B2429154F00B90B6D /* MVVMSignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		F012541D2429159B00B90B6D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		F012541F2429168500B90B6D /* SignUpViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerDelegate.swift; sourceTree = "<group>"; };
-		F01254212429193200B90B6D /* SignInTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextfield.swift; sourceTree = "<group>"; };
-		F0125424242919C900B90B6D /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
+		F01254212429193200B90B6D /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
+		F0125424242919C900B90B6D /* RoundedGrayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedGrayButton.swift; sourceTree = "<group>"; };
 		F012542624291ED400B90B6D /* MVCSignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		F012542824291EF800B90B6D /* MVCSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSignUpViewController.swift; sourceTree = "<group>"; };
 		F012542A2429203F00B90B6D /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -175,6 +180,7 @@
 		F0353E8A24261A9D00AEB067 /* MVVMAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMAppCoordinator.swift; sourceTree = "<group>"; };
 		F05E8E61242809B0007314BD /* UIViewController+UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIWindow.swift"; sourceTree = "<group>"; };
 		F05ED8A82438BB4900836D8A /* UserDataCacheMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCacheMock.swift; sourceTree = "<group>"; };
+		F0610F0A2447923C00C58740 /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		F063CC992433A5F0000227C8 /* AddUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserCell.swift; sourceTree = "<group>"; };
 		F063CC9B2433B4E8000227C8 /* UserDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCache.swift; sourceTree = "<group>"; };
 		F065399C242BBC5A00AF4E0F /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
@@ -212,6 +218,10 @@
 		F095A343242699DE00D51976 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 		F095A34524269EA900D51976 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		F095A34624269EA900D51976 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "assets-images.swift"; sourceTree = "<group>"; };
+		F0B419B9244473E00042B1E7 /* CalendarViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewControllerDelegate.swift; sourceTree = "<group>"; };
+		F0B419BB244474330042B1E7 /* CreateEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewModel.swift; sourceTree = "<group>"; };
+		F0B419BD244474890042B1E7 /* MVVMCreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCreateEventViewController.swift; sourceTree = "<group>"; };
+		F0B419BF244474C10042B1E7 /* CreateEventViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewControllerDelegate.swift; sourceTree = "<group>"; };
 		F0D0C7172429245900A75D43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F0D0C719242926DF00A75D43 /* SignUpViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelTests.swift; sourceTree = "<group>"; };
 		F0E73C15242F7E97006CD134 /* UsersViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -269,8 +279,8 @@
 		F0125423242919B500B90B6D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F01254212429193200B90B6D /* SignInTextfield.swift */,
-				F0125424242919C900B90B6D /* SignInButton.swift */,
+				F01254212429193200B90B6D /* BorderedTextField.swift */,
+				F0125424242919C900B90B6D /* RoundedGrayButton.swift */,
 				F063CC992433A5F0000227C8 /* AddUserCell.swift */,
 			);
 			path = Views;
@@ -336,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				F0D0C7172429245900A75D43 /* User.swift */,
+				F0610F0A2447923C00C58740 /* CalendarEvent.swift */,
 				F065399E242BBC8200AF4E0F /* RealmModels */,
 			);
 			path = Models;
@@ -467,6 +478,7 @@
 				F0346F5D242D48AF00368ABD /* MVVMCalendarViewController.swift */,
 				F0346F71242D4BDF00368ABD /* MVVMProfileViewController.swift */,
 				F0E73C1B242F85D4006CD134 /* MVVMAddUserViewController.swift */,
+				F0B419BD244474890042B1E7 /* MVVMCreateEventViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -565,6 +577,8 @@
 				F012541F2429168500B90B6D /* SignUpViewControllerDelegate.swift */,
 				F0E73C15242F7E97006CD134 /* UsersViewControllerDelegate.swift */,
 				F0E73C1F242F88FE006CD134 /* AddUserViewControllerDelegate.swift */,
+				F0B419B9244473E00042B1E7 /* CalendarViewControllerDelegate.swift */,
+				F0B419BF244474C10042B1E7 /* CreateEventViewControllerDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -579,6 +593,7 @@
 				F0346F5B242D487D00368ABD /* CalendarViewModel.swift */,
 				F0346F6F242D4BA700368ABD /* ProfileViewModel.swift */,
 				F0E73C1D242F8601006CD134 /* AddUserViewModel.swift */,
+				F0B419BB244474330042B1E7 /* CreateEventViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -896,8 +911,10 @@
 			files = (
 				F0346F62242D496100368ABD /* MVCCalendarCoordinator.swift in Sources */,
 				F095A34824269EA900D51976 /* assets-images.swift in Sources */,
+				F0610F0B2447923C00C58740 /* CalendarEvent.swift in Sources */,
 				F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */,
 				F0F6643424277AD400FC0A3B /* AppCoordinator.swift in Sources */,
+				F0B419BE244474890042B1E7 /* MVVMCreateEventViewController.swift in Sources */,
 				F095A344242699DE00D51976 /* UIColor+AppColors.swift in Sources */,
 				F012542B2429203F00B90B6D /* Validator.swift in Sources */,
 				F0E73C1C242F85D4006CD134 /* MVVMAddUserViewController.swift in Sources */,
@@ -919,6 +936,7 @@
 				F094346E24278546007898C8 /* MVCAppCoordinator.swift in Sources */,
 				F063CC9A2433A5F0000227C8 /* AddUserCell.swift in Sources */,
 				F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */,
+				F0B419C0244474C10042B1E7 /* CreateEventViewControllerDelegate.swift in Sources */,
 				F0346F4C242D411200368ABD /* MVVMUsersCoordinator.swift in Sources */,
 				F069984C242BBE4900A0E30D /* RealmProvider.swift in Sources */,
 				F01254202429168500B90B6D /* SignUpViewControllerDelegate.swift in Sources */,
@@ -926,6 +944,8 @@
 				F094348124278CAF007898C8 /* MVVMSignUpViewController.swift in Sources */,
 				F0346F48242D406000368ABD /* MVVMUsersViewController.swift in Sources */,
 				F012541E2429159B00B90B6D /* SignUpViewModel.swift in Sources */,
+				F0B419BA244473E00042B1E7 /* CalendarViewControllerDelegate.swift in Sources */,
+				F0B419BC244474330042B1E7 /* CreateEventViewModel.swift in Sources */,
 				F074A6EA242414080088D4F3 /* SceneDelegate.swift in Sources */,
 				F0346F5C242D487D00368ABD /* CalendarViewModel.swift in Sources */,
 				F0346F32242D297600368ABD /* MVVMMainTabbarCoordinator.swift in Sources */,
@@ -933,7 +953,7 @@
 				F0685D6D242671CB00F900CF /* MVVMSignInCoordinator.swift in Sources */,
 				F0346F76242D4C6D00368ABD /* MVCProfileCoordinator.swift in Sources */,
 				F0E73C16242F7E97006CD134 /* UsersViewControllerDelegate.swift in Sources */,
-				F0125425242919C900B90B6D /* SignInButton.swift in Sources */,
+				F0125425242919C900B90B6D /* RoundedGrayButton.swift in Sources */,
 				F012542924291EF800B90B6D /* MVCSignUpViewController.swift in Sources */,
 				F095A33A242692D500D51976 /* ViewModel.swift in Sources */,
 				F0346F3A242D30B800368ABD /* MVCMainTabbarCoordinator.swift in Sources */,
@@ -949,7 +969,7 @@
 				F0346F4A242D40CA00368ABD /* MVCUsersViewController.swift in Sources */,
 				F074A70B242418110088D4F3 /* MVVMSignInViewController.swift in Sources */,
 				F065399D242BBC5A00AF4E0F /* UserRealm.swift in Sources */,
-				F01254222429193200B90B6D /* SignInTextfield.swift in Sources */,
+				F01254222429193200B90B6D /* BorderedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

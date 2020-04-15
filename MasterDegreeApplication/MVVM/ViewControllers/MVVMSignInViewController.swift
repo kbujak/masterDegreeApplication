@@ -13,9 +13,9 @@ import RxCocoa
 
 class MVVMSignInViewController: UIViewController {
     private let titleLabel = UILabel()
-    private let usernameTextfield = SignInTextfield()
-    private let passwordTextfield = SignInTextfield()
-    private let signInButton = SignInButton()
+    private let usernameTextfield = BorderedTextField()
+    private let passwordTextfield = BorderedTextField()
+    private let signInButton = RoundedGrayButton()
     private let signUpButton = UIButton()
 
     private let viewModel: SignInViewModel

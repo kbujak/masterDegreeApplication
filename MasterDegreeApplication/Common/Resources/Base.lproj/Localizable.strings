@@ -6,19 +6,24 @@
   Copyright © 2020 Booyac IT. All rights reserved.
 */
 
-"Common.username"="Enter username";
-"Common.password"="Enter password";
-"Common.back"="Back";
+Common.username="Enter username";
+Common.password="Enter password";
+Common.back="Back";
+Common.create="Create";
 
-"SignInViewController.title"="Welcome";
-"SignInViewController.signIn"="Sign in";
-"SignInViewController.signUp"="Don't have account? Sign up!";
+SignInViewController.title="Welcome";
+SignInViewController.signIn="Sign in";
+SignInViewController.signUp="Don't have account? Sign up!";
 
-"SignUpViewController.signUp"="Register";
-"SignUpViewController.title"="Create account";
-"SignUpViewController.retypePassword"="Retype password";
+SignUpViewController.signUp="Register";
+SignUpViewController.title="Create account";
+SignUpViewController.retypePassword="Retype password";
 
-"UsersViewController.invite"="Invite";
-"UsersViewController.tabBarItem"="Friends";
+UsersViewController.invite="Invite";
+UsersViewController.tabBarItem="Friends";
 
-"AddUserViewController.SearchPlaceholder"="Search users";
+AddUserViewController.SearchPlaceholder="Search users";
+
+CreateEventViewController.title="Create event";
+CreateEventViewController.nameTextfield="Enter event name";
+CreateEventViewController.placeTextfield="Enter place";

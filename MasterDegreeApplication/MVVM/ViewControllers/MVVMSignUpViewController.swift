@@ -16,10 +16,10 @@ class MVVMSignUpViewController: UIViewController {
 
     private let backButton = UIButton(type: .close)
     private let titleLabel = UILabel()
-    private let usernameTextfield = SignInTextfield()
-    private let passwordTextfield = SignInTextfield()
-    private let retypePasswordTextfield = SignInTextfield()
-    private let submitButton = SignInButton()
+    private let usernameTextfield = BorderedTextField()
+    private let passwordTextfield = BorderedTextField()
+    private let retypePasswordTextfield = BorderedTextField()
+    private let submitButton = RoundedGrayButton()
 
     private let viewModel: SignUpViewModel
     private weak var delegate: SignUpViewControllerDelegate?

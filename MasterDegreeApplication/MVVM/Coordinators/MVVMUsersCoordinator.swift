@@ -38,7 +38,8 @@ class MVVMUsersCoordinator: CompoundCoordinator {
         guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
         let VM = AddUserViewModel(context: context)
         let VC = MVVMAddUserViewController(viewModel: VM, delegate: self)
-        navigationVC.pushViewController(VC, animated: true)
+        VC.modalPresentationStyle = .fullScreen
+        navigationVC.present(VC, animated: true, completion: nil)
     }
 }
 
@@ -52,6 +53,6 @@ extension MVVMUsersCoordinator: UsersViewControllerDelegate {
 // MARK: - AddUserViewControllerDelegate
 extension MVVMUsersCoordinator: AddUserViewControllerDelegate {
     func didTapBack() {
-        VC?.popViewController(animated: true)
+        VC?.dismiss(animated: true, completion: nil)
     }
 }
