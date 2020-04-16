@@ -17,6 +17,7 @@ protocol RealmProvider: class {
     func fetchUser(withPhrase phrase: String) -> Observable<[User]>
     func addFriend(withUserId userId: String, forUser user: User) -> Observable<User>
     func fetchFriends(forUser user: User) -> Observable<[User]>
+    func createCalendarEvent(withCalendarEvent calendarEvent: CalendarEvent) -> Observable<CalendarEvent>
     func clear()
 }
 
@@ -136,6 +137,26 @@ class RealmProviderImpl: RealmProvider {
 
                 let friends = Array(objects.map { User(realm: $0) })
                 subscriber.onNext(friends)
+                subscriber.onCompleted()
+            } catch {
+                subscriber.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+
+    func createCalendarEvent(withCalendarEvent calendarEvent: CalendarEvent) -> Observable<CalendarEvent> {
+        return Observable.create { [weak self] subscriber -> Disposable in
+            do {
+                guard let `self` = self else { throw AppErrors.unknownError }
+
+                let realm = try self.tryGetRealm()
+                let object = calendarEvent.createRealm()
+                try realm.write {
+                    realm.add(object)
+                }
+
+                subscriber.onNext(calendarEvent)
                 subscriber.onCompleted()
             } catch {
                 subscriber.onError(error)

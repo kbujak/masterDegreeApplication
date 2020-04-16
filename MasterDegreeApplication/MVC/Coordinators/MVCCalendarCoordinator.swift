@@ -47,6 +47,11 @@ extension MVCCalendarCoordinator: CalendarViewControllerDelegate {
 
 // MARK: - CreateEventViewControllerDelegate
 extension MVCCalendarCoordinator: CreateEventViewControllerDelegate {
+    func didCreateCalendarEvent(_ event: CalendarEvent) {
+        print(event)
+        VC?.dismiss(animated: true, completion: nil)
+    }
+
     func didTapBack() {
         VC?.dismiss(animated: true, completion: nil)
     }

@@ -130,6 +130,10 @@ private extension MVVMCreateEventViewController {
 
         output.dateString.drive(dateTextField.rx.text).disposed(by: bag)
         output.timeString.drive(timeTextField.rx.text).disposed(by: bag)
+
+        output.calendarEvent
+            .drive(onNext: { [weak self] event in self?.delegate?.didCreateCalendarEvent(event) })
+            .disposed(by: bag)
     }
 }
 

@@ -184,7 +184,18 @@ private extension MVCCreateEventViewController {
             let user = context.userDataCache.user
         else { return}
 
-        let event = CalendarEvent(ownerId: user.id, name: name, place: place, hours: hours, minutes: minutes, date: date)
-        print(event)
+        let event = CalendarEvent(ownerId: user.id,
+                                  name: name,
+                                  place: place,
+                                  hours: hours,
+                                  minutes: minutes,
+                                  date: date)
+
+        context.realmProvider.createCalendarEvent(withCalendarEvent: event)
+            .subscribe(
+                onNext: { [weak self] event in self?.delegate?.didCreateCalendarEvent(event) },
+                onError: { error in print(error) }
+            )
+            .disposed(by: bag)
     }
 }

@@ -18,7 +18,13 @@ struct CalendarEvent {
     let minutes: Int
     let date: Date
 
-    init(id: String = UUID().uuidString, ownerId: String, name: String, place: String, hours: Int, minutes: Int, date: Date) {
+    init(id: String = UUID().uuidString,
+         ownerId: String,
+         name: String,
+         place: String,
+         hours: Int,
+         minutes: Int,
+         date: Date) {
         self.id = id
         self.ownerId = ownerId
         self.name = name
@@ -27,6 +33,20 @@ struct CalendarEvent {
         self.minutes = minutes
         self.date = date
     }
+
+    init(realm: CalendarEventRealm) {
+        self.init(id: realm.id,
+                  ownerId: realm.ownerId,
+                  name: realm.name,
+                  place: realm.place,
+                  hours: realm.hours,
+                  minutes: realm.minutes,
+                  date: realm.date)
+    }
+
+    func createRealm() -> CalendarEventRealm {
+        return CalendarEventRealm(calendarEvent: self)
+    }
 }
 
 extension CalendarEvent: Equatable {
@@ -34,4 +54,3 @@ extension CalendarEvent: Equatable {
         return lhs.id == rhs.id
     }
 }
-

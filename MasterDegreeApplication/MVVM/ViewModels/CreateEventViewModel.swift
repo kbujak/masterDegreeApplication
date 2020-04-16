@@ -17,6 +17,7 @@ class CreateEventViewModel: ViewModel {
     private var nameRelay = BehaviorRelay<String?>(value: nil)
     private var placeRelay = BehaviorRelay<String?>(value: nil)
     private var timeRelay = BehaviorRelay<String>(value: "")
+    private let calendarEventSubject = PublishSubject<CalendarEvent>()
     private let context: Context
     private let bag = DisposeBag()
     private let errorSubject = PublishSubject<Error>()
@@ -64,6 +65,7 @@ class CreateEventViewModel: ViewModel {
         return Output(
             dateString: dateString,
             timeString: timeRelay.asDriver(),
+            calendarEvent: calendarEventSubject.asDriver(onErrorRecover: { _ in Driver.never() }),
             error: errorSubject.asObservable()
         )
     }
@@ -79,6 +81,7 @@ class CreateEventViewModel: ViewModel {
     struct Output {
         let dateString: Driver<String>
         let timeString: Driver<String>
+        let calendarEvent: Driver<CalendarEvent>
         let error: Observable<Error>
     }
 }
@@ -92,7 +95,15 @@ private extension CreateEventViewModel {
             let user = context.userDataCache.user
         else { return}
 
-        let event = CalendarEvent(ownerId: user.id, name: name, place: place, hours: hours, minutes: minutes, date: date)
-        print(event)
+        let event = CalendarEvent(ownerId: user.id,
+                                  name: name,
+                                  place: place,
+                                  hours: hours,
+                                  minutes: minutes,
+                                  date: date)
+
+        context.realmProvider
+            .createCalendarEvent(withCalendarEvent: event).bind(to: calendarEventSubject)
+            .disposed(by: bag)
     }
 }

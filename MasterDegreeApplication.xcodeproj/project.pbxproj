@@ -62,6 +62,7 @@
 		F05ED8A92438BB4900836D8A /* UserDataCacheMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05ED8A82438BB4900836D8A /* UserDataCacheMock.swift */; };
 		F0610F0B2447923C00C58740 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0610F0A2447923C00C58740 /* CalendarEvent.swift */; };
 		F0610F0D2447958C00C58740 /* MVCCreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0610F0C2447958C00C58740 /* MVCCreateEventViewController.swift */; };
+		F0620C032448E5F100AA427C /* CalendarEventRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0620C022448E5F100AA427C /* CalendarEventRealm.swift */; };
 		F063CC9A2433A5F0000227C8 /* AddUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063CC992433A5F0000227C8 /* AddUserCell.swift */; };
 		F063CC9C2433B4E8000227C8 /* UserDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063CC9B2433B4E8000227C8 /* UserDataCache.swift */; };
 		F065399D242BBC5A00AF4E0F /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065399C242BBC5A00AF4E0F /* UserRealm.swift */; };
@@ -183,6 +184,7 @@
 		F05ED8A82438BB4900836D8A /* UserDataCacheMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCacheMock.swift; sourceTree = "<group>"; };
 		F0610F0A2447923C00C58740 /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		F0610F0C2447958C00C58740 /* MVCCreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCCreateEventViewController.swift; sourceTree = "<group>"; };
+		F0620C022448E5F100AA427C /* CalendarEventRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventRealm.swift; sourceTree = "<group>"; };
 		F063CC992433A5F0000227C8 /* AddUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserCell.swift; sourceTree = "<group>"; };
 		F063CC9B2433B4E8000227C8 /* UserDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCache.swift; sourceTree = "<group>"; };
 		F065399C242BBC5A00AF4E0F /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				F065399C242BBC5A00AF4E0F /* UserRealm.swift */,
+				F0620C022448E5F100AA427C /* CalendarEventRealm.swift */,
 			);
 			path = RealmModels;
 			sourceTree = "<group>";
@@ -919,6 +922,7 @@
 				F0F6643424277AD400FC0A3B /* AppCoordinator.swift in Sources */,
 				F0B419BE244474890042B1E7 /* MVVMCreateEventViewController.swift in Sources */,
 				F095A344242699DE00D51976 /* UIColor+AppColors.swift in Sources */,
+				F0620C032448E5F100AA427C /* CalendarEventRealm.swift in Sources */,
 				F012542B2429203F00B90B6D /* Validator.swift in Sources */,
 				F0E73C1C242F85D4006CD134 /* MVVMAddUserViewController.swift in Sources */,
 				F0D0C7182429245900A75D43 /* User.swift in Sources */,

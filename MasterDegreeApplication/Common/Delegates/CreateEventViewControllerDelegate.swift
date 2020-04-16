@@ -8,4 +8,5 @@
 
 protocol CreateEventViewControllerDelegate: class {
     func didTapBack()
+    func didCreateCalendarEvent(_ event: CalendarEvent)
 }
