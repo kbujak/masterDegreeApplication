@@ -1,4 +1,5 @@
 PODS:
+  - JTAppleCalendar (7.1.8)
   - KeychainSwift (19.0.0)
   - PureLayout (3.1.5)
   - Realm (4.3.2):
@@ -18,6 +19,7 @@ PODS:
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
+  - JTAppleCalendar (~> 7.1)
   - KeychainSwift (~> 19.0)
   - PureLayout
   - RealmSwift
@@ -28,6 +30,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - JTAppleCalendar
     - KeychainSwift
     - PureLayout
     - Realm
@@ -40,6 +43,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  JTAppleCalendar: b7fb40852f5f319fe55c8ec3861f1de0edc99cc8
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
@@ -51,6 +55,6 @@ SPEC CHECKSUMS:
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: f846cf26f59a2e62e1b0f4d53353e16416428dca
+PODFILE CHECKSUM: 70ce41b7e22b44895d18e074fdcf872c96029e1c
 
 COCOAPODS: 1.9.1

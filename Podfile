@@ -10,6 +10,7 @@ target 'MasterDegreeApplication' do
   pod 'RxCocoa'
   pod 'PureLayout'
   pod 'KeychainSwift', '~> 19.0'
+  pod 'JTAppleCalendar', '~> 7.1'
 
   target 'MasterDegreeApplicationTests' do
     inherit! :search_paths

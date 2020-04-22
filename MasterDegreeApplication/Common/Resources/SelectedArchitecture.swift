@@ -6,4 +6,4 @@
 //  Copyright © 2020 Booyac IT. All rights reserved.
 //
 
-let architecture = AppArchitecture.MVC
+let architecture = AppArchitecture.MVVM
