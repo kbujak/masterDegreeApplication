@@ -82,7 +82,7 @@ private extension MVVMSignUpViewController {
     }
 
     private func setupStyles() {
-        view.backgroundColor = .mainColor
+        view.backgroundColor = .appPurple
 
         titleLabel.text = L10n.SignUpViewController.title
         titleLabel.textAlignment = .center

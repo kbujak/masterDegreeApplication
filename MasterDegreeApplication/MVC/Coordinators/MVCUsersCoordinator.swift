@@ -26,6 +26,9 @@ class MVCUsersCoordinator: CompoundCoordinator {
         let navigationVC = UINavigationController(rootViewController: VC)
         navigationVC.isNavigationBarHidden = true
         self.VC = navigationVC
+        navigationVC.tabBarItem.title = L10n.UsersViewController.tabBarItem
+        navigationVC.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.appPurple],
+                                                       for: .normal)
 
         controller.addChild(navigationVC)
     }

@@ -24,6 +24,8 @@ UsersViewController.tabBarItem="Friends";
 
 AddUserViewController.SearchPlaceholder="Search users";
 
+CalendarViewController.tabBarItem="Calendar";
+
 CreateEventViewController.title="Create event";
 CreateEventViewController.nameTextfield="Enter event name";
 CreateEventViewController.placeTextfield="Enter place";

@@ -12,21 +12,6 @@ import RxSwift
 import RxCocoa
 import JTAppleCalendar
 
-let monthOfYear = [
-    1: "January",
-    2: "February",
-    3: "March",
-    4: "April",
-    5: "May",
-    6: "June",
-    7: "July",
-    8: "August",
-    9: "September",
-    10: "October",
-    11: "November",
-    12: "December"
-]
-
 class MVVMCalendarViewController: UIViewController {
     private let createButton = UIButton()
     private let topContainer = UIView()
@@ -69,6 +54,7 @@ class MVVMCalendarViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if let layer = self.gradientLayer {
@@ -76,7 +62,7 @@ class MVVMCalendarViewController: UIViewController {
         }
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = topContainer.frame
-        gradientLayer.colors = [UIColor.mainColor2.cgColor, UIColor.mainColor.cgColor]
+        gradientLayer.colors = [UIColor.appPurple.cgColor, UIColor.appBlue.cgColor]
         gradientLayer.locations = [0.0, 0.95]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
@@ -128,8 +114,6 @@ private extension MVVMCalendarViewController {
     func setupStyles() {
         view.backgroundColor = .white
         createButton.setTitle("+", for: .normal)
-//        createButton.backgroundColor = .mainColor
-//        createButton.layer.cornerRadius = 25
         createButton.setTitleColor(.white, for: .normal)
         createButton.titleLabel?.font = UIFont.systemFont(ofSize: 35, weight: .regular)
 
@@ -175,10 +159,17 @@ private extension MVVMCalendarViewController {
         createButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in self?.delegate?.didTapCreate() })
             .disposed(by: bag)
+
+        let input = CalendarViewModel.Input()
+        let output = viewModel.transform(input: input)
+
+        output.events
+            .subscribe(onNext: { [weak self] _ in self?.calendarView.reloadData() })
+            .disposed(by: bag)
     }
 
     func setupCalendar() {
-        calendarView.register(CalendarCell.self, forCellWithReuseIdentifier: CalendarCell.identifier)
+        calendarView.register(MVVMCalendarCell.self, forCellWithReuseIdentifier: MVVMCalendarCell.identifier)
         calendarView.calendarDataSource = self
         calendarView.calendarDelegate = self
         calendarView.isPagingEnabled = true
@@ -195,9 +186,6 @@ private extension MVVMCalendarViewController {
 // MARK: - JTAppleCalendar
 extension MVVMCalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
-
         let calendar = Calendar.current
         let today = Date()
         let startDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: today),
@@ -219,10 +207,12 @@ extension MVVMCalendarViewController: JTAppleCalendarViewDataSource, JTAppleCale
                   cellForItemAt date: Date,
                   cellState: CellState,
                   indexPath: IndexPath) -> JTAppleCell {
-        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: CalendarCell.identifier,
+        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: MVVMCalendarCell.identifier,
                                                        for: indexPath)
-        if let calendarCell = cell as? CalendarCell {
-            calendarCell.setup(withDate: date, isInDate: cellState.dateBelongsTo == .thisMonth)
+        if let calendarCell = cell as? MVVMCalendarCell {
+            let events = viewModel.getEvents(fromDate: date)
+            let VM = CalendarCellViewModelImpl(date: date, cellState: cellState, events: events)
+            calendarCell.setup(withVM: VM)
         }
         return cell
     }

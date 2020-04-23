@@ -53,7 +53,7 @@ private extension MVCUsersViewController {
     func setupStyles() {
         view.backgroundColor = .white
         inviteButton.setTitle(L10n.UsersViewController.invite, for: .normal)
-        inviteButton.backgroundColor = .mainColor
+        inviteButton.backgroundColor = .appPurple
         inviteButton.layer.cornerRadius = 25
     }
 

@@ -66,7 +66,7 @@ private extension MVVMSignInViewController {
     }
 
     func setupStyles() {
-        view.backgroundColor = UIColor.mainColor
+        view.backgroundColor = UIColor.appPurple
 
         titleLabel.text = L10n.SignInViewController.title
         titleLabel.textAlignment = .center

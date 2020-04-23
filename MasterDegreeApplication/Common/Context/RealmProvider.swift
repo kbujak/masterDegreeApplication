@@ -18,6 +18,7 @@ protocol RealmProvider: class {
     func addFriend(withUserId userId: String, forUser user: User) -> Observable<User>
     func fetchFriends(forUser user: User) -> Observable<[User]>
     func createCalendarEvent(withCalendarEvent calendarEvent: CalendarEvent) -> Observable<CalendarEvent>
+    func fetchEvents(forUserIds userIds: [String]) -> Observable<[CalendarEvent]>
     func clear()
 }
 
@@ -157,6 +158,25 @@ class RealmProviderImpl: RealmProvider {
                 }
 
                 subscriber.onNext(calendarEvent)
+                subscriber.onCompleted()
+            } catch {
+                subscriber.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+
+    func fetchEvents(forUserIds userIds: [String]) -> Observable<[CalendarEvent]> {
+        return Observable.create { [weak self] subscriber -> Disposable in
+            do {
+                guard let `self` = self else { throw AppErrors.unknownError }
+
+                let realm = try self.tryGetRealm()
+                let objects = realm.objects(CalendarEventRealm.self)
+                    .filter(NSPredicate(format: "ownerId IN %@", userIds))
+
+                let calendarEvents = Array(objects.map { CalendarEvent(realm: $0) })
+                subscriber.onNext(calendarEvents)
                 subscriber.onCompleted()
             } catch {
                 subscriber.onError(error)

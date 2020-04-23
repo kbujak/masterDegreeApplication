@@ -17,6 +17,11 @@ internal enum L10n {
     internal static let searchPlaceholder = L10n.tr("Localizable", "AddUserViewController.SearchPlaceholder")
   }
 
+  internal enum CalendarViewController {
+    /// Calendar
+    internal static let tabBarItem = L10n.tr("Localizable", "CalendarViewController.tabBarItem")
+  }
+
   internal enum Common {
     /// Back
     internal static let back = L10n.tr("Localizable", "Common.back")
