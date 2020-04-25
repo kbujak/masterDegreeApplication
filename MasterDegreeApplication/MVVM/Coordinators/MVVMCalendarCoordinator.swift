@@ -48,6 +48,14 @@ extension MVVMCalendarCoordinator: CalendarViewControllerDelegate {
     func didTapCreate() {
         startCreateEventViewController()
     }
+
+    func didTapDate(withEvents events: [CalendarEvent]) {
+        guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
+        let VM = EventsForDateViewModel(events: events, context: context)
+        let VC = MVVMEventsForDateViewController(viewModel: VM, delegate: self)
+        VC.modalPresentationStyle = .overCurrentContext
+        navigationVC.present(VC, animated: true, completion: nil)
+    }
 }
 
 // MARK: - CreateEventViewControllerDelegate
@@ -58,6 +66,13 @@ extension MVVMCalendarCoordinator: CreateEventViewControllerDelegate {
     }
 
     func didTapBack() {
+        VC?.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - EventsForDateViewControllerDelegate
+extension MVVMCalendarCoordinator: EventsForDateViewControllerDelegate {
+    func eventsForDateDidTapBack() {
         VC?.dismiss(animated: true, completion: nil)
     }
 }

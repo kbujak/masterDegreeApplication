@@ -49,8 +49,44 @@ struct CalendarEvent {
     }
 }
 
-extension CalendarEvent: Equatable {
+extension CalendarEvent: Comparable {
     static func == (lhs: CalendarEvent, rhs: CalendarEvent) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.date == rhs.date && lhs.hours == rhs.hours && lhs.minutes == rhs.minutes
+    }
+
+    static func < (lhs: CalendarEvent, rhs: CalendarEvent) -> Bool {
+        let calendar = Calendar.current
+        let lhsComponents = calendar.dateComponents([.year, .month, .day], from: lhs.date)
+        let rhsComponents = calendar.dateComponents([.year, .month, .day], from: rhs.date)
+
+        if lhsComponents.year! < rhsComponents.year! {
+            return true
+        } else if lhsComponents.year! > rhsComponents.year! {
+            return false
+        } else {
+            if lhsComponents.month! < rhsComponents.month! {
+                return true
+            } else if lhsComponents.month! > rhsComponents.month! {
+                return false
+            } else {
+                if lhsComponents.day! < rhsComponents.day! {
+                    return true
+                } else if lhsComponents.day! > rhsComponents.day! {
+                    return false
+                } else {
+                    if lhs.hours < rhs.hours {
+                        return true
+                    } else if lhs.hours > rhs.hours {
+                        return false
+                    } else {
+                        if lhs.minutes < rhs.minutes {
+                            return true
+                        } else {
+                            return false
+                        }
+                    }
+                }
+            }
+        }
     }
 }

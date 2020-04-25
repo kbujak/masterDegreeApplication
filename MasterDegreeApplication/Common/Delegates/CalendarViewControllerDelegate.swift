@@ -8,4 +8,5 @@
 
 protocol CalendarViewControllerDelegate: class {
     func didTapCreate()
+    func didTapDate(withEvents events: [CalendarEvent])
 }

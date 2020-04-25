@@ -240,4 +240,9 @@ extension MVVMCalendarViewController: JTAppleCalendarViewDataSource, JTAppleCale
             self.monthLabel.text = monthOfYear[month.key]
         }
     }
+
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        let events = viewModel.getEvents(fromDate: date)
+        delegate?.didTapDate(withEvents: events)
+    }
 }

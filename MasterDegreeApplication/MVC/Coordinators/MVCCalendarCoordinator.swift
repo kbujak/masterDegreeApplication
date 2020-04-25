@@ -43,6 +43,10 @@ class MVCCalendarCoordinator: CompoundCoordinator {
 
 // MARK: - CalendarViewControllerDelegate
 extension MVCCalendarCoordinator: CalendarViewControllerDelegate {
+    func didTapDate(withEvents events: [CalendarEvent]) {
+        print(events)
+    }
+
     func didTapCreate() {
         startCreateEventViewController()
     }
