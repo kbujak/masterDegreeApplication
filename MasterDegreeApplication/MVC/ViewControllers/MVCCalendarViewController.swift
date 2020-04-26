@@ -246,6 +246,11 @@ extension MVCCalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         }
     }
 
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        let events = getEvents(fromDate: date)
+        delegate?.didTapDate(withEvents: events)
+    }
+
     private func getEvents(fromDate date: Date) -> [CalendarEvent] {
         let calendar = Calendar.current
         let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)

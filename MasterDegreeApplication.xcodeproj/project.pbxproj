@@ -64,6 +64,8 @@
 		F0610F0B2447923C00C58740 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0610F0A2447923C00C58740 /* CalendarEvent.swift */; };
 		F0610F0D2447958C00C58740 /* MVCCreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0610F0C2447958C00C58740 /* MVCCreateEventViewController.swift */; };
 		F0620C032448E5F100AA427C /* CalendarEventRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0620C022448E5F100AA427C /* CalendarEventRealm.swift */; };
+		F062168E24558FF200129232 /* MVCEventsForDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062168D24558FF200129232 /* MVCEventsForDateViewController.swift */; };
+		F06216902455949800129232 /* MVCEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062168F2455949800129232 /* MVCEventCell.swift */; };
 		F062F56324546BB6007078B5 /* MVVMEventsForDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062F56224546BB6007078B5 /* MVVMEventsForDateViewController.swift */; };
 		F062F56524546C6A007078B5 /* EventsForDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062F56424546C6A007078B5 /* EventsForDateViewModel.swift */; };
 		F062F56724546CBC007078B5 /* EventsForDateViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062F56624546CBC007078B5 /* EventsForDateViewControllerDelegate.swift */; };
@@ -195,6 +197,8 @@
 		F0610F0A2447923C00C58740 /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		F0610F0C2447958C00C58740 /* MVCCreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCCreateEventViewController.swift; sourceTree = "<group>"; };
 		F0620C022448E5F100AA427C /* CalendarEventRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventRealm.swift; sourceTree = "<group>"; };
+		F062168D24558FF200129232 /* MVCEventsForDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCEventsForDateViewController.swift; sourceTree = "<group>"; };
+		F062168F2455949800129232 /* MVCEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCEventCell.swift; sourceTree = "<group>"; };
 		F062F56224546BB6007078B5 /* MVVMEventsForDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMEventsForDateViewController.swift; sourceTree = "<group>"; };
 		F062F56424546C6A007078B5 /* EventsForDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsForDateViewModel.swift; sourceTree = "<group>"; };
 		F062F56624546CBC007078B5 /* EventsForDateViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsForDateViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -377,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				F06C7130245221D9006276A1 /* MVCCalendarCell.swift */,
+				F062168F2455949800129232 /* MVCEventCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -610,6 +615,7 @@
 				F0346F77242D4C9F00368ABD /* MVCProfileViewController.swift */,
 				F0E73C23242F8A93006CD134 /* MVCAddUserViewController.swift */,
 				F0610F0C2447958C00C58740 /* MVCCreateEventViewController.swift */,
+				F062168D24558FF200129232 /* MVCEventsForDateViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -961,6 +967,7 @@
 				F0346F62242D496100368ABD /* MVCCalendarCoordinator.swift in Sources */,
 				F095A34824269EA900D51976 /* assets-images.swift in Sources */,
 				F0610F0B2447923C00C58740 /* CalendarEvent.swift in Sources */,
+				F062168E24558FF200129232 /* MVCEventsForDateViewController.swift in Sources */,
 				F0353E8924261A8C00AEB067 /* Coordinator.swift in Sources */,
 				F0F6643424277AD400FC0A3B /* AppCoordinator.swift in Sources */,
 				F0B419BE244474890042B1E7 /* MVVMCreateEventViewController.swift in Sources */,
@@ -1006,6 +1013,7 @@
 				F0346F32242D297600368ABD /* MVVMMainTabbarCoordinator.swift in Sources */,
 				F063CC9C2433B4E8000227C8 /* UserDataCache.swift in Sources */,
 				F0685D6D242671CB00F900CF /* MVVMSignInCoordinator.swift in Sources */,
+				F06216902455949800129232 /* MVCEventCell.swift in Sources */,
 				F0346F76242D4C6D00368ABD /* MVCProfileCoordinator.swift in Sources */,
 				F062F56D24547737007078B5 /* EventCellViewModel.swift in Sources */,
 				F0E73C16242F7E97006CD134 /* UsersViewControllerDelegate.swift in Sources */,

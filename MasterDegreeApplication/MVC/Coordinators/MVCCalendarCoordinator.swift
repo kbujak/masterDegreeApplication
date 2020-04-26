@@ -44,7 +44,9 @@ class MVCCalendarCoordinator: CompoundCoordinator {
 // MARK: - CalendarViewControllerDelegate
 extension MVCCalendarCoordinator: CalendarViewControllerDelegate {
     func didTapDate(withEvents events: [CalendarEvent]) {
-        print(events)
+        guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
+        let VC = MVCEventsForDateViewController(events: events, context: context, delegate: self)
+        navigationVC.present(VC, animated: true, completion: nil)
     }
 
     func didTapCreate() {
@@ -60,6 +62,13 @@ extension MVCCalendarCoordinator: CreateEventViewControllerDelegate {
     }
 
     func didTapBack() {
+        VC?.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - EventsForDateViewControllerDelegate
+extension MVCCalendarCoordinator: EventsForDateViewControllerDelegate {
+    func eventsForDateDidTapBack() {
         VC?.dismiss(animated: true, completion: nil)
     }
 }
