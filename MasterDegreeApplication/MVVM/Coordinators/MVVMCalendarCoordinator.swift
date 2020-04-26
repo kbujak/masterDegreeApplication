@@ -53,7 +53,6 @@ extension MVVMCalendarCoordinator: CalendarViewControllerDelegate {
         guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
         let VM = EventsForDateViewModel(events: events, context: context)
         let VC = MVVMEventsForDateViewController(viewModel: VM, delegate: self)
-        VC.modalPresentationStyle = .overCurrentContext
         navigationVC.present(VC, animated: true, completion: nil)
     }
 }

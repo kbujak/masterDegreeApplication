@@ -40,13 +40,13 @@ class MVVMEventsForDateViewController: UIViewController {
 // MARK: - Setup UI
 private extension MVVMEventsForDateViewController {
     func setupLayouts() {
-        table.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 200, left: 50, bottom: 200, right: 50))
+        table.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
     }
 
     func setupStyles() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         table.backgroundColor = .white
         table.layer.cornerRadius = 20
+        table.separatorStyle = .none
     }
 }
 
@@ -56,6 +56,7 @@ private extension MVVMEventsForDateViewController {
         table.register(MVVMEventCell.self, forCellReuseIdentifier: MVVMEventCell.identifier)
         table.dataSource = self
         table.delegate = self
+        table.rowHeight = 100
     }
 
     func bindViewModelToView() {

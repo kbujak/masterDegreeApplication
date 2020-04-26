@@ -13,17 +13,20 @@ import RxCocoa
 class MVVMEventCell: UITableViewCell {
     static let identifier = "MVVMEventCell"
 
+    private let containerView = UIView()
     private let authorLabel = UILabel()
     private let timeLabel = UILabel()
     private let placeLabel = UILabel()
     private let nameLabel = UILabel()
+    private var gradientLayer: CAGradientLayer?
 
     private var viewModel: EventCellViewModel?
     private var bag = DisposeBag()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        [authorLabel, timeLabel, placeLabel, nameLabel].addTo(self)
+        addSubview(containerView)
+        [authorLabel, timeLabel, placeLabel, nameLabel].addTo(containerView)
 
         setupLayouts()
         setupStyles()
@@ -37,6 +40,22 @@ class MVVMEventCell: UITableViewCell {
         super.prepareForReuse()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if let layer = self.gradientLayer {
+            layer.removeFromSuperlayer()
+        }
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = containerView.frame
+        gradientLayer.colors = [UIColor.appPurple.cgColor, UIColor.appBlue.cgColor]
+        gradientLayer.locations = [0.0, 0.95]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        
+        containerView.layer.insertSublayer(gradientLayer, at: 0)
+        self.gradientLayer = gradientLayer
+    }
+
     func setup(withViewModel viewModel: EventCellViewModel) {
         self.viewModel = viewModel
         bindViewModelToView()
@@ -45,18 +64,34 @@ class MVVMEventCell: UITableViewCell {
 
 private extension MVVMEventCell {
     func setupLayouts() {
-        authorLabel.autoPinEdge(.left, to: .left, of: self)
-        authorLabel.autoPinEdge(.top, to: .top, of: self)
-        timeLabel.autoPinEdge(.left, to: .left, of: self)
-        timeLabel.autoPinEdge(.top, to: .top, of: authorLabel, withOffset: 20)
+        containerView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0))
+
+        authorLabel.autoPinEdge(.left, to: .left, of: containerView, withOffset: 10)
+        authorLabel.autoPinEdge(.top, to: .top, of: containerView, withOffset: 20)
+
+        timeLabel.autoPinEdge(.left, to: .left, of: authorLabel)
+        timeLabel.autoPinEdge(.top, to: .bottom, of: authorLabel, withOffset: 2)
+
         placeLabel.autoPinEdge(.left, to: .right, of: timeLabel, withOffset: 5)
-        placeLabel.autoPinEdge(.top, to: .top, of: authorLabel, withOffset: 20)
-        nameLabel.autoPinEdge(.left, to: .right, of: placeLabel, withOffset: 15)
-        nameLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 10)
+        placeLabel.autoPinEdge(.top, to: .bottom, of: authorLabel, withOffset: 2)
+
+        nameLabel.autoPinEdge(.left, to: .left, of: containerView, withOffset: 150)
+        nameLabel.autoAlignAxis(.horizontal, toSameAxisOf: containerView)
     }
 
     func setupStyles() {
-        backgroundColor = .blue
+        authorLabel.textColor = .white
+        authorLabel.font = UIFont.systemFont(ofSize: 24, weight: .regular)
+
+        timeLabel.textColor = .white
+        timeLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+
+        placeLabel.textColor = .white
+        placeLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+
+        nameLabel.textColor = .white
+        nameLabel.font = UIFont.systemFont(ofSize: 19, weight: .semibold)
+        nameLabel.numberOfLines = 0
     }
 
     func bindViewModelToView() {

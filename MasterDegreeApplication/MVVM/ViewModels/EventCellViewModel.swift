@@ -47,7 +47,7 @@ class EventCellViewModelImpl: EventCellViewModel {
 
         placeRelay.accept(event.place)
 
-        timeRelay.accept("\(event.hours):\(event.minutes)")
+        timeRelay.accept(String(format: "%d:%02d,", event.hours, event.minutes))
 
         nameRelay.accept(event.name)
     }
