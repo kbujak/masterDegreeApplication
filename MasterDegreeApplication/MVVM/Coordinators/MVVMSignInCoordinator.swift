@@ -68,7 +68,7 @@ extension MVVMSignInCoordinator: SignUpViewControllerDelegate {
     }
 }
 
-// MARK: - SignUpViewController
+// MARK: - MainTabBarCoordinatorDelegate
 extension MVVMSignInCoordinator: MainTabBarCoordinatorDelegate {
     func didLogOutFromMainTabBarFlow() {
         delegate?.didLogOutFromSignInFlow()

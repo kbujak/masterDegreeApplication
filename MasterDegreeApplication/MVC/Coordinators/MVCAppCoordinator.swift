@@ -25,13 +25,34 @@ class MVCAppCoordinator: AppCoordinator {
     private func startSignInCoordinator() {
         guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
         let coordinator: MVCSignInCoordinator = createCoordinator()
-        coordinator.start(in: navigationVC)
+        coordinator.start(in: navigationVC, delegate: self)
     }
 
     private func startMainTabbarCoordinator() {
         guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
         let coordinator: MVCMainTabbarCoordinator = createCoordinator()
         context.userDataCache.fetchData()
-        coordinator.start(in: navigationVC)
+        coordinator.start(in: navigationVC, delegate: self)
+    }
+
+    private func restartAppState() {
+        guard let navigationVC = self.VC else { fatalError("Navigation controller not initialised") }
+        navigationVC.dismiss(animated: true, completion: nil)
+        children = [:]
+        startSignInCoordinator()
+    }
+}
+
+// MARK: - MainTabBarCoordinatorDelegate
+extension MVCAppCoordinator: MainTabBarCoordinatorDelegate {
+    func didLogOutFromMainTabBarFlow() {
+        restartAppState()
+    }
+}
+
+// MARK: - SignInCoordinatorDelegate
+extension MVCAppCoordinator: SignInCoordinatorDelegate {
+    func didLogOutFromSignInFlow() {
+        restartAppState()
     }
 }

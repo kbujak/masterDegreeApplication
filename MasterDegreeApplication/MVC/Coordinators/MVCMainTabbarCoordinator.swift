@@ -14,6 +14,7 @@ class MVCMainTabbarCoordinator: CompoundCoordinator {
     var id: CoordinatorIdentifier
     var children: [CoordinatorIdentifier: Coordinator] = [:]
     let context: Context
+    private weak var delegate: MainTabBarCoordinatorDelegate?
 
     private var parentVC: UIViewController?
 
@@ -22,7 +23,7 @@ class MVCMainTabbarCoordinator: CompoundCoordinator {
         self.id = id
     }
 
-    func start(in controller: UIViewController) {
+    func start(in controller: UIViewController, delegate: MainTabBarCoordinatorDelegate? = nil) {
         self.parentVC = controller
 
         let VC = UITabBarController()
@@ -32,6 +33,8 @@ class MVCMainTabbarCoordinator: CompoundCoordinator {
         startUsersCoordinator()
         startCalendarCoordinator()
         startProfileCoordinator()
+
+        self.delegate = delegate
 
         controller.present(VC, animated: true, completion: nil)
     }
@@ -51,6 +54,14 @@ class MVCMainTabbarCoordinator: CompoundCoordinator {
     private func startProfileCoordinator() {
         guard let VC = self.VC else { fatalError() }
         let coordinator: MVCProfileCoordinator = createCoordinator()
-        coordinator.start(in: VC)
+        coordinator.start(in: VC, delegate: self)
+    }
+}
+
+// MARK: - ProfileCoordinatorDelegate
+extension MVCMainTabbarCoordinator: ProfileCoordinatorDelegate {
+    func didLogOut() {
+        children = [:]
+        delegate?.didLogOutFromMainTabBarFlow()
     }
 }
