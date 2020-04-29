@@ -57,17 +57,10 @@ class MVVMCalendarViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if let layer = self.gradientLayer {
+        if let layer = gradientLayer {
             layer.removeFromSuperlayer()
         }
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = topContainer.frame
-        gradientLayer.colors = [UIColor.appPurple.cgColor, UIColor.appBlue.cgColor]
-        gradientLayer.locations = [0.0, 0.95]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        topContainer.layer.insertSublayer(gradientLayer, at: 0)
-        self.gradientLayer = gradientLayer
+        self.gradientLayer = CAGradientLayer.createGradient(forView: topContainer)
     }
 }
 

@@ -42,18 +42,10 @@ class MVVMEventCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        if let layer = self.gradientLayer {
+        if let layer = gradientLayer {
             layer.removeFromSuperlayer()
         }
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = containerView.frame
-        gradientLayer.colors = [UIColor.appPurple.cgColor, UIColor.appBlue.cgColor]
-        gradientLayer.locations = [0.0, 0.95]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        
-        containerView.layer.insertSublayer(gradientLayer, at: 0)
-        self.gradientLayer = gradientLayer
+        self.gradientLayer = CAGradientLayer.createGradient(forView: containerView)
     }
 
     func setup(withViewModel viewModel: EventCellViewModel) {

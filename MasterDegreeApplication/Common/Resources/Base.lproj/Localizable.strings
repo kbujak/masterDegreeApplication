@@ -29,3 +29,6 @@ CalendarViewController.tabBarItem="Calendar";
 CreateEventViewController.title="Create event";
 CreateEventViewController.nameTextfield="Enter event name";
 CreateEventViewController.placeTextfield="Enter place";
+
+ProfileViewController.tabBarItem="Profile";
+ProfileViewController.logOut="Logout";

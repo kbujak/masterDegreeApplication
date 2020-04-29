@@ -16,6 +16,7 @@ protocol UserDataCache: class {
 
     func fetchData()
     func update(user: User)
+    func clear()
 }
 
 class UserDataCacheImpl: UserDataCache {
@@ -43,5 +44,9 @@ class UserDataCacheImpl: UserDataCache {
 
     func update(user: User) {
         userRelay.accept(user)
+    }
+
+    func clear() {
+        userRelay.accept(nil)
     }
 }

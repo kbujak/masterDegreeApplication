@@ -42,6 +42,13 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "CreateEventViewController.title")
   }
 
+  internal enum ProfileViewController {
+    /// Logout
+    internal static let logOut = L10n.tr("Localizable", "ProfileViewController.logOut")
+    /// Profile
+    internal static let tabBarItem = L10n.tr("Localizable", "ProfileViewController.tabBarItem")
+  }
+
   internal enum SignInViewController {
     /// Sign in
     internal static let signIn = L10n.tr("Localizable", "SignInViewController.signIn")

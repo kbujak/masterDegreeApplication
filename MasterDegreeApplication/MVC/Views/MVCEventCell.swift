@@ -94,4 +94,3 @@ private extension MVCEventCell {
         nameLabel.numberOfLines = 0
     }
 }
-

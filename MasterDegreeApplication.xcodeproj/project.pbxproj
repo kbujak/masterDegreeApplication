@@ -113,6 +113,11 @@
 		F0B419C0244474C10042B1E7 /* CreateEventViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B419BF244474C10042B1E7 /* CreateEventViewControllerDelegate.swift */; };
 		F0D0C7182429245900A75D43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0C7172429245900A75D43 /* User.swift */; };
 		F0D0C71A242926DF00A75D43 /* SignUpViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0C719242926DF00A75D43 /* SignUpViewModelTests.swift */; };
+		F0DA9BB7245999D200CDB5EF /* CAGradientLayer+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA9BB6245999D200CDB5EF /* CAGradientLayer+Factory.swift */; };
+		F0DA9BB92459A53100CDB5EF /* ProfileViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA9BB82459A53100CDB5EF /* ProfileViewControllerDelegate.swift */; };
+		F0DA9BBB2459A67F00CDB5EF /* ProfileCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA9BBA2459A67F00CDB5EF /* ProfileCoordinatorDelegate.swift */; };
+		F0DA9BBD2459A94000CDB5EF /* MainTabBarCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA9BBC2459A94000CDB5EF /* MainTabBarCoordinatorDelegate.swift */; };
+		F0DA9BBF2459AC4700CDB5EF /* SignInCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA9BBE2459AC4700CDB5EF /* SignInCoordinatorDelegate.swift */; };
 		F0E73C16242F7E97006CD134 /* UsersViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E73C15242F7E97006CD134 /* UsersViewControllerDelegate.swift */; };
 		F0E73C18242F8540006CD134 /* MVVMAddUserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E73C17242F8540006CD134 /* MVVMAddUserViewControllerTests.swift */; };
 		F0E73C1A242F858E006CD134 /* AddUserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E73C19242F858E006CD134 /* AddUserViewModelTests.swift */; };
@@ -250,6 +255,11 @@
 		F0B419BF244474C10042B1E7 /* CreateEventViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewControllerDelegate.swift; sourceTree = "<group>"; };
 		F0D0C7172429245900A75D43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F0D0C719242926DF00A75D43 /* SignUpViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelTests.swift; sourceTree = "<group>"; };
+		F0DA9BB6245999D200CDB5EF /* CAGradientLayer+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Factory.swift"; sourceTree = "<group>"; };
+		F0DA9BB82459A53100CDB5EF /* ProfileViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerDelegate.swift; sourceTree = "<group>"; };
+		F0DA9BBA2459A67F00CDB5EF /* ProfileCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		F0DA9BBC2459A94000CDB5EF /* MainTabBarCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		F0DA9BBE2459AC4700CDB5EF /* SignInCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		F0E73C15242F7E97006CD134 /* UsersViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewControllerDelegate.swift; sourceTree = "<group>"; };
 		F0E73C17242F8540006CD134 /* MVVMAddUserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMAddUserViewControllerTests.swift; sourceTree = "<group>"; };
 		F0E73C19242F858E006CD134 /* AddUserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewModelTests.swift; sourceTree = "<group>"; };
@@ -630,6 +640,10 @@
 				F0B419B9244473E00042B1E7 /* CalendarViewControllerDelegate.swift */,
 				F0B419BF244474C10042B1E7 /* CreateEventViewControllerDelegate.swift */,
 				F062F56624546CBC007078B5 /* EventsForDateViewControllerDelegate.swift */,
+				F0DA9BB82459A53100CDB5EF /* ProfileViewControllerDelegate.swift */,
+				F0DA9BBA2459A67F00CDB5EF /* ProfileCoordinatorDelegate.swift */,
+				F0DA9BBC2459A94000CDB5EF /* MainTabBarCoordinatorDelegate.swift */,
+				F0DA9BBE2459AC4700CDB5EF /* SignInCoordinatorDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -691,6 +705,7 @@
 			children = (
 				F095A3402426984600D51976 /* Array+UIView.swift */,
 				F095A343242699DE00D51976 /* UIColor+AppColors.swift */,
+				F0DA9BB6245999D200CDB5EF /* CAGradientLayer+Factory.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -977,6 +992,7 @@
 				F012542B2429203F00B90B6D /* Validator.swift in Sources */,
 				F0E73C1C242F85D4006CD134 /* MVVMAddUserViewController.swift in Sources */,
 				F0D0C7182429245900A75D43 /* User.swift in Sources */,
+				F0DA9BB92459A53100CDB5EF /* ProfileViewControllerDelegate.swift in Sources */,
 				F0699849242BBD8E00A0E30D /* Context.swift in Sources */,
 				F0346F74242D4C0C00368ABD /* MVVMProfileCoordinator.swift in Sources */,
 				F0346F72242D4BDF00368ABD /* MVVMProfileViewController.swift in Sources */,
@@ -985,6 +1001,7 @@
 				F095A3412426984600D51976 /* Array+UIView.swift in Sources */,
 				F0610F0D2447958C00C58740 /* MVCCreateEventViewController.swift in Sources */,
 				F062F56324546BB6007078B5 /* MVVMEventsForDateViewController.swift in Sources */,
+				F0DA9BBF2459AC4700CDB5EF /* SignInCoordinatorDelegate.swift in Sources */,
 				F0E73C20242F88FE006CD134 /* AddUserViewControllerDelegate.swift in Sources */,
 				F0346F5E242D48AF00368ABD /* MVVMCalendarViewController.swift in Sources */,
 				F095A337242691C400D51976 /* SignInViewModel.swift in Sources */,
@@ -995,6 +1012,7 @@
 				F0943474242785E5007898C8 /* MVCSignInCoordinator.swift in Sources */,
 				F0346F4E242D421100368ABD /* MVCUsersCoordinator.swift in Sources */,
 				F094346E24278546007898C8 /* MVCAppCoordinator.swift in Sources */,
+				F0DA9BBB2459A67F00CDB5EF /* ProfileCoordinatorDelegate.swift in Sources */,
 				F063CC9A2433A5F0000227C8 /* AddUserCell.swift in Sources */,
 				F0353E8B24261A9D00AEB067 /* MVVMAppCoordinator.swift in Sources */,
 				F0B419C0244474C10042B1E7 /* CreateEventViewControllerDelegate.swift in Sources */,
@@ -1018,6 +1036,7 @@
 				F062F56D24547737007078B5 /* EventCellViewModel.swift in Sources */,
 				F0E73C16242F7E97006CD134 /* UsersViewControllerDelegate.swift in Sources */,
 				F0125425242919C900B90B6D /* RoundedGrayButton.swift in Sources */,
+				F0DA9BBD2459A94000CDB5EF /* MainTabBarCoordinatorDelegate.swift in Sources */,
 				F012542924291EF800B90B6D /* MVCSignUpViewController.swift in Sources */,
 				F095A33A242692D500D51976 /* ViewModel.swift in Sources */,
 				F0346F3A242D30B800368ABD /* MVCMainTabbarCoordinator.swift in Sources */,
@@ -1036,6 +1055,7 @@
 				F0346F36242D2B1D00368ABD /* KeychainProvider.swift in Sources */,
 				F0346F4A242D40CA00368ABD /* MVCUsersViewController.swift in Sources */,
 				F074A70B242418110088D4F3 /* MVVMSignInViewController.swift in Sources */,
+				F0DA9BB7245999D200CDB5EF /* CAGradientLayer+Factory.swift in Sources */,
 				F065399D242BBC5A00AF4E0F /* UserRealm.swift in Sources */,
 				F01254222429193200B90B6D /* BorderedTextField.swift in Sources */,
 			);
